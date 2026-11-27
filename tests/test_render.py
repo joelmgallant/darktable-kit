@@ -85,3 +85,16 @@ def test_messenger_preset():
 def test_unknown_preset():
     with pytest.raises(LookupError, match="no preset named 'nope'"):
         load_preset("nope")
+
+
+def test_missing_darktable_cli_is_a_render_error(raw, tmp_path, monkeypatch):
+    monkeypatch.setenv("DTK_DARKTABLE_CLI", str(tmp_path / "no-such-darktable-cli"))
+    with pytest.raises(RenderError, match="DTK_DARKTABLE_CLI"):
+        render(raw, "<x/>", tmp_path / "a.jpg", RenderSpec())
+
+
+def test_hung_darktable_cli_is_a_render_error(raw, tmp_path):
+    def hang(cmd, **kwargs):
+        raise subprocess.TimeoutExpired(cmd, kwargs.get("timeout"))
+    with pytest.raises(RenderError, match="did not finish"):
+        render(raw, "<x/>", tmp_path / "a.jpg", RenderSpec(), run=hang)

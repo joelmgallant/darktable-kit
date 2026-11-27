@@ -80,3 +80,38 @@ def test_export_refuses_to_overwrite_its_source(tmp_path, fake_darktable, capsys
     shutil.copy(FIXTURES / "minimal.xmp", tmp_path / "shot.jpg.xmp")
     assert main(["export", str(jpeg), "--preset", "messenger", "--out", str(tmp_path)]) == 1
     assert "would overwrite" in capsys.readouterr().err
+
+
+def test_export_refuses_to_overwrite_a_camera_jpeg_next_to_the_raw(photo, fake_darktable, capsys):
+    camera_jpeg = photo.with_name("IMG_1.jpg")
+    camera_jpeg.write_bytes(b"camera original")
+    assert main(["export", str(photo), "--preset", "messenger", "--out", str(photo.parent)]) == 1
+    assert "would overwrite" in capsys.readouterr().err
+    assert camera_jpeg.read_bytes() == b"camera original"
+
+
+def test_export_refuses_two_images_with_the_same_output_name(photo, fake_darktable, tmp_path, capsys):
+    other = tmp_path / "elsewhere" / "IMG_1.CR2"
+    other.parent.mkdir()
+    other.write_bytes(b"raw")
+    shutil.copy(FIXTURES / "minimal.xmp", other.with_name("IMG_1.CR2.xmp"))
+    out = tmp_path / "out"
+    assert main(["export", str(photo), str(other), "--preset", "messenger", "--out", str(out)]) == 1
+    assert "same output" in capsys.readouterr().err
+    assert not out.exists()
+
+
+def test_library_snapshots_are_removed_at_exit(tmp_path, monkeypatch):
+    import sqlite3
+
+    import dtk.commands as commands
+    library = tmp_path / "library.db"
+    sqlite3.connect(library).close()
+    monkeypatch.setattr(commands, "DEFAULT_LIBRARY", library)
+    cleanups = []
+    monkeypatch.setattr(commands.atexit, "register", lambda func, *args, **kwargs: cleanups.append((func, args, kwargs)))
+    copy = commands._library_snapshot()
+    assert copy.exists()
+    for func, args, kwargs in cleanups:
+        func(*args, **kwargs)
+    assert not copy.parent.exists()

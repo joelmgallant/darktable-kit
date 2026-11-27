@@ -1,6 +1,8 @@
 """Implementations of the dtk subcommands. Each returns an exit code."""
 from __future__ import annotations
 
+import atexit
+import shutil
 import tempfile
 from datetime import date, datetime
 from pathlib import Path
@@ -21,12 +23,18 @@ from dtk.xmp import parse_sidecar
 SUMMARY_FIELDS = 6
 
 
+def _snapshot_until_exit(src: Path, prefix: str) -> Path:
+    folder = Path(tempfile.mkdtemp(prefix=prefix))
+    atexit.register(shutil.rmtree, folder, ignore_errors=True)
+    return snapshot(src, folder)
+
+
 def _library_snapshot() -> Path:
-    return snapshot(DEFAULT_LIBRARY, Path(tempfile.mkdtemp(prefix="dtk-library-")))
+    return _snapshot_until_exit(DEFAULT_LIBRARY, "dtk-library-")
 
 
 def _data_snapshot() -> Path:
-    return snapshot(DEFAULT_DATA, Path(tempfile.mkdtemp(prefix="dtk-data-")))
+    return _snapshot_until_exit(DEFAULT_DATA, "dtk-data-")
 
 
 def cmd_find(args) -> int:
@@ -78,14 +86,29 @@ def cmd_modules(args) -> int:
     return 0
 
 
+def _export_target(files, out_dir: Path) -> Path:
+    out = out_dir / f"{files.raw.stem}.jpg"
+    same_as_source = str(out.resolve()).casefold() == str(files.raw.resolve()).casefold()
+    beside_source = out.resolve().parent == files.raw.resolve().parent and out.exists()
+    if same_as_source or beside_source:
+        raise EditRefused(f"exporting {files.raw.name} to {out_dir} would overwrite {out.name} next to the source; "
+                          "pick another --out")
+    return out
+
+
 def cmd_export(args) -> int:
     preset = load_preset(args.preset)
+    jobs, seen = [], {}
     for image in args.images:
         files = resolve_image(image, _library_snapshot)
         out_dir = Path(args.out).expanduser() if args.out else out_dir_for(preset, files.raw)
-        out = out_dir / f"{files.raw.stem}.jpg"
-        if str(out.resolve()).casefold() == str(files.raw.resolve()).casefold():
-            raise EditRefused(f"exporting {files.raw.name} to {out_dir} would overwrite the source; pick another --out")
+        out = _export_target(files, out_dir)
+        key = str(out.resolve()).casefold()
+        if key in seen:
+            raise EditRefused(f"{seen[key]} and {files.raw} have the same output {out}; export them to different --out")
+        seen[key] = files.raw
+        jobs.append((files, out))
+    for files, out in jobs:
         render.render(files.raw, files.xmp.read_text(encoding="utf-8"), out, preset.spec)
         print(out)
     return 0

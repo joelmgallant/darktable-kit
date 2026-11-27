@@ -14,6 +14,7 @@ from PIL import Image, ImageCms
 DEFAULT_CLI = "/Applications/darktable.app/Contents/MacOS/darktable-cli"
 STDERR_TAIL_LINES = 8
 GAP_PIXELS = 8
+RENDER_TIMEOUT_SECONDS = 600
 
 
 def cli_path() -> str:
@@ -84,8 +85,15 @@ def render(raw: Path, xmp_text: str, out: Path, spec: RenderSpec, run=None) -> P
         configdir = tmp / "config"
         configdir.mkdir()
         produced = tmp / ("render" + (out.suffix or ".jpg"))
-        result = run(build_command(raw_link, xmp_copy, produced, spec, configdir),
-                     capture_output=True, text=True, timeout=600)
+        try:
+            result = run(build_command(raw_link, xmp_copy, produced, spec, configdir),
+                         capture_output=True, text=True, timeout=RENDER_TIMEOUT_SECONDS)
+        except FileNotFoundError:
+            raise RenderError(f"darktable-cli not found at {cli_path()}; install darktable or set "
+                              "DTK_DARKTABLE_CLI to its path") from None
+        except subprocess.TimeoutExpired:
+            raise RenderError(f"darktable-cli did not finish within {RENDER_TIMEOUT_SECONDS} s; "
+                              "check the raw opens in darktable") from None
         _verify(produced, spec, result)
         out.unlink(missing_ok=True)
         shutil.move(str(produced), out)

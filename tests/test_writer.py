@@ -66,3 +66,14 @@ def test_pending_round_trip(tmp_path):
     assert pending.load(edit.id, root=tmp_path).applied is True
     with pytest.raises(LookupError, match="no pending edit"):
         pending.load("nope", root=tmp_path)
+
+
+def test_read_back_mismatch_is_refused_and_names_the_backup(xmp, tmp_path, monkeypatch):
+    import dtk.writer as writer
+
+    def corrupting_replace(src, dst):
+        Path(dst).write_text("truncated")
+        Path(src).unlink()
+    monkeypatch.setattr(writer.os, "replace", corrupting_replace)
+    with pytest.raises(WriteRefused, match="did not read back as written; restore from"):
+        write_xmp(xmp, NEW_TEXT, sha(xmp), is_running=lambda: False, backup_dir=tmp_path / "bk")
