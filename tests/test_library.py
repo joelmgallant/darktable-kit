@@ -97,3 +97,8 @@ def test_resolve_image_refuses_missing_sidecar(tmp_path):
     raw.write_bytes(b"")
     with pytest.raises(ImageNotFound, match="no sidecar"):
         resolve_image(str(raw), library_snapshot=lambda: None)
+
+
+def test_snapshot_of_a_missing_library_is_a_clear_refusal(tmp_path):
+    with pytest.raises(LookupError, match="no darktable library at .*DTK_LIBRARY"):
+        snapshot(tmp_path / "missing.db", tmp_path / "snap")

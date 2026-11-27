@@ -36,6 +36,8 @@ def from_timespan(value: int | None) -> datetime | None:
 
 
 def snapshot(src: Path, dest_dir: Path) -> Path:
+    if not src.is_file():
+        raise LookupError(f"no darktable library at {src}; set DTK_LIBRARY (or DTK_DATA) to its path")
     dest_dir.mkdir(parents=True, exist_ok=True)
     dest = dest_dir / src.name
     with sqlite3.connect(f"file:{src}?mode=ro", uri=True) as source, sqlite3.connect(dest) as target:
