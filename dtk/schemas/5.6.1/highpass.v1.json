@@ -1,0 +1,30 @@
+{
+ "module": "highpass",
+ "version": 1,
+ "struct": "dt_iop_highpass_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 8,
+ "fields": [
+  {
+   "name": "sharpness",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0
+  },
+  {
+   "name": "contrast",
+   "ctype": "float",
+   "dims": [],
+   "description": "contrast boost",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0
+  }
+ ]
+}

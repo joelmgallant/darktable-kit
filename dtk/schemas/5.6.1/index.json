@@ -1,0 +1,706 @@
+[
+ {
+  "module": "agx",
+  "version": 7,
+  "struct": "dt_iop_agx_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 144
+ },
+ {
+  "module": "ashift",
+  "version": 5,
+  "struct": "dt_iop_ashift_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 892
+ },
+ {
+  "module": "atrous",
+  "version": 2,
+  "struct": "dt_iop_atrous_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 248
+ },
+ {
+  "module": "basecurve",
+  "version": 6,
+  "struct": "dt_iop_basecurve_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 520
+ },
+ {
+  "module": "basicadj",
+  "version": 2,
+  "struct": "dt_iop_basicadj_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 44
+ },
+ {
+  "module": "bilat",
+  "version": 3,
+  "struct": "dt_iop_bilat_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 20
+ },
+ {
+  "module": "bloom",
+  "version": 1,
+  "struct": "dt_iop_bloom_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 12
+ },
+ {
+  "module": "blurs",
+  "version": 1,
+  "struct": "dt_iop_blurs_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 36
+ },
+ {
+  "module": "borders",
+  "version": 4,
+  "struct": "dt_iop_borders_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 120
+ },
+ {
+  "module": "cacorrect",
+  "version": 2,
+  "struct": "dt_iop_cacorrect_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 8
+ },
+ {
+  "module": "cacorrectrgb",
+  "version": 1,
+  "struct": "dt_iop_cacorrectrgb_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 20
+ },
+ {
+  "module": "censorize",
+  "version": 1,
+  "struct": "dt_iop_censorize_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 16
+ },
+ {
+  "module": "channelmixer",
+  "version": 2,
+  "struct": "dt_iop_channelmixer_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 88
+ },
+ {
+  "module": "channelmixerrgb",
+  "version": 3,
+  "struct": "dt_iop_channelmixer_rgb_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 160
+ },
+ {
+  "module": "clipping",
+  "version": 5,
+  "struct": "dt_iop_clipping_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 84
+ },
+ {
+  "module": "colisa",
+  "version": 1,
+  "struct": "dt_iop_colisa_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 12
+ },
+ {
+  "module": "colorbalance",
+  "version": 3,
+  "struct": "dt_iop_colorbalance_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 68
+ },
+ {
+  "module": "colorbalancergb",
+  "version": 5,
+  "struct": "dt_iop_colorbalancergb_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 132
+ },
+ {
+  "module": "colorchecker",
+  "version": 2,
+  "struct": "dt_iop_colorchecker_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 1180
+ },
+ {
+  "module": "colorcontrast",
+  "version": 2,
+  "struct": "dt_iop_colorcontrast_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 20
+ },
+ {
+  "module": "colorcorrection",
+  "version": 1,
+  "struct": "dt_iop_colorcorrection_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 20
+ },
+ {
+  "module": "colorequal",
+  "version": 4,
+  "struct": "dt_iop_colorequal_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 128
+ },
+ {
+  "module": "colorharmonizer",
+  "version": 1,
+  "struct": "dt_iop_colorharmonizer_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 60
+ },
+ {
+  "module": "colorin",
+  "version": 7,
+  "struct": "dt_iop_colorin_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 1044
+ },
+ {
+  "module": "colorize",
+  "version": 2,
+  "struct": "dt_iop_colorize_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 20
+ },
+ {
+  "module": "colormapping",
+  "version": 1,
+  "struct": "dt_iop_colormapping_params_t",
+  "status": "unsupported",
+  "reason": "source_mean: unknown type float2",
+  "size": null
+ },
+ {
+  "module": "colorout",
+  "version": 5,
+  "struct": "dt_iop_colorout_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 520
+ },
+ {
+  "module": "colorreconstruction",
+  "version": 3,
+  "struct": "dt_iop_colorreconstruct_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 20
+ },
+ {
+  "module": "colortransfer",
+  "version": 1,
+  "struct": "dt_iop_colortransfer_params_t",
+  "status": "unsupported",
+  "reason": "mean: unknown type float2",
+  "size": null
+ },
+ {
+  "module": "colorzones",
+  "version": 5,
+  "struct": "dt_iop_colorzones_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 520
+ },
+ {
+  "module": "crop",
+  "version": 3,
+  "struct": "dt_iop_crop_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 24
+ },
+ {
+  "module": "defringe",
+  "version": 1,
+  "struct": "dt_iop_defringe_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 12
+ },
+ {
+  "module": "demosaic",
+  "version": 6,
+  "struct": "dt_iop_demosaic_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 48
+ },
+ {
+  "module": "denoiseprofile",
+  "version": 12,
+  "struct": "dt_iop_denoiseprofile_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 416
+ },
+ {
+  "module": "diffuse",
+  "version": 2,
+  "struct": "dt_iop_diffuse_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 60
+ },
+ {
+  "module": "dither",
+  "version": 2,
+  "struct": "dt_iop_dither_params_t",
+  "status": "unsupported",
+  "reason": "unsupported declaration 'struct\\n  {\\n    float radius'",
+  "size": null
+ },
+ {
+  "module": "enlargecanvas",
+  "version": 1,
+  "struct": "dt_iop_enlargecanvas_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 20
+ },
+ {
+  "module": "equalizer",
+  "version": 1,
+  "struct": "dt_iop_equalizer_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 144
+ },
+ {
+  "module": "exposure",
+  "version": 7,
+  "struct": "dt_iop_exposure_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 28
+ },
+ {
+  "module": "filmic",
+  "version": 3,
+  "struct": "dt_iop_filmic_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 60
+ },
+ {
+  "module": "filmicrgb",
+  "version": 6,
+  "struct": "dt_iop_filmicrgb_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 116
+ },
+ {
+  "module": "finalscale",
+  "version": 1,
+  "struct": "dt_iop_finalscale_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 4
+ },
+ {
+  "module": "flip",
+  "version": 2,
+  "struct": "dt_iop_flip_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 4
+ },
+ {
+  "module": "gamma",
+  "version": 1,
+  "struct": "dt_iop_gamma_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 8
+ },
+ {
+  "module": "globaltonemap",
+  "version": 3,
+  "struct": "dt_iop_global_tonemap_params_t",
+  "status": "unsupported",
+  "reason": "unsupported declaration 'struct\\n  {\\n    float bias'",
+  "size": null
+ },
+ {
+  "module": "graduatednd",
+  "version": 1,
+  "struct": "dt_iop_graduatednd_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 24
+ },
+ {
+  "module": "grain",
+  "version": 2,
+  "struct": "dt_iop_grain_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 16
+ },
+ {
+  "module": "hazeremoval",
+  "version": 3,
+  "struct": "dt_iop_hazeremoval_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 16
+ },
+ {
+  "module": "highlights",
+  "version": 4,
+  "struct": "dt_iop_highlights_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 48
+ },
+ {
+  "module": "highpass",
+  "version": 1,
+  "struct": "dt_iop_highpass_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 8
+ },
+ {
+  "module": "hotpixels",
+  "version": 1,
+  "struct": "dt_iop_hotpixels_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 16
+ },
+ {
+  "module": "invert",
+  "version": 2,
+  "struct": "dt_iop_invert_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 16
+ },
+ {
+  "module": "levels",
+  "version": 2,
+  "struct": "dt_iop_levels_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 28
+ },
+ {
+  "module": "liquify",
+  "version": 1,
+  "struct": "dt_iop_liquify_params_t",
+  "status": "unsupported",
+  "reason": "cannot read declarator 'complex point'",
+  "size": null
+ },
+ {
+  "module": "lowlight",
+  "version": 1,
+  "struct": "dt_iop_lowlight_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 52
+ },
+ {
+  "module": "lowpass",
+  "version": 4,
+  "struct": "dt_iop_lowpass_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 28
+ },
+ {
+  "module": "lut3d",
+  "version": 3,
+  "struct": "dt_iop_lut3d_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 12940
+ },
+ {
+  "module": "mask_manager",
+  "version": 2,
+  "struct": "dt_iop_mask_manager_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 4
+ },
+ {
+  "module": "monochrome",
+  "version": 2,
+  "struct": "dt_iop_monochrome_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 16
+ },
+ {
+  "module": "negadoctor",
+  "version": 2,
+  "struct": "dt_iop_negadoctor_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 76
+ },
+ {
+  "module": "nlmeans",
+  "version": 2,
+  "struct": "dt_iop_nlmeans_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 16
+ },
+ {
+  "module": "overlay",
+  "version": 1,
+  "struct": "dt_iop_overlay_params_t",
+  "status": "unsupported",
+  "reason": "dummy0: unknown type size_t",
+  "size": null
+ },
+ {
+  "module": "primaries",
+  "version": 1,
+  "struct": "dt_iop_primaries_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 32
+ },
+ {
+  "module": "profile_gamma",
+  "version": 2,
+  "struct": "dt_iop_profilegamma_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 28
+ },
+ {
+  "module": "rasterfile",
+  "version": 1,
+  "struct": "dt_iop_rasterfile_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 4100
+ },
+ {
+  "module": "rawdenoise",
+  "version": 2,
+  "struct": "dt_iop_rawdenoise_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 164
+ },
+ {
+  "module": "rawprepare",
+  "version": 2,
+  "struct": "dt_iop_rawprepare_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 32
+ },
+ {
+  "module": "relight",
+  "version": 1,
+  "struct": "dt_iop_relight_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 12
+ },
+ {
+  "module": "retouch",
+  "version": 3,
+  "struct": "dt_iop_retouch_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 13260
+ },
+ {
+  "module": "rgbcurve",
+  "version": 1,
+  "struct": "dt_iop_rgbcurve_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 516
+ },
+ {
+  "module": "rgblevels",
+  "version": 1,
+  "struct": "dt_iop_rgblevels_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 44
+ },
+ {
+  "module": "rotatepixels",
+  "version": 1,
+  "struct": "dt_iop_rotatepixels_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 12
+ },
+ {
+  "module": "scalepixels",
+  "version": 1,
+  "struct": "dt_iop_scalepixels_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 4
+ },
+ {
+  "module": "shadhi",
+  "version": 5,
+  "struct": "dt_iop_shadhi_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 48
+ },
+ {
+  "module": "sharpen",
+  "version": 1,
+  "struct": "dt_iop_sharpen_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 12
+ },
+ {
+  "module": "sigmoid",
+  "version": 3,
+  "struct": "dt_iop_sigmoid_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 56
+ },
+ {
+  "module": "soften",
+  "version": 1,
+  "struct": "dt_iop_soften_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 16
+ },
+ {
+  "module": "splittoning",
+  "version": 1,
+  "struct": "dt_iop_splittoning_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 24
+ },
+ {
+  "module": "spots",
+  "version": 2,
+  "struct": "dt_iop_spots_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 512
+ },
+ {
+  "module": "temperature",
+  "version": 4,
+  "struct": "dt_iop_temperature_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 20
+ },
+ {
+  "module": "tonecurve",
+  "version": 5,
+  "struct": "dt_iop_tonecurve_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 520
+ },
+ {
+  "module": "toneequal",
+  "version": 2,
+  "struct": "dt_iop_toneequalizer_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 72
+ },
+ {
+  "module": "useless",
+  "version": 3,
+  "struct": "dt_iop_useless_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 16
+ },
+ {
+  "module": "velvia",
+  "version": 2,
+  "struct": "dt_iop_velvia_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 8
+ },
+ {
+  "module": "vibrance",
+  "version": 2,
+  "struct": "dt_iop_vibrance_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 4
+ },
+ {
+  "module": "vignette",
+  "version": 4,
+  "struct": "dt_iop_vignette_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 44
+ },
+ {
+  "module": "watermark",
+  "version": 7,
+  "struct": "dt_iop_watermark_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 880
+ },
+ {
+  "module": "zonesystem",
+  "version": 1,
+  "struct": "dt_iop_zonesystem_params_t",
+  "status": "ok",
+  "reason": null,
+  "size": 104
+ }
+]

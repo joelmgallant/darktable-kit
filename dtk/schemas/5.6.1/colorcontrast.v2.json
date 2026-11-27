@@ -1,0 +1,60 @@
+{
+ "module": "colorcontrast",
+ "version": 2,
+ "struct": "dt_iop_colorcontrast_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 20,
+ "fields": [
+  {
+   "name": "a_steepness",
+   "ctype": "float",
+   "dims": [],
+   "description": "green-magenta contrast",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 5.0,
+   "default": 1.0
+  },
+  {
+   "name": "a_offset",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "b_steepness",
+   "ctype": "float",
+   "dims": [],
+   "description": "blue-yellow contrast",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 5.0,
+   "default": 1.0
+  },
+  {
+   "name": "b_offset",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "unbound",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  }
+ ]
+}

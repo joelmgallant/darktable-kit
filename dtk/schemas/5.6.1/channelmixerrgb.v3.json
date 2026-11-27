@@ -1,0 +1,296 @@
+{
+ "module": "channelmixerrgb",
+ "version": 3,
+ "struct": "dt_iop_channelmixer_rgb_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 160,
+ "fields": [
+  {
+   "name": "red",
+   "ctype": "float",
+   "dims": [
+    4
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": "COLOR_MIN",
+   "max": "COLOR_MAX",
+   "default": null
+  },
+  {
+   "name": "green",
+   "ctype": "float",
+   "dims": [
+    4
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": "COLOR_MIN",
+   "max": "COLOR_MAX",
+   "default": null
+  },
+  {
+   "name": "blue",
+   "ctype": "float",
+   "dims": [
+    4
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": "COLOR_MIN",
+   "max": "COLOR_MAX",
+   "default": null
+  },
+  {
+   "name": "saturation",
+   "ctype": "float",
+   "dims": [
+    4
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": null
+  },
+  {
+   "name": "lightness",
+   "ctype": "float",
+   "dims": [
+    4
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": null
+  },
+  {
+   "name": "grey",
+   "ctype": "float",
+   "dims": [
+    4
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": null
+  },
+  {
+   "name": "normalize_R",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "normalize channels",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "normalize_G",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "normalize channels",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "normalize_B",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "normalize channels",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "normalize_sat",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "normalize channels",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "normalize_light",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "normalize channels",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "normalize_grey",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "normalize channels",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "illuminant",
+   "ctype": "dt_illuminant_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "DT_ILLUMINANT_PIPE": 0,
+    "DT_ILLUMINANT_A": 1,
+    "DT_ILLUMINANT_D": 2,
+    "DT_ILLUMINANT_E": 3,
+    "DT_ILLUMINANT_F": 4,
+    "DT_ILLUMINANT_LED": 5,
+    "DT_ILLUMINANT_BB": 6,
+    "DT_ILLUMINANT_CUSTOM": 7,
+    "DT_ILLUMINANT_CAMERA": 10,
+    "DT_ILLUMINANT_LAST": 11,
+    "DT_ILLUMINANT_DETECT_SURFACES": 8,
+    "DT_ILLUMINANT_DETECT_EDGES": 9
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_ILLUMINANT_D"
+  },
+  {
+   "name": "illum_fluo",
+   "ctype": "dt_illuminant_fluo_t",
+   "dims": [],
+   "description": "F source",
+   "kind": "enum",
+   "enum": {
+    "DT_ILLUMINANT_FLUO_F1": 0,
+    "DT_ILLUMINANT_FLUO_F2": 1,
+    "DT_ILLUMINANT_FLUO_F3": 2,
+    "DT_ILLUMINANT_FLUO_F4": 3,
+    "DT_ILLUMINANT_FLUO_F5": 4,
+    "DT_ILLUMINANT_FLUO_F6": 5,
+    "DT_ILLUMINANT_FLUO_F7": 6,
+    "DT_ILLUMINANT_FLUO_F8": 7,
+    "DT_ILLUMINANT_FLUO_F9": 8,
+    "DT_ILLUMINANT_FLUO_F10": 9,
+    "DT_ILLUMINANT_FLUO_F11": 10,
+    "DT_ILLUMINANT_FLUO_F12": 11,
+    "DT_ILLUMINANT_FLUO_LAST": 12
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_ILLUMINANT_FLUO_F3"
+  },
+  {
+   "name": "illum_led",
+   "ctype": "dt_illuminant_led_t",
+   "dims": [],
+   "description": "LED source",
+   "kind": "enum",
+   "enum": {
+    "DT_ILLUMINANT_LED_B1": 0,
+    "DT_ILLUMINANT_LED_B2": 1,
+    "DT_ILLUMINANT_LED_B3": 2,
+    "DT_ILLUMINANT_LED_B4": 3,
+    "DT_ILLUMINANT_LED_B5": 4,
+    "DT_ILLUMINANT_LED_BH1": 5,
+    "DT_ILLUMINANT_LED_RGB1": 6,
+    "DT_ILLUMINANT_LED_V1": 7,
+    "DT_ILLUMINANT_LED_V2": 8,
+    "DT_ILLUMINANT_LED_LAST": 9
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_ILLUMINANT_LED_B5"
+  },
+  {
+   "name": "adaptation",
+   "ctype": "dt_adaptation_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "DT_ADAPTATION_LINEAR_BRADFORD": 0,
+    "DT_ADAPTATION_CAT16": 1,
+    "DT_ADAPTATION_FULL_BRADFORD": 2,
+    "DT_ADAPTATION_XYZ": 3,
+    "DT_ADAPTATION_RGB": 4,
+    "DT_ADAPTATION_LAST": 5
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_ADAPTATION_CAT16"
+  },
+  {
+   "name": "x",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0.333
+  },
+  {
+   "name": "y",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0.333
+  },
+  {
+   "name": "temperature",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": "TEMP_MIN",
+   "max": "TEMP_MAX",
+   "default": 5003.0
+  },
+  {
+   "name": "gamut",
+   "ctype": "float",
+   "dims": [],
+   "description": "gamut compression",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 12.0,
+   "default": 1.0
+  },
+  {
+   "name": "clip",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "clip negative RGB from gamut",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  },
+  {
+   "name": "version",
+   "ctype": "dt_iop_channelmixer_rgb_version_t",
+   "dims": [],
+   "description": "saturation algorithm",
+   "kind": "enum",
+   "enum": {
+    "CHANNELMIXERRGB_V_1": 0,
+    "CHANNELMIXERRGB_V_2": 1,
+    "CHANNELMIXERRGB_V_3": 2
+   },
+   "min": null,
+   "max": null,
+   "default": "CHANNELMIXERRGB_V_3"
+  }
+ ]
+}

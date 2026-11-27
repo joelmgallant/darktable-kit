@@ -1,0 +1,53 @@
+{
+ "module": "rasterfile",
+ "version": 1,
+ "struct": "dt_iop_rasterfile_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 4100,
+ "fields": [
+  {
+   "name": "mode",
+   "ctype": "dt_iop_rasterfile_mode_t",
+   "dims": [],
+   "description": "mode",
+   "kind": "enum",
+   "enum": {
+    "DT_RASTERFILE_MODE_ALL": 7,
+    "DT_RASTERFILE_MODE_RED": 1,
+    "DT_RASTERFILE_MODE_GREEN": 2,
+    "DT_RASTERFILE_MODE_BLUE": 4,
+    "DT_RASTERFILE_MODE_REDGREEN": 3,
+    "DT_RASTERFILE_MODE_REDBLUE": 5,
+    "DT_RASTERFILE_MODE_GREENBLUE": 6
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_RASTERFILE_MODE_ALL"
+  },
+  {
+   "name": "path",
+   "ctype": "char",
+   "dims": [
+    2048
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "file",
+   "ctype": "char",
+   "dims": [
+    2048
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

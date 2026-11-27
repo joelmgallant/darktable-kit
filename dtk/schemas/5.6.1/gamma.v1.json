@@ -1,0 +1,30 @@
+{
+ "module": "gamma",
+ "version": 1,
+ "struct": "dt_iop_gamma_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 8,
+ "fields": [
+  {
+   "name": "gamma",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "linear",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "module": "nlmeans",
+ "version": 2,
+ "struct": "dt_iop_nlmeans_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 16,
+ "fields": [
+  {
+   "name": "radius",
+   "ctype": "float",
+   "dims": [],
+   "description": "patch size",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 2.0
+  },
+  {
+   "name": "strength",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100000.0,
+   "default": 50.0
+  },
+  {
+   "name": "luma",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.5
+  },
+  {
+   "name": "chroma",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 1.0
+  }
+ ]
+}

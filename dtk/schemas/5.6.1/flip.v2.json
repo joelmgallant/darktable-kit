@@ -1,0 +1,34 @@
+{
+ "module": "flip",
+ "version": 2,
+ "struct": "dt_iop_flip_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 4,
+ "fields": [
+  {
+   "name": "orientation",
+   "ctype": "dt_image_orientation_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "ORIENTATION_NULL": -1,
+    "ORIENTATION_NONE": 0,
+    "ORIENTATION_FLIP_Y": 1,
+    "ORIENTATION_FLIP_X": 2,
+    "ORIENTATION_SWAP_XY": 4,
+    "ORIENTATION_FLIP_HORIZONTALLY": 2,
+    "ORIENTATION_FLIP_VERTICALLY": 1,
+    "ORIENTATION_ROTATE_180_DEG": 3,
+    "ORIENTATION_TRANSPOSE": 4,
+    "ORIENTATION_ROTATE_CCW_90_DEG": 6,
+    "ORIENTATION_ROTATE_CW_90_DEG": 5,
+    "ORIENTATION_TRANSVERSE": 7
+   },
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

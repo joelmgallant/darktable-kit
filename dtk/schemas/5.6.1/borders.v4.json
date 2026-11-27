@@ -1,0 +1,172 @@
+{
+ "module": "borders",
+ "version": 4,
+ "struct": "dt_iop_borders_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 120,
+ "fields": [
+  {
+   "name": "color",
+   "ctype": "float",
+   "dims": [
+    3
+   ],
+   "description": "border color",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1.0
+  },
+  {
+   "name": "aspect",
+   "ctype": "float",
+   "dims": [],
+   "description": "aspect ratio",
+   "kind": "prim",
+   "min": 1.0,
+   "max": 3.0,
+   "default": "DT_IOP_BORDERS_ASPECT_CONSTANT_VALUE"
+  },
+  {
+   "name": "aspect_text",
+   "ctype": "char",
+   "dims": [
+    20
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "aspect_orient",
+   "ctype": "dt_iop_orientation_t",
+   "dims": [],
+   "description": "orientation",
+   "kind": "enum",
+   "enum": {
+    "DT_IOP_BORDERS_ASPECT_ORIENTATION_AUTO": 0,
+    "DT_IOP_BORDERS_ASPECT_ORIENTATION_PORTRAIT": 1,
+    "DT_IOP_BORDERS_ASPECT_ORIENTATION_LANDSCAPE": 2
+   },
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "size",
+   "ctype": "float",
+   "dims": [],
+   "description": "border size",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.5,
+   "default": 0.1
+  },
+  {
+   "name": "pos_h",
+   "ctype": "float",
+   "dims": [],
+   "description": "horizontal offset",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.5
+  },
+  {
+   "name": "pos_h_text",
+   "ctype": "char",
+   "dims": [
+    20
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "pos_v",
+   "ctype": "float",
+   "dims": [],
+   "description": "vertical offset",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.5
+  },
+  {
+   "name": "pos_v_text",
+   "ctype": "char",
+   "dims": [
+    20
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "frame_size",
+   "ctype": "float",
+   "dims": [],
+   "description": "frame line size",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "frame_offset",
+   "ctype": "float",
+   "dims": [],
+   "description": "frame line offset",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.5
+  },
+  {
+   "name": "frame_color",
+   "ctype": "float",
+   "dims": [
+    3
+   ],
+   "description": "frame line color",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0.0
+  },
+  {
+   "name": "max_border_size",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  },
+  {
+   "name": "basis",
+   "ctype": "dt_iop_basis_t",
+   "dims": [],
+   "description": "basis",
+   "kind": "enum",
+   "enum": {
+    "DT_IOP_BORDERS_BASIS_AUTO": 0,
+    "DT_IOP_BORDERS_BASIS_WIDTH": 1,
+    "DT_IOP_BORDERS_BASIS_HEIGHT": 2,
+    "DT_IOP_BORDERS_BASIS_SHORTER": 3,
+    "DT_IOP_BORDERS_BASIS_LONGER": 4
+   },
+   "min": null,
+   "max": null,
+   "default": 0
+  }
+ ]
+}

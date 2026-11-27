@@ -1,0 +1,40 @@
+{
+ "module": "relight",
+ "version": 1,
+ "struct": "dt_iop_relight_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 12,
+ "fields": [
+  {
+   "name": "ev",
+   "ctype": "float",
+   "dims": [],
+   "description": "exposure",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.33
+  },
+  {
+   "name": "center",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0.0
+  },
+  {
+   "name": "width",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 2.0,
+   "max": 10.0,
+   "default": 4.0
+  }
+ ]
+}

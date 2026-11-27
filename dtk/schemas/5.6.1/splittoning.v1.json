@@ -1,0 +1,70 @@
+{
+ "module": "splittoning",
+ "version": 1,
+ "struct": "dt_iop_splittoning_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 24,
+ "fields": [
+  {
+   "name": "shadow_hue",
+   "ctype": "float",
+   "dims": [],
+   "description": "hue",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "shadow_saturation",
+   "ctype": "float",
+   "dims": [],
+   "description": "saturation",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.5
+  },
+  {
+   "name": "highlight_hue",
+   "ctype": "float",
+   "dims": [],
+   "description": "hue",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.2
+  },
+  {
+   "name": "highlight_saturation",
+   "ctype": "float",
+   "dims": [],
+   "description": "saturation",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.5
+  },
+  {
+   "name": "balance",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.5
+  },
+  {
+   "name": "compress",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 33.0
+  }
+ ]
+}

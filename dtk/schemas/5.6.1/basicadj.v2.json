@@ -1,0 +1,129 @@
+{
+ "module": "basicadj",
+ "version": 2,
+ "struct": "dt_iop_basicadj_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 44,
+ "fields": [
+  {
+   "name": "black_point",
+   "ctype": "float",
+   "dims": [],
+   "description": "black level correction",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "exposure",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -18.0,
+   "max": 18.0,
+   "default": 0.0
+  },
+  {
+   "name": "hlcompr",
+   "ctype": "float",
+   "dims": [],
+   "description": "highlight compression",
+   "kind": "prim",
+   "min": 0,
+   "max": 500.0,
+   "default": 0.0
+  },
+  {
+   "name": "hlcomprthresh",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "contrast",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -1.0,
+   "max": 5.0,
+   "default": 0.0
+  },
+  {
+   "name": "preserve_colors",
+   "ctype": "dt_iop_rgb_norms_t",
+   "dims": [],
+   "description": "preserve colors",
+   "kind": "enum",
+   "enum": {
+    "DT_RGB_NORM_NONE": 0,
+    "DT_RGB_NORM_LUMINANCE": 1,
+    "DT_RGB_NORM_MAX": 2,
+    "DT_RGB_NORM_AVERAGE": 3,
+    "DT_RGB_NORM_SUM": 4,
+    "DT_RGB_NORM_NORM": 5,
+    "DT_RGB_NORM_POWER": 6
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_RGB_NORM_LUMINANCE"
+  },
+  {
+   "name": "middle_grey",
+   "ctype": "float",
+   "dims": [],
+   "description": "middle gray",
+   "kind": "prim",
+   "min": 0.05,
+   "max": 100,
+   "default": 18.42
+  },
+  {
+   "name": "brightness",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -4.0,
+   "max": 4.0,
+   "default": 0.0
+  },
+  {
+   "name": "saturation",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "vibrance",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "clip",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  }
+ ]
+}

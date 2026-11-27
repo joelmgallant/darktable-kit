@@ -1,0 +1,90 @@
+{
+ "module": "primaries",
+ "version": 1,
+ "struct": "dt_iop_primaries_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 32,
+ "fields": [
+  {
+   "name": "achromatic_tint_hue",
+   "ctype": "float",
+   "dims": [],
+   "description": "tint hue",
+   "kind": "prim",
+   "min": "-M_PI",
+   "max": "M_PI",
+   "default": 0.0
+  },
+  {
+   "name": "achromatic_tint_purity",
+   "ctype": "float",
+   "dims": [],
+   "description": "tint purity",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.99,
+   "default": 0.0
+  },
+  {
+   "name": "red_hue",
+   "ctype": "float",
+   "dims": [],
+   "description": "red hue",
+   "kind": "prim",
+   "min": "-M_PI",
+   "max": "M_PI",
+   "default": 0.0
+  },
+  {
+   "name": "red_purity",
+   "ctype": "float",
+   "dims": [],
+   "description": "red purity",
+   "kind": "prim",
+   "min": 0.01,
+   "max": 5.0,
+   "default": 1.0
+  },
+  {
+   "name": "green_hue",
+   "ctype": "float",
+   "dims": [],
+   "description": "green hue",
+   "kind": "prim",
+   "min": "-M_PI",
+   "max": "M_PI",
+   "default": 0.0
+  },
+  {
+   "name": "green_purity",
+   "ctype": "float",
+   "dims": [],
+   "description": "green purity",
+   "kind": "prim",
+   "min": 0.01,
+   "max": 5.0,
+   "default": 1.0
+  },
+  {
+   "name": "blue_hue",
+   "ctype": "float",
+   "dims": [],
+   "description": "blue hue",
+   "kind": "prim",
+   "min": "-M_PI",
+   "max": "M_PI",
+   "default": 0.0
+  },
+  {
+   "name": "blue_purity",
+   "ctype": "float",
+   "dims": [],
+   "description": "blue purity",
+   "kind": "prim",
+   "min": 0.01,
+   "max": 5.0,
+   "default": 1.0
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+{
+ "module": "dither",
+ "version": 2,
+ "struct": "dt_iop_dither_params_t",
+ "status": "unsupported",
+ "reason": "unsupported declaration 'struct\\n  {\\n    float radius'",
+ "size": null,
+ "fields": []
+}

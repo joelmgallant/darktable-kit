@@ -1,0 +1,9 @@
+{
+ "module": "colortransfer",
+ "version": 1,
+ "struct": "dt_iop_colortransfer_params_t",
+ "status": "unsupported",
+ "reason": "mean: unknown type float2",
+ "size": null,
+ "fields": []
+}

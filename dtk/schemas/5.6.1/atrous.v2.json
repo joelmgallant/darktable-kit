@@ -1,0 +1,56 @@
+{
+ "module": "atrous",
+ "version": 2,
+ "struct": "dt_iop_atrous_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 248,
+ "fields": [
+  {
+   "name": "octaves",
+   "ctype": "int32_t",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 3
+  },
+  {
+   "name": "x",
+   "ctype": "float",
+   "dims": [
+    5,
+    6
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "y",
+   "ctype": "float",
+   "dims": [
+    5,
+    6
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0.5
+  },
+  {
+   "name": "mix",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 1.0
+  }
+ ]
+}

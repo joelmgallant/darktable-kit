@@ -1,0 +1,207 @@
+{
+ "module": "toneequal",
+ "version": 2,
+ "struct": "dt_iop_toneequalizer_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 72,
+ "fields": [
+  {
+   "name": "noise",
+   "ctype": "float",
+   "dims": [],
+   "description": "blacks",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "ultra_deep_blacks",
+   "ctype": "float",
+   "dims": [],
+   "description": "deep shadows",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "deep_blacks",
+   "ctype": "float",
+   "dims": [],
+   "description": "shadows",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "blacks",
+   "ctype": "float",
+   "dims": [],
+   "description": "light shadows",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "shadows",
+   "ctype": "float",
+   "dims": [],
+   "description": "mid-tones",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "midtones",
+   "ctype": "float",
+   "dims": [],
+   "description": "dark highlights",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "highlights",
+   "ctype": "float",
+   "dims": [],
+   "description": "highlights",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "whites",
+   "ctype": "float",
+   "dims": [],
+   "description": "whites",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "speculars",
+   "ctype": "float",
+   "dims": [],
+   "description": "speculars",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "blending",
+   "ctype": "float",
+   "dims": [],
+   "description": "smoothing diameter",
+   "kind": "prim",
+   "min": 0.01,
+   "max": 100.0,
+   "default": 5.0
+  },
+  {
+   "name": "smoothing",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1.414213562
+  },
+  {
+   "name": "feathering",
+   "ctype": "float",
+   "dims": [],
+   "description": "edges refinement/feathering",
+   "kind": "prim",
+   "min": 0.01,
+   "max": 10000.0,
+   "default": 1.0
+  },
+  {
+   "name": "quantization",
+   "ctype": "float",
+   "dims": [],
+   "description": "mask quantization",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "contrast_boost",
+   "ctype": "float",
+   "dims": [],
+   "description": "mask contrast compensation",
+   "kind": "prim",
+   "min": -16.0,
+   "max": 16.0,
+   "default": 0.0
+  },
+  {
+   "name": "exposure_boost",
+   "ctype": "float",
+   "dims": [],
+   "description": "mask exposure compensation",
+   "kind": "prim",
+   "min": -16.0,
+   "max": 16.0,
+   "default": 0.0
+  },
+  {
+   "name": "details",
+   "ctype": "dt_iop_toneequalizer_filter_t",
+   "dims": [],
+   "description": "preserve details",
+   "kind": "enum",
+   "enum": {
+    "DT_TONEEQ_NONE": 0,
+    "DT_TONEEQ_AVG_GUIDED": 1,
+    "DT_TONEEQ_GUIDED": 2,
+    "DT_TONEEQ_AVG_EIGF": 3,
+    "DT_TONEEQ_EIGF": 4
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_TONEEQ_EIGF"
+  },
+  {
+   "name": "method",
+   "ctype": "dt_iop_luminance_mask_method_t",
+   "dims": [],
+   "description": "luminance estimator",
+   "kind": "enum",
+   "enum": {
+    "DT_TONEEQ_MEAN": 0,
+    "DT_TONEEQ_LIGHTNESS": 1,
+    "DT_TONEEQ_VALUE": 2,
+    "DT_TONEEQ_NORM_1": 3,
+    "DT_TONEEQ_NORM_2": 4,
+    "DT_TONEEQ_NORM_POWER": 5,
+    "DT_TONEEQ_GEOMEAN": 6,
+    "DT_TONEEQ_LAST": 7
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_TONEEQ_NORM_2"
+  },
+  {
+   "name": "iterations",
+   "ctype": "int",
+   "dims": [],
+   "description": "filter diffusion",
+   "kind": "prim",
+   "min": 1,
+   "max": 20,
+   "default": 1
+  }
+ ]
+}

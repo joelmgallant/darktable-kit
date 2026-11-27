@@ -1,0 +1,80 @@
+{
+ "module": "colorout",
+ "version": 5,
+ "struct": "dt_iop_colorout_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 520,
+ "fields": [
+  {
+   "name": "type",
+   "ctype": "dt_colorspaces_color_profile_type_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "DT_COLORSPACE_NONE": -1,
+    "DT_COLORSPACE_FILE": 0,
+    "DT_COLORSPACE_SRGB": 1,
+    "DT_COLORSPACE_ADOBERGB": 2,
+    "DT_COLORSPACE_LIN_REC709": 3,
+    "DT_COLORSPACE_LIN_REC2020": 4,
+    "DT_COLORSPACE_XYZ": 5,
+    "DT_COLORSPACE_LAB": 6,
+    "DT_COLORSPACE_INFRARED": 7,
+    "DT_COLORSPACE_DISPLAY": 8,
+    "DT_COLORSPACE_EMBEDDED_ICC": 9,
+    "DT_COLORSPACE_EMBEDDED_MATRIX": 10,
+    "DT_COLORSPACE_STANDARD_MATRIX": 11,
+    "DT_COLORSPACE_ENHANCED_MATRIX": 12,
+    "DT_COLORSPACE_VENDOR_MATRIX": 13,
+    "DT_COLORSPACE_ALTERNATE_MATRIX": 14,
+    "DT_COLORSPACE_BRG": 15,
+    "DT_COLORSPACE_EXPORT": 16,
+    "DT_COLORSPACE_SOFTPROOF": 17,
+    "DT_COLORSPACE_WORK": 18,
+    "DT_COLORSPACE_DISPLAY2": 19,
+    "DT_COLORSPACE_REC709": 20,
+    "DT_COLORSPACE_PROPHOTO_RGB": 21,
+    "DT_COLORSPACE_PQ_REC2020": 22,
+    "DT_COLORSPACE_HLG_REC2020": 23,
+    "DT_COLORSPACE_PQ_P3": 24,
+    "DT_COLORSPACE_HLG_P3": 25,
+    "DT_COLORSPACE_DISPLAY_P3": 26,
+    "DT_COLORSPACE_LAST": 27
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_COLORSPACE_SRGB"
+  },
+  {
+   "name": "filename",
+   "ctype": "char",
+   "dims": [
+    512
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "intent",
+   "ctype": "dt_iop_color_intent_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "DT_INTENT_PERCEPTUAL": null,
+    "DT_INTENT_RELATIVE_COLORIMETRIC": null,
+    "DT_INTENT_SATURATION": null,
+    "DT_INTENT_ABSOLUTE_COLORIMETRIC": null,
+    "DT_INTENT_LAST": null
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_INTENT_PERCEPTUAL"
+  }
+ ]
+}

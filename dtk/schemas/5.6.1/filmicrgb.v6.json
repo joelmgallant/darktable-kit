@@ -1,0 +1,335 @@
+{
+ "module": "filmicrgb",
+ "version": 6,
+ "struct": "dt_iop_filmicrgb_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 116,
+ "fields": [
+  {
+   "name": "grey_point_source",
+   "ctype": "float",
+   "dims": [],
+   "description": "middle gray luminance",
+   "kind": "prim",
+   "min": 0,
+   "max": 100,
+   "default": 18.45
+  },
+  {
+   "name": "black_point_source",
+   "ctype": "float",
+   "dims": [],
+   "description": "black relative exposure",
+   "kind": "prim",
+   "min": -16,
+   "max": -0.1,
+   "default": -8.0
+  },
+  {
+   "name": "white_point_source",
+   "ctype": "float",
+   "dims": [],
+   "description": "white relative exposure",
+   "kind": "prim",
+   "min": 0.1,
+   "max": 16,
+   "default": 4.0
+  },
+  {
+   "name": "reconstruct_threshold",
+   "ctype": "float",
+   "dims": [],
+   "description": "threshold",
+   "kind": "prim",
+   "min": -6.0,
+   "max": 6.0,
+   "default": 0.0
+  },
+  {
+   "name": "reconstruct_feather",
+   "ctype": "float",
+   "dims": [],
+   "description": "transition",
+   "kind": "prim",
+   "min": 0.25,
+   "max": 6.0,
+   "default": 3.0
+  },
+  {
+   "name": "reconstruct_bloom_vs_details",
+   "ctype": "float",
+   "dims": [],
+   "description": "bloom \u2194 reconstruct",
+   "kind": "prim",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 100.0
+  },
+  {
+   "name": "reconstruct_grey_vs_color",
+   "ctype": "float",
+   "dims": [],
+   "description": "gray \u2194 colorful details",
+   "kind": "prim",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 100.0
+  },
+  {
+   "name": "reconstruct_structure_vs_texture",
+   "ctype": "float",
+   "dims": [],
+   "description": "structure \u2194 texture",
+   "kind": "prim",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 0.0
+  },
+  {
+   "name": "security_factor",
+   "ctype": "float",
+   "dims": [],
+   "description": "dynamic range scaling",
+   "kind": "prim",
+   "min": -50,
+   "max": 200,
+   "default": 0
+  },
+  {
+   "name": "grey_point_target",
+   "ctype": "float",
+   "dims": [],
+   "description": "target middle gray",
+   "kind": "prim",
+   "min": 1,
+   "max": 50,
+   "default": 18.45
+  },
+  {
+   "name": "black_point_target",
+   "ctype": "float",
+   "dims": [],
+   "description": "target black luminance",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 20.0,
+   "default": 0.01517634
+  },
+  {
+   "name": "white_point_target",
+   "ctype": "float",
+   "dims": [],
+   "description": "target white luminance",
+   "kind": "prim",
+   "min": 0,
+   "max": 1600,
+   "default": 100
+  },
+  {
+   "name": "output_power",
+   "ctype": "float",
+   "dims": [],
+   "description": "hardness",
+   "kind": "prim",
+   "min": 1,
+   "max": 10,
+   "default": 4.0
+  },
+  {
+   "name": "latitude",
+   "ctype": "float",
+   "dims": [],
+   "description": "linear region",
+   "kind": "prim",
+   "min": 0.01,
+   "max": 99,
+   "default": 0.01
+  },
+  {
+   "name": "contrast",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0,
+   "max": 5,
+   "default": 1.0
+  },
+  {
+   "name": "saturation",
+   "ctype": "float",
+   "dims": [],
+   "description": "extreme luminance saturation",
+   "kind": "prim",
+   "min": -200,
+   "max": 200,
+   "default": 0
+  },
+  {
+   "name": "balance",
+   "ctype": "float",
+   "dims": [],
+   "description": "shadows \u2194 highlights balance",
+   "kind": "prim",
+   "min": -50,
+   "max": 50,
+   "default": 0.0
+  },
+  {
+   "name": "noise_level",
+   "ctype": "float",
+   "dims": [],
+   "description": "add noise in highlights",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 6.0,
+   "default": 0.2
+  },
+  {
+   "name": "preserve_color",
+   "ctype": "dt_iop_filmicrgb_methods_type_t",
+   "dims": [],
+   "description": "preserve chrominance",
+   "kind": "enum",
+   "enum": {
+    "DT_FILMIC_METHOD_NONE": 0,
+    "DT_FILMIC_METHOD_MAX_RGB": 1,
+    "DT_FILMIC_METHOD_LUMINANCE": 2,
+    "DT_FILMIC_METHOD_POWER_NORM": 3,
+    "DT_FILMIC_METHOD_EUCLIDEAN_NORM_V1": 4,
+    "DT_FILMIC_METHOD_EUCLIDEAN_NORM_V2": 5
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_FILMIC_METHOD_POWER_NORM"
+  },
+  {
+   "name": "version",
+   "ctype": "dt_iop_filmicrgb_colorscience_type_t",
+   "dims": [],
+   "description": "color science",
+   "kind": "enum",
+   "enum": {
+    "DT_FILMIC_COLORSCIENCE_V1": 0,
+    "DT_FILMIC_COLORSCIENCE_V2": 1,
+    "DT_FILMIC_COLORSCIENCE_V3": 2,
+    "DT_FILMIC_COLORSCIENCE_V4": 3,
+    "DT_FILMIC_COLORSCIENCE_V5": 4
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_FILMIC_COLORSCIENCE_V5"
+  },
+  {
+   "name": "auto_hardness",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "auto adjust hardness",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  },
+  {
+   "name": "custom_grey",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "use custom middle-gray values",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "high_quality_reconstruction",
+   "ctype": "int",
+   "dims": [],
+   "description": "iterations of high-quality reconstruction",
+   "kind": "prim",
+   "min": 0,
+   "max": 10,
+   "default": 1
+  },
+  {
+   "name": "noise_distribution",
+   "ctype": "dt_iop_filmic_noise_distribution_t",
+   "dims": [],
+   "description": "type of noise",
+   "kind": "enum",
+   "enum": {
+    "DT_FILMIC_NOISE_UNIFORM": 0,
+    "DT_FILMIC_NOISE_GAUSSIAN": 1,
+    "DT_FILMIC_NOISE_POISSONIAN": 2
+   },
+   "min": null,
+   "max": null,
+   "default": 1
+  },
+  {
+   "name": "shadows",
+   "ctype": "dt_iop_filmicrgb_curve_type_t",
+   "dims": [],
+   "description": "contrast in shadows",
+   "kind": "enum",
+   "enum": {
+    "DT_FILMIC_CURVE_POLY_4": 0,
+    "DT_FILMIC_CURVE_POLY_3": 1,
+    "DT_FILMIC_CURVE_RATIONAL": 2
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_FILMIC_CURVE_POLY_4"
+  },
+  {
+   "name": "highlights",
+   "ctype": "dt_iop_filmicrgb_curve_type_t",
+   "dims": [],
+   "description": "contrast in highlights",
+   "kind": "enum",
+   "enum": {
+    "DT_FILMIC_CURVE_POLY_4": 0,
+    "DT_FILMIC_CURVE_POLY_3": 1,
+    "DT_FILMIC_CURVE_RATIONAL": 2
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_FILMIC_CURVE_POLY_4"
+  },
+  {
+   "name": "compensate_icc_black",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "compensate output ICC profile black point",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "spline_version",
+   "ctype": "dt_iop_filmicrgb_spline_version_type_t",
+   "dims": [],
+   "description": "spline handling",
+   "kind": "enum",
+   "enum": {
+    "DT_FILMIC_SPLINE_VERSION_V1": 0,
+    "DT_FILMIC_SPLINE_VERSION_V2": 1,
+    "DT_FILMIC_SPLINE_VERSION_V3": 2
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_FILMIC_SPLINE_VERSION_V3"
+  },
+  {
+   "name": "enable_highlight_reconstruction",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "enable highlight reconstruction",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  }
+ ]
+}

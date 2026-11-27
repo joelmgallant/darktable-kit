@@ -1,0 +1,37 @@
+{
+ "module": "cacorrect",
+ "version": 2,
+ "struct": "dt_iop_cacorrect_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 8,
+ "fields": [
+  {
+   "name": "avoidshift",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "avoid colorshift",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "iterations",
+   "ctype": "dt_iop_cacorrect_multi_t",
+   "dims": [],
+   "description": "iterations",
+   "kind": "enum",
+   "enum": {
+    "CACORRETC_MULTI_1": 1,
+    "CACORRETC_MULTI_2": 2,
+    "CACORRETC_MULTI_3": 3,
+    "CACORRETC_MULTI_4": 4,
+    "CACORRETC_MULTI_5": 5
+   },
+   "min": null,
+   "max": null,
+   "default": "CACORRETC_MULTI_2"
+  }
+ ]
+}

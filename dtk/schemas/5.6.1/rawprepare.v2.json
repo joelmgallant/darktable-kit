@@ -1,0 +1,86 @@
+{
+ "module": "rawprepare",
+ "version": 2,
+ "struct": "dt_iop_rawprepare_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 32,
+ "fields": [
+  {
+   "name": "left",
+   "ctype": "int32_t",
+   "dims": [],
+   "description": "crop left",
+   "kind": "prim",
+   "min": 0,
+   "max": "UINT16_MAX",
+   "default": null
+  },
+  {
+   "name": "top",
+   "ctype": "int32_t",
+   "dims": [],
+   "description": "crop top",
+   "kind": "prim",
+   "min": 0,
+   "max": "UINT16_MAX",
+   "default": null
+  },
+  {
+   "name": "right",
+   "ctype": "int32_t",
+   "dims": [],
+   "description": "crop right",
+   "kind": "prim",
+   "min": 0,
+   "max": "UINT16_MAX",
+   "default": null
+  },
+  {
+   "name": "bottom",
+   "ctype": "int32_t",
+   "dims": [],
+   "description": "crop bottom",
+   "kind": "prim",
+   "min": 0,
+   "max": "UINT16_MAX",
+   "default": null
+  },
+  {
+   "name": "raw_black_level_separate",
+   "ctype": "uint16_t",
+   "dims": [
+    4
+   ],
+   "description": "black level",
+   "kind": "prim",
+   "min": 0,
+   "max": "UINT16_MAX",
+   "default": null
+  },
+  {
+   "name": "raw_white_point",
+   "ctype": "uint16_t",
+   "dims": [],
+   "description": "white point",
+   "kind": "prim",
+   "min": 0,
+   "max": "UINT16_MAX",
+   "default": null
+  },
+  {
+   "name": "flat_field",
+   "ctype": "dt_iop_rawprepare_flat_field_t",
+   "dims": [],
+   "description": "flat field correction",
+   "kind": "enum",
+   "enum": {
+    "FLAT_FIELD_OFF": 0,
+    "FLAT_FIELD_EMBEDDED": 1
+   },
+   "min": null,
+   "max": null,
+   "default": "FLAT_FIELD_OFF"
+  }
+ ]
+}

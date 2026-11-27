@@ -1,0 +1,22 @@
+{
+ "module": "invert",
+ "version": 2,
+ "struct": "dt_iop_invert_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 16,
+ "fields": [
+  {
+   "name": "color",
+   "ctype": "float",
+   "dims": [
+    4
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1.0
+  }
+ ]
+}

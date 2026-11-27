@@ -1,0 +1,65 @@
+{
+ "module": "colorreconstruction",
+ "version": 3,
+ "struct": "dt_iop_colorreconstruct_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 20,
+ "fields": [
+  {
+   "name": "threshold",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 50.0,
+   "max": 150.0,
+   "default": 100.0
+  },
+  {
+   "name": "spatial",
+   "ctype": "float",
+   "dims": [],
+   "description": "spatial extent",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1000.0,
+   "default": 400.0
+  },
+  {
+   "name": "range",
+   "ctype": "float",
+   "dims": [],
+   "description": "range extent",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 50.0,
+   "default": 10.0
+  },
+  {
+   "name": "hue",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.66
+  },
+  {
+   "name": "precedence",
+   "ctype": "dt_iop_colorreconstruct_precedence_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "COLORRECONSTRUCT_PRECEDENCE_NONE": 0,
+    "COLORRECONSTRUCT_PRECEDENCE_CHROMA": 1,
+    "COLORRECONSTRUCT_PRECEDENCE_HUE": 2
+   },
+   "min": null,
+   "max": null,
+   "default": 0
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+{
+ "module": "overlay",
+ "version": 1,
+ "struct": "dt_iop_overlay_params_t",
+ "status": "unsupported",
+ "reason": "dummy0: unknown type size_t",
+ "size": null,
+ "fields": []
+}

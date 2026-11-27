@@ -1,0 +1,60 @@
+{
+ "module": "channelmixer",
+ "version": 2,
+ "struct": "dt_iop_channelmixer_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 88,
+ "fields": [
+  {
+   "name": "red",
+   "ctype": "float",
+   "dims": [
+    7
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": null
+  },
+  {
+   "name": "green",
+   "ctype": "float",
+   "dims": [
+    7
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": null
+  },
+  {
+   "name": "blue",
+   "ctype": "float",
+   "dims": [
+    7
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": null
+  },
+  {
+   "name": "algorithm_version",
+   "ctype": "_channelmixer_algorithm_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "CHANNEL_MIXER_VERSION_1": 0,
+    "CHANNEL_MIXER_VERSION_2": 1
+   },
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

@@ -14,9 +14,10 @@ class ParseError(ValueError):
     """The C text uses a construct this scanner does not model."""
 
 
-TYPEDEF_BLOCK_RE = re.compile(r"^typedef[ \t]+(struct|enum)\b[ \t]*(?:[A-Za-z_]\w*)?\s*\{", re.M)
+TYPEDEF_BLOCK_RE = re.compile(r"^(?P<indent>[ \t]*)typedef[ \t]+(struct|enum)\b[ \t]*(?:[A-Za-z_]\w*)?\s*\{", re.M)
 TYPEDEF_ALIAS_RE = re.compile(
     r"^typedef[ \t]+((?:unsigned[ \t]+|signed[ \t]+)?[A-Za-z_]\w*)[ \t]+([A-Za-z_]\w*)[ \t]*;", re.M)
+LITERAL_OR_COMMENT_RE = re.compile(r'//[^\n]*|/\*.*?\*/|"(?:[^"\\\n]|\\.)*"|\'(?:[^\'\\\n]|\\.)*\'', re.S)
 ANNOTATION_RE = re.compile(r'\$(MIN|MAX|DEFAULT|DESCRIPTION):\s*("(?:[^"\\]|\\.)*"|[^\s$]+)')
 DECL_RE = re.compile(r"^(?P<ctype>(?:(?:const|unsigned|signed)\s+)*[A-Za-z_]\w*)\s+(?P<declarators>.+)$", re.S)
 DECLARATOR_RE = re.compile(r"^(?P<name>[A-Za-z_]\w*)\s*(?P<dims>(?:\[[^\]]+\]\s*)*)$")
@@ -62,9 +63,27 @@ def match_brace(text: str, open_index: int) -> int:
     raise ParseError("unbalanced braces")
 
 
+def _blank_comments_and_literals(src: str) -> str:
+    return LITERAL_OR_COMMENT_RE.sub(lambda found: " " * len(found.group(0)), src)
+
+
+def _at_file_scope(blanked: str, index: int) -> bool:
+    return blanked.count("{", 0, index) == blanked.count("}", 0, index)
+
+
 def find_typedefs(src: str) -> dict[str, tuple[str, str]]:
+    """Typedef'd struct/enum bodies at file scope.
+
+    A typedef at column 0 always counts. An indented one counts only outside every brace: headers such as
+    src/common/rgb_norms.h indent file-scope typedefs, while legacy params structs sit indented inside functions.
+    """
     found: dict[str, tuple[str, str]] = {}
+    blanked = None
     for match in TYPEDEF_BLOCK_RE.finditer(src):
+        if match.group("indent"):
+            blanked = blanked if blanked is not None else _blank_comments_and_literals(src)
+            if not _at_file_scope(blanked, match.start()):
+                continue
         open_index = match.end() - 1
         try:
             close_index = match_brace(src, open_index)
@@ -72,7 +91,7 @@ def find_typedefs(src: str) -> dict[str, tuple[str, str]]:
             continue
         tail = re.match(r"\s*([A-Za-z_]\w*)\s*;", src[close_index + 1:])
         if tail:
-            found[tail.group(1)] = (match.group(1), src[open_index + 1:close_index])
+            found[tail.group(1)] = (match.group(2), src[open_index + 1:close_index])
     return found
 
 

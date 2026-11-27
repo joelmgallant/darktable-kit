@@ -1,0 +1,160 @@
+{
+ "module": "diffuse",
+ "version": 2,
+ "struct": "dt_iop_diffuse_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 60,
+ "fields": [
+  {
+   "name": "iterations",
+   "ctype": "int",
+   "dims": [],
+   "description": "iterations",
+   "kind": "prim",
+   "min": 0,
+   "max": 500,
+   "default": 1
+  },
+  {
+   "name": "sharpness",
+   "ctype": "float",
+   "dims": [],
+   "description": "sharpness",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "radius",
+   "ctype": "int",
+   "dims": [],
+   "description": "radius span",
+   "kind": "prim",
+   "min": 0,
+   "max": 2048,
+   "default": 8
+  },
+  {
+   "name": "regularization",
+   "ctype": "float",
+   "dims": [],
+   "description": "edge sensitivity",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 4.0,
+   "default": 0.0
+  },
+  {
+   "name": "variance_threshold",
+   "ctype": "float",
+   "dims": [],
+   "description": "edge threshold",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "anisotropy_first",
+   "ctype": "float",
+   "dims": [],
+   "description": "1st order anisotropy",
+   "kind": "prim",
+   "min": -10.0,
+   "max": 10.0,
+   "default": 0.0
+  },
+  {
+   "name": "anisotropy_second",
+   "ctype": "float",
+   "dims": [],
+   "description": "2nd order anisotropy",
+   "kind": "prim",
+   "min": -10.0,
+   "max": 10.0,
+   "default": 0.0
+  },
+  {
+   "name": "anisotropy_third",
+   "ctype": "float",
+   "dims": [],
+   "description": "3rd order anisotropy",
+   "kind": "prim",
+   "min": -10.0,
+   "max": 10.0,
+   "default": 0.0
+  },
+  {
+   "name": "anisotropy_fourth",
+   "ctype": "float",
+   "dims": [],
+   "description": "4th order anisotropy",
+   "kind": "prim",
+   "min": -10.0,
+   "max": 10.0,
+   "default": 0.0
+  },
+  {
+   "name": "threshold",
+   "ctype": "float",
+   "dims": [],
+   "description": "luminance masking threshold",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 8.0,
+   "default": 0.0
+  },
+  {
+   "name": "first",
+   "ctype": "float",
+   "dims": [],
+   "description": "1st order speed",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "second",
+   "ctype": "float",
+   "dims": [],
+   "description": "2nd order speed",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "third",
+   "ctype": "float",
+   "dims": [],
+   "description": "3rd order speed",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "fourth",
+   "ctype": "float",
+   "dims": [],
+   "description": "4th order speed",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "radius_center",
+   "ctype": "int",
+   "dims": [],
+   "description": "central radius",
+   "kind": "prim",
+   "min": 0,
+   "max": 1024,
+   "default": 0
+  }
+ ]
+}

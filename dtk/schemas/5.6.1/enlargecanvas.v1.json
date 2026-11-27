@@ -1,0 +1,68 @@
+{
+ "module": "enlargecanvas",
+ "version": 1,
+ "struct": "dt_iop_enlargecanvas_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 20,
+ "fields": [
+  {
+   "name": "percent_left",
+   "ctype": "float",
+   "dims": [],
+   "description": "percent left",
+   "kind": "prim",
+   "min": 0,
+   "max": 100.0,
+   "default": 0
+  },
+  {
+   "name": "percent_right",
+   "ctype": "float",
+   "dims": [],
+   "description": "percent right",
+   "kind": "prim",
+   "min": 0,
+   "max": 100.0,
+   "default": 0
+  },
+  {
+   "name": "percent_top",
+   "ctype": "float",
+   "dims": [],
+   "description": "percent top",
+   "kind": "prim",
+   "min": 0,
+   "max": 100.0,
+   "default": 0
+  },
+  {
+   "name": "percent_bottom",
+   "ctype": "float",
+   "dims": [],
+   "description": "percent bottom",
+   "kind": "prim",
+   "min": 0,
+   "max": 100.0,
+   "default": 0
+  },
+  {
+   "name": "color",
+   "ctype": "dt_iop_canvas_color_t",
+   "dims": [],
+   "description": "color",
+   "kind": "enum",
+   "enum": {
+    "DT_IOP_CANVAS_COLOR_GREEN": 0,
+    "DT_IOP_CANVAS_COLOR_RED": 1,
+    "DT_IOP_CANVAS_COLOR_BLUE": 2,
+    "DT_IOP_CANVAS_COLOR_BLACK": 3,
+    "DT_IOP_CANVAS_COLOR_WHITE": 4,
+    "DT_IOP_CANVAS_COLOR_COUNT": 5
+   },
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

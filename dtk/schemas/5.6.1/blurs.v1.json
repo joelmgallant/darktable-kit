@@ -1,0 +1,105 @@
+{
+ "module": "blurs",
+ "version": 1,
+ "struct": "dt_iop_blurs_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 36,
+ "fields": [
+  {
+   "name": "type",
+   "ctype": "dt_iop_blur_type_t",
+   "dims": [],
+   "description": "blur type",
+   "kind": "enum",
+   "enum": {
+    "DT_BLUR_LENS": 0,
+    "DT_BLUR_MOTION": 1,
+    "DT_BLUR_GAUSSIAN": 2
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_BLUR_LENS"
+  },
+  {
+   "name": "radius",
+   "ctype": "int",
+   "dims": [],
+   "description": "blur radius",
+   "kind": "prim",
+   "min": 4,
+   "max": 256,
+   "default": 8
+  },
+  {
+   "name": "blades",
+   "ctype": "int",
+   "dims": [],
+   "description": "diaphragm blades",
+   "kind": "prim",
+   "min": 3,
+   "max": 11,
+   "default": 5
+  },
+  {
+   "name": "concavity",
+   "ctype": "float",
+   "dims": [],
+   "description": "concavity",
+   "kind": "prim",
+   "min": 1.0,
+   "max": 9.0,
+   "default": 1.0
+  },
+  {
+   "name": "linearity",
+   "ctype": "float",
+   "dims": [],
+   "description": "linearity",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 1.0
+  },
+  {
+   "name": "rotation",
+   "ctype": "float",
+   "dims": [],
+   "description": "rotation",
+   "kind": "prim",
+   "min": "-M_PI_2f",
+   "max": "M_PI_2f",
+   "default": 0.0
+  },
+  {
+   "name": "angle",
+   "ctype": "float",
+   "dims": [],
+   "description": "direction",
+   "kind": "prim",
+   "min": "-M_PI_F",
+   "max": "M_PI_F",
+   "default": 0.0
+  },
+  {
+   "name": "curvature",
+   "ctype": "float",
+   "dims": [],
+   "description": "curvature",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "offset",
+   "ctype": "float",
+   "dims": [],
+   "description": "offset",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0
+  }
+ ]
+}

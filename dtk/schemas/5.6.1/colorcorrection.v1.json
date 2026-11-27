@@ -1,0 +1,60 @@
+{
+ "module": "colorcorrection",
+ "version": 1,
+ "struct": "dt_iop_colorcorrection_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 20,
+ "fields": [
+  {
+   "name": "hia",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "hib",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "loa",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "lob",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "saturation",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -3.0,
+   "max": 3.0,
+   "default": 1.0
+  }
+ ]
+}

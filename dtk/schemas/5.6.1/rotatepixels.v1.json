@@ -1,0 +1,40 @@
+{
+ "module": "rotatepixels",
+ "version": 1,
+ "struct": "dt_iop_rotatepixels_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 12,
+ "fields": [
+  {
+   "name": "rx",
+   "ctype": "uint32_t",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "ry",
+   "ctype": "uint32_t",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "angle",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

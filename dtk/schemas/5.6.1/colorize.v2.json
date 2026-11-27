@@ -1,0 +1,60 @@
+{
+ "module": "colorize",
+ "version": 2,
+ "struct": "dt_iop_colorize_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 20,
+ "fields": [
+  {
+   "name": "hue",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "saturation",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.5
+  },
+  {
+   "name": "source_lightness_mix",
+   "ctype": "float",
+   "dims": [],
+   "description": "source mix",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0
+  },
+  {
+   "name": "lightness",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0
+  },
+  {
+   "name": "version",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

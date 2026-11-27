@@ -1,0 +1,161 @@
+{
+ "module": "sigmoid",
+ "version": 3,
+ "struct": "dt_iop_sigmoid_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 56,
+ "fields": [
+  {
+   "name": "middle_grey_contrast",
+   "ctype": "float",
+   "dims": [],
+   "description": "contrast",
+   "kind": "prim",
+   "min": 0.1,
+   "max": 10.0,
+   "default": 1.5
+  },
+  {
+   "name": "contrast_skewness",
+   "ctype": "float",
+   "dims": [],
+   "description": "skew",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "display_white_target",
+   "ctype": "float",
+   "dims": [],
+   "description": "target white",
+   "kind": "prim",
+   "min": 20.0,
+   "max": 1600.0,
+   "default": 100.0
+  },
+  {
+   "name": "display_black_target",
+   "ctype": "float",
+   "dims": [],
+   "description": "target black",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 15.0,
+   "default": 0.0152
+  },
+  {
+   "name": "color_processing",
+   "ctype": "dt_iop_sigmoid_methods_type_t",
+   "dims": [],
+   "description": "color processing",
+   "kind": "enum",
+   "enum": {
+    "DT_SIGMOID_METHOD_PER_CHANNEL": 0,
+    "DT_SIGMOID_METHOD_RGB_RATIO": 1
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_SIGMOID_METHOD_PER_CHANNEL"
+  },
+  {
+   "name": "hue_preservation",
+   "ctype": "float",
+   "dims": [],
+   "description": "preserve hue",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0
+  },
+  {
+   "name": "red_inset",
+   "ctype": "float",
+   "dims": [],
+   "description": "red attenuation",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.99,
+   "default": 0.0
+  },
+  {
+   "name": "red_rotation",
+   "ctype": "float",
+   "dims": [],
+   "description": "red rotation",
+   "kind": "prim",
+   "min": -0.4,
+   "max": 0.4,
+   "default": 0.0
+  },
+  {
+   "name": "green_inset",
+   "ctype": "float",
+   "dims": [],
+   "description": "green attenuation",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.99,
+   "default": 0.0
+  },
+  {
+   "name": "green_rotation",
+   "ctype": "float",
+   "dims": [],
+   "description": "green rotation",
+   "kind": "prim",
+   "min": -0.4,
+   "max": 0.4,
+   "default": 0.0
+  },
+  {
+   "name": "blue_inset",
+   "ctype": "float",
+   "dims": [],
+   "description": "blue attenuation",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.99,
+   "default": 0.0
+  },
+  {
+   "name": "blue_rotation",
+   "ctype": "float",
+   "dims": [],
+   "description": "blue rotation",
+   "kind": "prim",
+   "min": -0.4,
+   "max": 0.4,
+   "default": 0.0
+  },
+  {
+   "name": "purity",
+   "ctype": "float",
+   "dims": [],
+   "description": "recover purity",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "base_primaries",
+   "ctype": "dt_iop_sigmoid_base_primaries_t",
+   "dims": [],
+   "description": "base primaries",
+   "kind": "enum",
+   "enum": {
+    "DT_SIGMOID_WORK_PROFILE": 0,
+    "DT_SIGMOID_REC2020": 1,
+    "DT_SIGMOID_DISPLAY_P3": 2,
+    "DT_SIGMOID_ADOBE_RGB": 3,
+    "DT_SIGMOID_SRGB": 4
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_SIGMOID_WORK_PROFILE"
+  }
+ ]
+}

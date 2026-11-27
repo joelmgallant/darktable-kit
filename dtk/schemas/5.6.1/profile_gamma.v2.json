@@ -1,0 +1,84 @@
+{
+ "module": "profile_gamma",
+ "version": 2,
+ "struct": "dt_iop_profilegamma_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 28,
+ "fields": [
+  {
+   "name": "mode",
+   "ctype": "dt_iop_profilegamma_mode_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "PROFILEGAMMA_LOG": 0,
+    "PROFILEGAMMA_GAMMA": 1
+   },
+   "min": null,
+   "max": null,
+   "default": "PROFILEGAMMA_LOG"
+  },
+  {
+   "name": "linear",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.1
+  },
+  {
+   "name": "gamma",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.45
+  },
+  {
+   "name": "dynamic_range",
+   "ctype": "float",
+   "dims": [],
+   "description": "dynamic range",
+   "kind": "prim",
+   "min": 0.01,
+   "max": 32.0,
+   "default": 10.0
+  },
+  {
+   "name": "grey_point",
+   "ctype": "float",
+   "dims": [],
+   "description": "middle gray luma",
+   "kind": "prim",
+   "min": 0.1,
+   "max": 100.0,
+   "default": 18.0
+  },
+  {
+   "name": "shadows_range",
+   "ctype": "float",
+   "dims": [],
+   "description": "black relative exposure",
+   "kind": "prim",
+   "min": -16.0,
+   "max": 16.0,
+   "default": -5.0
+  },
+  {
+   "name": "security_factor",
+   "ctype": "float",
+   "dims": [],
+   "description": "safety factor",
+   "kind": "prim",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 0.0
+  }
+ ]
+}

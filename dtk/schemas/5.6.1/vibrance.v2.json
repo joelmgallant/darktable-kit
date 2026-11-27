@@ -1,0 +1,20 @@
+{
+ "module": "vibrance",
+ "version": 2,
+ "struct": "dt_iop_vibrance_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 4,
+ "fields": [
+  {
+   "name": "amount",
+   "ctype": "float",
+   "dims": [],
+   "description": "vibrance",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 25.0
+  }
+ ]
+}

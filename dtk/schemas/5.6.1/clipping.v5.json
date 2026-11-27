@@ -1,0 +1,220 @@
+{
+ "module": "clipping",
+ "version": 5,
+ "struct": "dt_iop_clipping_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 84,
+ "fields": [
+  {
+   "name": "angle",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -180.0,
+   "max": 180.0,
+   "default": null
+  },
+  {
+   "name": "cx",
+   "ctype": "float",
+   "dims": [],
+   "description": "left",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": null
+  },
+  {
+   "name": "cy",
+   "ctype": "float",
+   "dims": [],
+   "description": "top",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": null
+  },
+  {
+   "name": "cw",
+   "ctype": "float",
+   "dims": [],
+   "description": "right",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": null
+  },
+  {
+   "name": "ch",
+   "ctype": "float",
+   "dims": [],
+   "description": "bottom",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": null
+  },
+  {
+   "name": "k_h",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "k_v",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "kxa",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.2
+  },
+  {
+   "name": "kya",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.2
+  },
+  {
+   "name": "kxb",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.8
+  },
+  {
+   "name": "kyb",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.2
+  },
+  {
+   "name": "kxc",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.8
+  },
+  {
+   "name": "kyc",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.8
+  },
+  {
+   "name": "kxd",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.2
+  },
+  {
+   "name": "kyd",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.8
+  },
+  {
+   "name": "k_type",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "k_sym",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "k_apply",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "crop_auto",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "automatic cropping",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  },
+  {
+   "name": "ratio_n",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": -1
+  },
+  {
+   "name": "ratio_d",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": -1
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "module": "soften",
+ "version": 1,
+ "struct": "dt_iop_soften_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 16,
+ "fields": [
+  {
+   "name": "size",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0
+  },
+  {
+   "name": "saturation",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0
+  },
+  {
+   "name": "brightness",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.33
+  },
+  {
+   "name": "amount",
+   "ctype": "float",
+   "dims": [],
+   "description": "mix",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0
+  }
+ ]
+}

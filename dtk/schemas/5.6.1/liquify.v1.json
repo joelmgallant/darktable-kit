@@ -1,0 +1,9 @@
+{
+ "module": "liquify",
+ "version": 1,
+ "struct": "dt_iop_liquify_params_t",
+ "status": "unsupported",
+ "reason": "cannot read declarator 'complex point'",
+ "size": null,
+ "fields": []
+}

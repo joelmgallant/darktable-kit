@@ -1,0 +1,56 @@
+{
+ "module": "rgblevels",
+ "version": 1,
+ "struct": "dt_iop_rgblevels_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 44,
+ "fields": [
+  {
+   "name": "autoscale",
+   "ctype": "dt_iop_rgblevels_autoscale_t",
+   "dims": [],
+   "description": "mode",
+   "kind": "enum",
+   "enum": {
+    "DT_IOP_RGBLEVELS_LINKED_CHANNELS": 0,
+    "DT_IOP_RGBLEVELS_INDEPENDENT_CHANNELS": 1
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_IOP_RGBLEVELS_LINKED_CHANNELS"
+  },
+  {
+   "name": "preserve_colors",
+   "ctype": "dt_iop_rgb_norms_t",
+   "dims": [],
+   "description": "preserve colors",
+   "kind": "enum",
+   "enum": {
+    "DT_RGB_NORM_NONE": 0,
+    "DT_RGB_NORM_LUMINANCE": 1,
+    "DT_RGB_NORM_MAX": 2,
+    "DT_RGB_NORM_AVERAGE": 3,
+    "DT_RGB_NORM_SUM": 4,
+    "DT_RGB_NORM_NORM": 5,
+    "DT_RGB_NORM_POWER": 6
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_RGB_NORM_LUMINANCE"
+  },
+  {
+   "name": "levels",
+   "ctype": "float",
+   "dims": [
+    3,
+    3
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

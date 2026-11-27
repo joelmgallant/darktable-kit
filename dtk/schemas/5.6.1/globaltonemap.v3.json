@@ -1,0 +1,9 @@
+{
+ "module": "globaltonemap",
+ "version": 3,
+ "struct": "dt_iop_global_tonemap_params_t",
+ "status": "unsupported",
+ "reason": "unsupported declaration 'struct\\n  {\\n    float bias'",
+ "size": null,
+ "fields": []
+}

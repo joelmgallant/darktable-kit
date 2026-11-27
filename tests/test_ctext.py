@@ -103,3 +103,11 @@ def test_multiple_declarators():
 def test_unsupported_declarations_raise(body):
     with pytest.raises(ParseError):
         parse_struct_body(body)
+
+
+def test_indented_top_level_typedefs_count_but_function_local_ones_do_not():
+    # src/common/rgb_norms.h indents its enum typedef by one space at file scope
+    src = " typedef enum dt_iop_rgb_norms_t\n {\n   DT_RGB_NORM_NONE = 0,\n } dt_iop_rgb_norms_t;\n" + EXPOSURE_SRC
+    found = find_typedefs(src)
+    assert found["dt_iop_rgb_norms_t"][0] == "enum"
+    assert "dt_iop_exposure_params_v6_t" not in found

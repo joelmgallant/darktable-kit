@@ -1,0 +1,137 @@
+{
+ "module": "vignette",
+ "version": 4,
+ "struct": "dt_iop_vignette_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 44,
+ "fields": [
+  {
+   "name": "scale",
+   "ctype": "float",
+   "dims": [],
+   "description": "fall-off start",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 200.0,
+   "default": 80.0
+  },
+  {
+   "name": "falloff_scale",
+   "ctype": "float",
+   "dims": [],
+   "description": "fall-off radius",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 200.0,
+   "default": 50.0
+  },
+  {
+   "name": "brightness",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": -0.5
+  },
+  {
+   "name": "saturation",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": -0.5
+  },
+  {
+   "name": "center",
+   "ctype": "dt_iop_vector_2d_t",
+   "dims": [],
+   "description": null,
+   "kind": "struct",
+   "fields": [
+    {
+     "name": "x",
+     "ctype": "float",
+     "dims": [],
+     "description": "horizontal center",
+     "kind": "prim",
+     "min": -1.0,
+     "max": 1.0,
+     "default": null
+    },
+    {
+     "name": "y",
+     "ctype": "float",
+     "dims": [],
+     "description": "vertical center",
+     "kind": "prim",
+     "min": -1.0,
+     "max": 1.0,
+     "default": null
+    }
+   ],
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "autoratio",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "automatic ratio",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "whratio",
+   "ctype": "float",
+   "dims": [],
+   "description": "width/height ratio",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "shape",
+   "ctype": "float",
+   "dims": [],
+   "description": "shape",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 5.0,
+   "default": 1.0
+  },
+  {
+   "name": "dithering",
+   "ctype": "dt_iop_dither_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "DITHER_OFF": 0,
+    "DITHER_8BIT": 1,
+    "DITHER_16BIT": 2
+   },
+   "min": null,
+   "max": null,
+   "default": "DITHER_OFF"
+  },
+  {
+   "name": "unbound",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  }
+ ]
+}

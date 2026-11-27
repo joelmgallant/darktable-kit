@@ -1,0 +1,161 @@
+{
+ "module": "highlights",
+ "version": 4,
+ "struct": "dt_iop_highlights_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 48,
+ "fields": [
+  {
+   "name": "mode",
+   "ctype": "dt_iop_highlights_mode_t",
+   "dims": [],
+   "description": "method",
+   "kind": "enum",
+   "enum": {
+    "DT_IOP_HIGHLIGHTS_OPPOSED": 5,
+    "DT_IOP_HIGHLIGHTS_LCH": 1,
+    "DT_IOP_HIGHLIGHTS_CLIP": 0,
+    "DT_IOP_HIGHLIGHTS_SEGMENTS": 4,
+    "DT_IOP_HIGHLIGHTS_LAPLACIAN": 3,
+    "DT_IOP_HIGHLIGHTS_INPAINT": 2
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_IOP_HIGHLIGHTS_OPPOSED"
+  },
+  {
+   "name": "blendL",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1.0
+  },
+  {
+   "name": "blendC",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0.0
+  },
+  {
+   "name": "strength",
+   "ctype": "float",
+   "dims": [],
+   "description": "strength",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "clip",
+   "ctype": "float",
+   "dims": [],
+   "description": "clipping threshold",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "noise_level",
+   "ctype": "float",
+   "dims": [],
+   "description": "noise level",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.5,
+   "default": 0.0
+  },
+  {
+   "name": "iterations",
+   "ctype": "int",
+   "dims": [],
+   "description": "iterations",
+   "kind": "prim",
+   "min": 1,
+   "max": 256,
+   "default": 30
+  },
+  {
+   "name": "scales",
+   "ctype": "dt_atrous_wavelets_scales_t",
+   "dims": [],
+   "description": "diameter of reconstruction",
+   "kind": "enum",
+   "enum": {
+    "WAVELETS_1_SCALE": 0,
+    "WAVELETS_2_SCALE": 1,
+    "WAVELETS_3_SCALE": 2,
+    "WAVELETS_4_SCALE": 3,
+    "WAVELETS_5_SCALE": 4,
+    "WAVELETS_6_SCALE": 5,
+    "WAVELETS_7_SCALE": 6,
+    "WAVELETS_8_SCALE": 7,
+    "WAVELETS_9_SCALE": 8,
+    "WAVELETS_10_SCALE": 9,
+    "WAVELETS_11_SCALE": 10,
+    "WAVELETS_12_SCALE": 11
+   },
+   "min": null,
+   "max": null,
+   "default": "WAVELETS_7_SCALE"
+  },
+  {
+   "name": "candidating",
+   "ctype": "float",
+   "dims": [],
+   "description": "candidating",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.4
+  },
+  {
+   "name": "combine",
+   "ctype": "float",
+   "dims": [],
+   "description": "combine",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 8.0,
+   "default": 2.0
+  },
+  {
+   "name": "recovery",
+   "ctype": "dt_recovery_mode_t",
+   "dims": [],
+   "description": "rebuild",
+   "kind": "enum",
+   "enum": {
+    "DT_RECOVERY_MODE_OFF": 0,
+    "DT_RECOVERY_MODE_ADAPT": 5,
+    "DT_RECOVERY_MODE_ADAPTF": 6,
+    "DT_RECOVERY_MODE_SMALL": 1,
+    "DT_RECOVERY_MODE_LARGE": 2,
+    "DT_RECOVERY_MODE_SMALLF": 3,
+    "DT_RECOVERY_MODE_LARGEF": 4
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_RECOVERY_MODE_OFF"
+  },
+  {
+   "name": "solid_color",
+   "ctype": "float",
+   "dims": [],
+   "description": "inpaint a flat color",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  }
+ ]
+}

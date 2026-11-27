@@ -1,0 +1,116 @@
+{
+ "module": "colorharmonizer",
+ "version": 1,
+ "struct": "dt_iop_colorharmonizer_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 60,
+ "fields": [
+  {
+   "name": "rule",
+   "ctype": "dt_iop_colorharmonizer_rule_t",
+   "dims": [],
+   "description": "harmony rule",
+   "kind": "enum",
+   "enum": {
+    "DT_COLORHARMONIZER_MONOCHROMATIC": 0,
+    "DT_COLORHARMONIZER_ANALOGOUS": 1,
+    "DT_COLORHARMONIZER_ANALOGOUS_COMPLEMENTARY": 2,
+    "DT_COLORHARMONIZER_COMPLEMENTARY": 3,
+    "DT_COLORHARMONIZER_SPLIT_COMPLEMENTARY": 4,
+    "DT_COLORHARMONIZER_DYAD": 5,
+    "DT_COLORHARMONIZER_TRIAD": 6,
+    "DT_COLORHARMONIZER_TETRAD": 7,
+    "DT_COLORHARMONIZER_SQUARE": 8,
+    "DT_COLORHARMONIZER_CUSTOM": 9
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_COLORHARMONIZER_COMPLEMENTARY"
+  },
+  {
+   "name": "anchor_hue",
+   "ctype": "float",
+   "dims": [],
+   "description": "anchor hue",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.1
+  },
+  {
+   "name": "pull_strength",
+   "ctype": "float",
+   "dims": [],
+   "description": "pull strength",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "neutral_protection",
+   "ctype": "float",
+   "dims": [],
+   "description": "neutral color protection",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.5
+  },
+  {
+   "name": "pull_width",
+   "ctype": "float",
+   "dims": [],
+   "description": "pull width",
+   "kind": "prim",
+   "min": 0.25,
+   "max": 4.0,
+   "default": 1.0
+  },
+  {
+   "name": "custom_hue",
+   "ctype": "float",
+   "dims": [
+    4
+   ],
+   "description": "custom node hue",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "num_custom_nodes",
+   "ctype": "int",
+   "dims": [],
+   "description": "nodes",
+   "kind": "prim",
+   "min": 2,
+   "max": 4,
+   "default": 4
+  },
+  {
+   "name": "node_saturation",
+   "ctype": "float",
+   "dims": [
+    4
+   ],
+   "description": "node saturation",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "smoothing",
+   "ctype": "float",
+   "dims": [],
+   "description": "smoothing",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 0.0
+  }
+ ]
+}

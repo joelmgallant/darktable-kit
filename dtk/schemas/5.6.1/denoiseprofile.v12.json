@@ -1,0 +1,211 @@
+{
+ "module": "denoiseprofile",
+ "version": 12,
+ "struct": "dt_iop_denoiseprofile_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 416,
+ "fields": [
+  {
+   "name": "radius",
+   "ctype": "float",
+   "dims": [],
+   "description": "patch size",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 12.0,
+   "default": 1.0
+  },
+  {
+   "name": "nbhood",
+   "ctype": "float",
+   "dims": [],
+   "description": "search radius",
+   "kind": "prim",
+   "min": 1.0,
+   "max": 30.0,
+   "default": 7.0
+  },
+  {
+   "name": "strength",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.001,
+   "max": 1000.0,
+   "default": 1.0
+  },
+  {
+   "name": "shadows",
+   "ctype": "float",
+   "dims": [],
+   "description": "preserve shadows",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.8,
+   "default": 1.0
+  },
+  {
+   "name": "bias",
+   "ctype": "float",
+   "dims": [],
+   "description": "bias correction",
+   "kind": "prim",
+   "min": -1000.0,
+   "max": 100.0,
+   "default": 0.0
+  },
+  {
+   "name": "scattering",
+   "ctype": "float",
+   "dims": [],
+   "description": "scattering",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 20.0,
+   "default": 0.0
+  },
+  {
+   "name": "central_pixel_weight",
+   "ctype": "float",
+   "dims": [],
+   "description": "central pixel weight",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.1
+  },
+  {
+   "name": "overshooting",
+   "ctype": "float",
+   "dims": [],
+   "description": "adjust autoset parameters",
+   "kind": "prim",
+   "min": 0.001,
+   "max": 1000.0,
+   "default": 1.0
+  },
+  {
+   "name": "a",
+   "ctype": "float",
+   "dims": [
+    3
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "b",
+   "ctype": "float",
+   "dims": [
+    3
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "mode",
+   "ctype": "dt_iop_denoiseprofile_mode_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "MODE_NLMEANS": 0,
+    "MODE_NLMEANS_AUTO": 3,
+    "MODE_WAVELETS": 1,
+    "MODE_WAVELETS_AUTO": 4,
+    "MODE_VARIANCE": 2
+   },
+   "min": null,
+   "max": null,
+   "default": "MODE_WAVELETS"
+  },
+  {
+   "name": "x",
+   "ctype": "float",
+   "dims": [
+    6,
+    7
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "y",
+   "ctype": "float",
+   "dims": [
+    6,
+    7
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0.5
+  },
+  {
+   "name": "wb_adaptive_anscombe",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "whitebalance-adaptive transform",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  },
+  {
+   "name": "fix_anscombe_and_nlmeans_norm",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "fix various bugs in algorithm",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  },
+  {
+   "name": "use_new_vst",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "upgrade profiled transform",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  },
+  {
+   "name": "wavelet_color_mode",
+   "ctype": "dt_iop_denoiseprofile_wavelet_mode_t",
+   "dims": [],
+   "description": "color mode",
+   "kind": "enum",
+   "enum": {
+    "MODE_RGB": 0,
+    "MODE_Y0U0V0": 1
+   },
+   "min": null,
+   "max": null,
+   "default": "MODE_Y0U0V0"
+  },
+  {
+   "name": "compensate_hilite_pres",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "compensate highlight preservation",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  }
+ ]
+}

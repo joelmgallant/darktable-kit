@@ -1,0 +1,378 @@
+{
+ "module": "agx",
+ "version": 7,
+ "struct": "dt_iop_agx_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 144,
+ "fields": [
+  {
+   "name": "look_lift",
+   "ctype": "float",
+   "dims": [],
+   "description": "lift",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "look_slope",
+   "ctype": "float",
+   "dims": [],
+   "description": "slope",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 1.0
+  },
+  {
+   "name": "look_brightness",
+   "ctype": "float",
+   "dims": [],
+   "description": "brightness",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 1.0
+  },
+  {
+   "name": "look_saturation",
+   "ctype": "float",
+   "dims": [],
+   "description": "saturation",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 1.0
+  },
+  {
+   "name": "look_original_hue_mix_ratio",
+   "ctype": "float",
+   "dims": [],
+   "description": "preserve hue",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.6
+  },
+  {
+   "name": "range_black_relative_ev",
+   "ctype": "float",
+   "dims": [],
+   "description": "black relative exposure",
+   "kind": "prim",
+   "min": -20.0,
+   "max": -0.1,
+   "default": -10.0
+  },
+  {
+   "name": "range_white_relative_ev",
+   "ctype": "float",
+   "dims": [],
+   "description": "white relative exposure",
+   "kind": "prim",
+   "min": 0.1,
+   "max": 20.0,
+   "default": 6.5
+  },
+  {
+   "name": "dynamic_range_scaling",
+   "ctype": "float",
+   "dims": [],
+   "description": "dynamic range scaling",
+   "kind": "prim",
+   "min": -0.5,
+   "max": 2.0,
+   "default": 0.1
+  },
+  {
+   "name": "curve_pivot_x",
+   "ctype": "float",
+   "dims": [],
+   "description": "pivot relative exposure",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.606060606061
+  },
+  {
+   "name": "curve_pivot_y_linear_output",
+   "ctype": "float",
+   "dims": [],
+   "description": "pivot target output",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.18
+  },
+  {
+   "name": "curve_contrast_around_pivot",
+   "ctype": "float",
+   "dims": [],
+   "description": "contrast",
+   "kind": "prim",
+   "min": 0.1,
+   "max": 10.0,
+   "default": 3.0
+  },
+  {
+   "name": "curve_linear_ratio_below_pivot",
+   "ctype": "float",
+   "dims": [],
+   "description": "toe start",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "curve_linear_ratio_above_pivot",
+   "ctype": "float",
+   "dims": [],
+   "description": "shoulder start",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "curve_toe_power",
+   "ctype": "float",
+   "dims": [],
+   "description": "toe power",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 1.5
+  },
+  {
+   "name": "curve_shoulder_power",
+   "ctype": "float",
+   "dims": [],
+   "description": "shoulder power",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 3.3
+  },
+  {
+   "name": "curve_gamma",
+   "ctype": "float",
+   "dims": [],
+   "description": "curve y gamma",
+   "kind": "prim",
+   "min": 0.01,
+   "max": 100.0,
+   "default": 2.2
+  },
+  {
+   "name": "auto_gamma",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "keep the pivot on the diagonal",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "curve_target_display_black_ratio",
+   "ctype": "float",
+   "dims": [],
+   "description": "target black",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.15,
+   "default": 0.0
+  },
+  {
+   "name": "curve_target_display_white_ratio",
+   "ctype": "float",
+   "dims": [],
+   "description": "target white",
+   "kind": "prim",
+   "min": 0.2,
+   "max": 1.0,
+   "default": 1.0
+  },
+  {
+   "name": "base_primaries",
+   "ctype": "dt_iop_agx_base_primaries_t",
+   "dims": [],
+   "description": "base primaries",
+   "kind": "enum",
+   "enum": {
+    "DT_AGX_EXPORT_PROFILE": 0,
+    "DT_AGX_WORK_PROFILE": 1,
+    "DT_AGX_REC2020": 2,
+    "DT_AGX_DISPLAY_P3": 3,
+    "DT_AGX_ADOBE_RGB": 4,
+    "DT_AGX_SRGB": 5
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_AGX_REC2020"
+  },
+  {
+   "name": "disable_primaries_adjustments",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "disable adjustments",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "red_inset",
+   "ctype": "float",
+   "dims": [],
+   "description": "red attenuation",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.99,
+   "default": 0.0
+  },
+  {
+   "name": "red_rotation",
+   "ctype": "float",
+   "dims": [],
+   "description": "red rotation",
+   "kind": "prim",
+   "min": -0.5236,
+   "max": 0.5236,
+   "default": 0.0
+  },
+  {
+   "name": "green_inset",
+   "ctype": "float",
+   "dims": [],
+   "description": "green attenuation",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.99,
+   "default": 0.0
+  },
+  {
+   "name": "green_rotation",
+   "ctype": "float",
+   "dims": [],
+   "description": "green rotation",
+   "kind": "prim",
+   "min": -0.5236,
+   "max": 0.5236,
+   "default": 0.0
+  },
+  {
+   "name": "blue_inset",
+   "ctype": "float",
+   "dims": [],
+   "description": "blue attenuation",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.99,
+   "default": 0.0
+  },
+  {
+   "name": "blue_rotation",
+   "ctype": "float",
+   "dims": [],
+   "description": "blue rotation",
+   "kind": "prim",
+   "min": -0.5236,
+   "max": 0.5236,
+   "default": 0.0
+  },
+  {
+   "name": "master_outset_ratio",
+   "ctype": "float",
+   "dims": [],
+   "description": "master purity boost",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "master_unrotation_ratio",
+   "ctype": "float",
+   "dims": [],
+   "description": "master rotation reversal",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "red_outset",
+   "ctype": "float",
+   "dims": [],
+   "description": "red purity boost",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.99,
+   "default": 0.0
+  },
+  {
+   "name": "red_unrotation",
+   "ctype": "float",
+   "dims": [],
+   "description": "red reverse rotation",
+   "kind": "prim",
+   "min": -0.5236,
+   "max": 0.5236,
+   "default": 0.0
+  },
+  {
+   "name": "green_outset",
+   "ctype": "float",
+   "dims": [],
+   "description": "green purity boost",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.99,
+   "default": 0.0
+  },
+  {
+   "name": "green_unrotation",
+   "ctype": "float",
+   "dims": [],
+   "description": "green reverse rotation",
+   "kind": "prim",
+   "min": -0.5236,
+   "max": 0.5236,
+   "default": 0.0
+  },
+  {
+   "name": "blue_outset",
+   "ctype": "float",
+   "dims": [],
+   "description": "blue purity boost",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.99,
+   "default": 0.0
+  },
+  {
+   "name": "blue_unrotation",
+   "ctype": "float",
+   "dims": [],
+   "description": "blue reverse rotation",
+   "kind": "prim",
+   "min": -0.5236,
+   "max": 0.5236,
+   "default": 0.0
+  },
+  {
+   "name": "completely_reverse_primaries",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "reverse all",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  }
+ ]
+}

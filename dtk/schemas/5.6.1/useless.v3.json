@@ -1,0 +1,55 @@
+{
+ "module": "useless",
+ "version": 3,
+ "struct": "dt_iop_useless_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 16,
+ "fields": [
+  {
+   "name": "checker_scale",
+   "ctype": "int",
+   "dims": [],
+   "description": "size",
+   "kind": "prim",
+   "min": 0,
+   "max": 10,
+   "default": 1
+  },
+  {
+   "name": "factor",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0
+  },
+  {
+   "name": "check",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "checkbox option",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "method",
+   "ctype": "dt_iop_useless_type_t",
+   "dims": [],
+   "description": "parameter choices",
+   "kind": "enum",
+   "enum": {
+    "DT_USELESS_NONE": 0,
+    "DT_USELESS_FIRST": 1,
+    "DT_USELESS_SECOND": 2
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_USELESS_SECOND"
+  }
+ ]
+}

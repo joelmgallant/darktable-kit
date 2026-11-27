@@ -1,0 +1,89 @@
+{
+ "module": "lowpass",
+ "version": 4,
+ "struct": "dt_iop_lowpass_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 28,
+ "fields": [
+  {
+   "name": "order",
+   "ctype": "dt_gaussian_order_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "DT_IOP_GAUSSIAN_ZERO": 0,
+    "DT_IOP_GAUSSIAN_ONE": 1,
+    "DT_IOP_GAUSSIAN_TWO": 2
+   },
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "radius",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.1,
+   "max": 500.0,
+   "default": 10.0
+  },
+  {
+   "name": "contrast",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -3.0,
+   "max": 3.0,
+   "default": 1.0
+  },
+  {
+   "name": "brightness",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -3.0,
+   "max": 3.0,
+   "default": 0.0
+  },
+  {
+   "name": "saturation",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -3.0,
+   "max": 3.0,
+   "default": 1.0
+  },
+  {
+   "name": "lowpass_algo",
+   "ctype": "dt_iop_lowpass_algo_t",
+   "dims": [],
+   "description": "soften with",
+   "kind": "enum",
+   "enum": {
+    "LOWPASS_ALGO_GAUSSIAN": 0,
+    "LOWPASS_ALGO_BILATERAL": 1
+   },
+   "min": null,
+   "max": null,
+   "default": "LOWPASS_ALGO_GAUSSIAN"
+  },
+  {
+   "name": "unbound",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  }
+ ]
+}

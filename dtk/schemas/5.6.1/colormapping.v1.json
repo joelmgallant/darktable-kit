@@ -1,0 +1,9 @@
+{
+ "module": "colormapping",
+ "version": 1,
+ "struct": "dt_iop_colormapping_params_t",
+ "status": "unsupported",
+ "reason": "source_mean: unknown type float2",
+ "size": null,
+ "fields": []
+}

@@ -1,0 +1,40 @@
+{
+ "module": "bloom",
+ "version": 1,
+ "struct": "dt_iop_bloom_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 12,
+ "fields": [
+  {
+   "name": "size",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 20.0
+  },
+  {
+   "name": "threshold",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 90.0
+  },
+  {
+   "name": "strength",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 25.0
+  }
+ ]
+}
