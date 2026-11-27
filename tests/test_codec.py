@@ -80,3 +80,8 @@ def test_char_array_overflow_is_refused():
     sch = schema("named", [prim("label", "char", dims=(4,))])
     with pytest.raises(CodecError, match="longer than 3 bytes"):
         encode(sch, {"label": "abcd"})
+
+
+def test_float_too_large_for_float32_is_a_codec_error():
+    with pytest.raises(CodecError, match="exposure"):
+        encode(EXPOSURE_V7, {**decode(EXPOSURE_V7, bytes.fromhex(EXPOSURE_V7_HEX)), "exposure": 1e39})

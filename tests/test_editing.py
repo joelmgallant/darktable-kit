@@ -1,12 +1,13 @@
+from dataclasses import replace
 from pathlib import Path
 
 import pytest
 
-from dtk.blob import decode_param_string
+from dtk.blob import decode_param_string, encode_param_string
 from dtk.codec import decode
 from dtk.editing import plan_edit
 from dtk.values import Change, EditRefused, apply_change, parse_set
-from dtk.xmp import parse_sidecar
+from dtk.xmp import parse_sidecar, with_appended_entries
 from tests.schema_helpers import EXPOSURE_V7, nested, prim, schema
 
 MINIMAL = (Path(__file__).parent / "fixtures" / "minimal.xmp").read_text()
@@ -104,3 +105,48 @@ def test_array_and_struct_paths():
         apply_change(sch, values, parse_set("curve.nodes=1"))
     with pytest.raises(EditRefused, match="index 5 is outside 0..1"):
         apply_change(sch, values, parse_set("curve.nodes.5.x=0.5"))
+
+
+def with_extra_exposure(text, *, enabled, multi_name="", multi_priority=0, params=None):
+    sidecar = parse_sidecar(text)
+    first = sidecar.history[0]
+    extra = replace(first, num=sidecar.history_end, enabled=enabled, multi_name=multi_name,
+                    multi_priority=multi_priority, params=params or first.params)
+    return with_appended_entries(sidecar, [extra])[0]
+
+
+def test_switched_off_module_is_refused_not_re_enabled():
+    text = with_extra_exposure(MINIMAL, enabled=False)
+    with pytest.raises(EditRefused, match="switched off"):
+        plan(text, "exposure.black=0.01")
+
+
+def test_topmost_enabled_instance_is_chosen_when_another_is_off():
+    # instance 1 ("sky") is on; the default instance's latest entry switches it off
+    text = with_extra_exposure(MINIMAL, enabled=True, multi_name="sky", multi_priority=1)
+    text = with_extra_exposure(text, enabled=False)
+    result = plan(text, "exposure.exposure=0.5")
+    entry, _, _ = last_values(result.new_text)
+    assert (entry.multi_name, entry.multi_priority, entry.enabled) == ("sky", 1, True)
+
+
+def test_gz_entries_stay_gz():
+    raw, _ = decode_param_string(parse_sidecar(MINIMAL).history[0].params)
+    text = with_extra_exposure(MINIMAL, enabled=True, params=encode_param_string(raw, "gz"))
+    entry, fmt, values = last_values(plan(text, "exposure.exposure=0.5").new_text)
+    assert fmt == "gz" and values["exposure"] == 0.5
+
+
+@pytest.mark.parametrize("arg, message", [
+    ("exposure.exposure=nan", "finite"),
+    ("exposure.deflicker_percentile=inf", "finite"),
+    ("exposure.mode=7", "not a member"),
+])
+def test_non_finite_and_unknown_enum_numbers_are_refused(arg, message):
+    with pytest.raises(EditRefused, match=message):
+        plan(MINIMAL, arg)
+
+
+def test_enum_member_number_is_accepted():
+    _, _, values = last_values(plan(MINIMAL, "exposure.mode=1").new_text)
+    assert values["mode"] == 1

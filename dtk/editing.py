@@ -19,14 +19,25 @@ class EditPlan:
 
 
 def _select_instance(active: tuple[HistoryEntry, ...], module: str, instance: str | None) -> HistoryEntry:
-    matches = [entry for entry in active if entry.operation == module]
-    if not matches:
+    """The topmost instance whose latest active entry is enabled (spec, edit flow step 2).
+
+    An instance is identified by multi_priority; its current state is its latest entry at or below history_end.
+    """
+    latest_by_priority: dict[int, HistoryEntry] = {}
+    for entry in active:
+        if entry.operation == module:
+            latest_by_priority[entry.multi_priority] = entry
+    if not latest_by_priority:
         raise EditRefused(f"{module} is not in this image's history; enable it in darktable or apply a style first")
+    candidates = list(latest_by_priority.values())
     if instance is not None:
-        matches = [entry for entry in matches if entry.multi_name == instance]
-        if not matches:
+        candidates = [entry for entry in candidates if entry.multi_name == instance]
+        if not candidates:
             raise EditRefused(f"{module} has no {instance!r} instance; dtk show lists instance names")
-    return matches[-1]
+    enabled = [entry for entry in candidates if entry.enabled]
+    if not enabled:
+        raise EditRefused(f"{module} is switched off in this image; turn it on in darktable first, then retry")
+    return max(enabled, key=lambda entry: entry.num)
 
 
 def _label(entry: HistoryEntry) -> str:

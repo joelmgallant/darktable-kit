@@ -140,7 +140,7 @@ def _encode_value(field: dict, value: Any, buf: bytearray, offset: int, dims: li
     fmt, _ = _scalar_format(field)
     try:
         struct.pack_into("<" + fmt, buf, offset, float(value) if fmt in "fd" else int(value))
-    except struct.error as exc:
+    except (struct.error, OverflowError) as exc:
         raise CodecError(f"{field['name']}: {exc}") from None
 
 

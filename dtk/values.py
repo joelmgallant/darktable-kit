@@ -1,6 +1,7 @@
 """Apply one --set change to decoded params values, validating against the schema."""
 from __future__ import annotations
 
+import math
 import re
 from dataclasses import dataclass
 
@@ -46,11 +47,14 @@ def _coerce(field: dict, change: Change, old):
     if isinstance(old, str):
         return text
     if field["kind"] == "enum":
+        members = field.get("enum") or {}
+        known = ", ".join(name for name, value in members.items() if value is not None)
         if text.lstrip("-").isdigit():
+            if int(text) not in members.values():
+                raise EditRefused(f"{label}={text} is not a member; known: {known}")
             return int(text)
-        number = (field.get("enum") or {}).get(text)
+        number = members.get(text)
         if number is None:
-            known = ", ".join(name for name, value in field["enum"].items() if value is not None)
             raise EditRefused(f"{label}: unknown member {text!r}; known: {known}")
         return number
     if field["ctype"] == "gboolean":
@@ -63,10 +67,14 @@ def _coerce(field: dict, change: Change, old):
         number = float(text) if field["ctype"] in ("float", "double") else int(text)
     except ValueError:
         raise EditRefused(f"{label}: {text!r} is not a number") from None
+    if not math.isfinite(number):
+        raise EditRefused(f"{label} must be a finite number, not {text!r}")
     if change.op == "+=":
-        return old + number
-    if change.op == "-=":
-        return old - number
+        number = old + number
+    elif change.op == "-=":
+        number = old - number
+    if not math.isfinite(number):
+        raise EditRefused(f"{label} must stay a finite number")
     return number
 
 
