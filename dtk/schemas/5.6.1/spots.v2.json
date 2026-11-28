@@ -1,0 +1,34 @@
+{
+ "module": "spots",
+ "version": 2,
+ "struct": "dt_iop_spots_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 512,
+ "fields": [
+  {
+   "name": "clone_id",
+   "ctype": "int",
+   "dims": [
+    64
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "clone_algo",
+   "ctype": "int",
+   "dims": [
+    64
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

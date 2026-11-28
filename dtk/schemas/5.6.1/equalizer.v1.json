@@ -1,0 +1,36 @@
+{
+ "module": "equalizer",
+ "version": 1,
+ "struct": "dt_iop_equalizer_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 144,
+ "fields": [
+  {
+   "name": "equalizer_x",
+   "ctype": "float",
+   "dims": [
+    3,
+    6
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "equalizer_y",
+   "ctype": "float",
+   "dims": [
+    3,
+    6
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

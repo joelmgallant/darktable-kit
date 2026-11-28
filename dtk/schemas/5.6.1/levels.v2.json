@@ -1,0 +1,66 @@
+{
+ "module": "levels",
+ "version": 2,
+ "struct": "dt_iop_levels_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 28,
+ "fields": [
+  {
+   "name": "mode",
+   "ctype": "dt_iop_levels_mode_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "LEVELS_MODE_MANUAL": 0,
+    "LEVELS_MODE_AUTOMATIC": 1
+   },
+   "min": null,
+   "max": null,
+   "default": "LEVELS_MODE_MANUAL"
+  },
+  {
+   "name": "black",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 0.0
+  },
+  {
+   "name": "gray",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0
+  },
+  {
+   "name": "white",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0
+  },
+  {
+   "name": "levels",
+   "ctype": "float",
+   "dims": [
+    3
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

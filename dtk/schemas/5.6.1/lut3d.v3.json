@@ -1,0 +1,89 @@
+{
+ "module": "lut3d",
+ "version": 3,
+ "struct": "dt_iop_lut3d_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 12940,
+ "fields": [
+  {
+   "name": "filepath",
+   "ctype": "char",
+   "dims": [
+    512
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "colorspace",
+   "ctype": "dt_iop_lut3d_colorspace_t",
+   "dims": [],
+   "description": "application color space",
+   "kind": "enum",
+   "enum": {
+    "DT_IOP_SRGB": 0,
+    "DT_IOP_ARGB": 1,
+    "DT_IOP_REC709": 2,
+    "DT_IOP_LIN_REC709": 3,
+    "DT_IOP_LIN_REC2020": 4,
+    "DT_IOP_LIN_PROPHOTO": 5
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_IOP_SRGB"
+  },
+  {
+   "name": "interpolation",
+   "ctype": "dt_iop_lut3d_interpolation_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "DT_IOP_TETRAHEDRAL": 0,
+    "DT_IOP_TRILINEAR": 1,
+    "DT_IOP_PYRAMID": 2
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_IOP_TETRAHEDRAL"
+  },
+  {
+   "name": "nb_keypoints",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "c_clut",
+   "ctype": "char",
+   "dims": [
+    12288
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "lutname",
+   "ctype": "char",
+   "dims": [
+    128
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

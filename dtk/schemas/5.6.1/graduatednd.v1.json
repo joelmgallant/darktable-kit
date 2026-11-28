@@ -1,0 +1,70 @@
+{
+ "module": "graduatednd",
+ "version": 1,
+ "struct": "dt_iop_graduatednd_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 24,
+ "fields": [
+  {
+   "name": "density",
+   "ctype": "float",
+   "dims": [],
+   "description": "density",
+   "kind": "prim",
+   "min": -8.0,
+   "max": 8.0,
+   "default": 1.0
+  },
+  {
+   "name": "hardness",
+   "ctype": "float",
+   "dims": [],
+   "description": "hardness",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 0.0
+  },
+  {
+   "name": "rotation",
+   "ctype": "float",
+   "dims": [],
+   "description": "rotation",
+   "kind": "prim",
+   "min": -180.0,
+   "max": 180.0,
+   "default": 0.0
+  },
+  {
+   "name": "offset",
+   "ctype": "float",
+   "dims": [],
+   "description": "offset",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 50.0
+  },
+  {
+   "name": "hue",
+   "ctype": "float",
+   "dims": [],
+   "description": "hue",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "saturation",
+   "ctype": "float",
+   "dims": [],
+   "description": "saturation",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  }
+ ]
+}

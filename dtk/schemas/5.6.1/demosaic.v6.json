@@ -1,0 +1,170 @@
+{
+ "module": "demosaic",
+ "version": 6,
+ "struct": "dt_iop_demosaic_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 48,
+ "fields": [
+  {
+   "name": "green_eq",
+   "ctype": "dt_iop_demosaic_greeneq_t",
+   "dims": [],
+   "description": "match greens",
+   "kind": "enum",
+   "enum": {
+    "DT_IOP_GREEN_EQ_NO": 0,
+    "DT_IOP_GREEN_EQ_LOCAL": 1,
+    "DT_IOP_GREEN_EQ_FULL": 2,
+    "DT_IOP_GREEN_EQ_BOTH": 3
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_IOP_GREEN_EQ_NO"
+  },
+  {
+   "name": "median_thrs",
+   "ctype": "float",
+   "dims": [],
+   "description": "edge threshold",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "color_smoothing",
+   "ctype": "dt_iop_demosaic_smooth_t",
+   "dims": [],
+   "description": "color smoothing",
+   "kind": "enum",
+   "enum": {
+    "DT_DEMOSAIC_SMOOTH_OFF": 0,
+    "DT_DEMOSAIC_SMOOTH_1": 1,
+    "DT_DEMOSAIC_SMOOTH_2": 2,
+    "DT_DEMOSAIC_SMOOTH_3": 3,
+    "DT_DEMOSAIC_SMOOTH_4": 4,
+    "DT_DEMOSAIC_SMOOTH_5": 5
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_DEMOSAIC_SMOOTH_OFF"
+  },
+  {
+   "name": "demosaicing_method",
+   "ctype": "dt_iop_demosaic_method_t",
+   "dims": [],
+   "description": "method",
+   "kind": "enum",
+   "enum": {
+    "DT_IOP_DEMOSAIC_PPG": 0,
+    "DT_IOP_DEMOSAIC_AMAZE": 1,
+    "DT_IOP_DEMOSAIC_VNG4": 2,
+    "DT_IOP_DEMOSAIC_RCD": 5,
+    "DT_IOP_DEMOSAIC_LMMSE": 6,
+    "DT_IOP_DEMOSAIC_RCD_DUAL": 2053,
+    "DT_IOP_DEMOSAIC_AMAZE_DUAL": 2049,
+    "DT_IOP_DEMOSAIC_PASSTHROUGH_MONOCHROME": 3,
+    "DT_IOP_DEMOSAIC_PASSTHROUGH_COLOR": 4,
+    "DT_IOP_DEMOSAIC_VNG": 1024,
+    "DT_IOP_DEMOSAIC_MARKESTEIJN": 1025,
+    "DT_IOP_DEMOSAIC_MARKESTEIJN_3": 1026,
+    "DT_IOP_DEMOSAIC_FDC": 1028,
+    "DT_IOP_DEMOSAIC_MARKEST3_DUAL": 3074,
+    "DT_IOP_DEMOSAIC_PASSTHR_MONOX": 1027,
+    "DT_IOP_DEMOSAIC_PASSTHR_COLORX": 1029,
+    "DT_IOP_DEMOSAIC_MONO": 7
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_IOP_DEMOSAIC_RCD"
+  },
+  {
+   "name": "lmmse_refine",
+   "ctype": "dt_iop_demosaic_lmmse_t",
+   "dims": [],
+   "description": "LMMSE refine",
+   "kind": "enum",
+   "enum": {
+    "DT_LMMSE_REFINE_0": 0,
+    "DT_LMMSE_REFINE_1": 1,
+    "DT_LMMSE_REFINE_2": 2,
+    "DT_LMMSE_REFINE_3": 3,
+    "DT_LMMSE_REFINE_4": 4
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_LMMSE_REFINE_1"
+  },
+  {
+   "name": "dual_thrs",
+   "ctype": "float",
+   "dims": [],
+   "description": "dual threshold",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.2
+  },
+  {
+   "name": "cs_radius",
+   "ctype": "float",
+   "dims": [],
+   "description": "radius",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.5,
+   "default": 0.0
+  },
+  {
+   "name": "cs_thrs",
+   "ctype": "float",
+   "dims": [],
+   "description": "contrast sensitivity",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.4
+  },
+  {
+   "name": "cs_boost",
+   "ctype": "float",
+   "dims": [],
+   "description": "corner boost",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.5,
+   "default": 0.0
+  },
+  {
+   "name": "cs_iter",
+   "ctype": "int",
+   "dims": [],
+   "description": "iterations",
+   "kind": "prim",
+   "min": 1,
+   "max": 25,
+   "default": 8
+  },
+  {
+   "name": "cs_center",
+   "ctype": "float",
+   "dims": [],
+   "description": "sharp center",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "cs_enabled",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "capture sharpen",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  }
+ ]
+}

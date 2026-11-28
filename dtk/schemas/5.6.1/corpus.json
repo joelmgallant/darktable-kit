@@ -1,0 +1,560 @@
+{
+ "agx": {
+  "blobs": 6,
+  "problems": [],
+  "status": "editable",
+  "version": 7
+ },
+ "ashift": {
+  "blobs": 1,
+  "problems": [],
+  "status": "editable",
+  "version": 5
+ },
+ "atrous": {
+  "blobs": 16,
+  "problems": [],
+  "status": "editable",
+  "version": 2
+ },
+ "basecurve": {
+  "blobs": 32,
+  "problems": [],
+  "status": "editable",
+  "version": 6
+ },
+ "basicadj": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 2
+ },
+ "bilat": {
+  "blobs": 5,
+  "problems": [],
+  "status": "editable",
+  "version": 3
+ },
+ "bloom": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "blurs": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "borders": {
+  "blobs": 2,
+  "problems": [],
+  "status": "editable",
+  "version": 4
+ },
+ "cacorrect": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 2
+ },
+ "cacorrectrgb": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "censorize": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "channelmixer": {
+  "blobs": 17,
+  "problems": [
+   "preset:_builtin_B/W artifacts boost: blue.6=1.274999976158142 is above 1.0"
+  ],
+  "status": "read-only",
+  "version": 2
+ },
+ "channelmixerrgb": {
+  "blobs": 17,
+  "problems": [],
+  "status": "editable",
+  "version": 3
+ },
+ "clipping": {
+  "blobs": 1,
+  "problems": [
+   "sidecar_08.xmp#4: cx is NaN",
+   "sidecar_08.xmp#4: cy is NaN",
+   "sidecar_08.xmp#4: cw is NaN",
+   "sidecar_08.xmp#4: ch is NaN"
+  ],
+  "status": "read-only",
+  "version": 5
+ },
+ "colisa": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "colorbalance": {
+  "blobs": 6,
+  "problems": [],
+  "status": "editable",
+  "version": 3
+ },
+ "colorbalancergb": {
+  "blobs": 6,
+  "problems": [],
+  "status": "editable",
+  "version": 5
+ },
+ "colorchecker": {
+  "blobs": 8,
+  "problems": [],
+  "status": "editable",
+  "version": 2
+ },
+ "colorcontrast": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 2
+ },
+ "colorcorrection": {
+  "blobs": 3,
+  "problems": [],
+  "status": "editable",
+  "version": 1
+ },
+ "colorequal": {
+  "blobs": 4,
+  "problems": [],
+  "status": "editable",
+  "version": 4
+ },
+ "colorharmonizer": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "colorin": {
+  "blobs": 8,
+  "problems": [],
+  "status": "editable",
+  "version": 7
+ },
+ "colorize": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 2
+ },
+ "colormapping": {
+  "blobs": 0,
+  "problems": [
+   "source_mean: unknown type float2"
+  ],
+  "status": "unsupported",
+  "version": 1
+ },
+ "colorout": {
+  "blobs": 8,
+  "problems": [],
+  "status": "editable",
+  "version": 5
+ },
+ "colorreconstruction": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 3
+ },
+ "colortransfer": {
+  "blobs": 0,
+  "problems": [
+   "mean: unknown type float2"
+  ],
+  "status": "unsupported",
+  "version": 1
+ },
+ "colorzones": {
+  "blobs": 6,
+  "problems": [],
+  "status": "editable",
+  "version": 5
+ },
+ "crop": {
+  "blobs": 3,
+  "problems": [],
+  "status": "editable",
+  "version": 3
+ },
+ "defringe": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "demosaic": {
+  "blobs": 7,
+  "problems": [],
+  "status": "editable",
+  "version": 6
+ },
+ "denoiseprofile": {
+  "blobs": 3,
+  "problems": [],
+  "status": "editable",
+  "version": 12
+ },
+ "diffuse": {
+  "blobs": 21,
+  "problems": [],
+  "status": "editable",
+  "version": 2
+ },
+ "dither": {
+  "blobs": 0,
+  "problems": [
+   "unsupported declaration 'struct\\n  {\\n    float radius'"
+  ],
+  "status": "unsupported",
+  "version": 2
+ },
+ "enlargecanvas": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "equalizer": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "exposure": {
+  "blobs": 15,
+  "problems": [],
+  "status": "editable",
+  "version": 7
+ },
+ "filmic": {
+  "blobs": 9,
+  "problems": [],
+  "status": "editable",
+  "version": 3
+ },
+ "filmicrgb": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 6
+ },
+ "finalscale": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "flip": {
+  "blobs": 17,
+  "problems": [],
+  "status": "editable",
+  "version": 2
+ },
+ "gamma": {
+  "blobs": 8,
+  "problems": [],
+  "status": "editable",
+  "version": 1
+ },
+ "globaltonemap": {
+  "blobs": 0,
+  "problems": [
+   "unsupported declaration 'struct\\n  {\\n    float bias'"
+  ],
+  "status": "unsupported",
+  "version": 3
+ },
+ "graduatednd": {
+  "blobs": 13,
+  "problems": [],
+  "status": "editable",
+  "version": 1
+ },
+ "grain": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 2
+ },
+ "hazeremoval": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 3
+ },
+ "highlights": {
+  "blobs": 7,
+  "problems": [],
+  "status": "editable",
+  "version": 4
+ },
+ "highpass": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "hotpixels": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "invert": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 2
+ },
+ "levels": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 2
+ },
+ "liquify": {
+  "blobs": 0,
+  "problems": [
+   "cannot read declarator 'complex point'"
+  ],
+  "status": "unsupported",
+  "version": 1
+ },
+ "lowlight": {
+  "blobs": 9,
+  "problems": [],
+  "status": "editable",
+  "version": 1
+ },
+ "lowpass": {
+  "blobs": 1,
+  "problems": [],
+  "status": "editable",
+  "version": 4
+ },
+ "lut3d": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 3
+ },
+ "mask_manager": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 2
+ },
+ "monochrome": {
+  "blobs": 1,
+  "problems": [],
+  "status": "editable",
+  "version": 2
+ },
+ "negadoctor": {
+  "blobs": 2,
+  "problems": [
+   "preset:_builtin_black and white film: Dmin.3=0.0 is below 1e-05",
+   "preset:_builtin_black and white film: wb_high.3=0.0 is below 0.25",
+   "preset:_builtin_black and white film: wb_low.3=0.0 is below 0.25",
+   "preset:_builtin_color film: Dmin.3=0.0 is below 1e-05",
+   "preset:_builtin_color film: wb_high.3=0.0 is below 0.25",
+   "preset:_builtin_color film: wb_low.3=0.0 is below 0.25"
+  ],
+  "status": "read-only",
+  "version": 2
+ },
+ "nlmeans": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 2
+ },
+ "overlay": {
+  "blobs": 0,
+  "problems": [
+   "dummy0: unknown type size_t"
+  ],
+  "status": "unsupported",
+  "version": 1
+ },
+ "primaries": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "profile_gamma": {
+  "blobs": 5,
+  "problems": [],
+  "status": "editable",
+  "version": 2
+ },
+ "rasterfile": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "rawdenoise": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 2
+ },
+ "rawprepare": {
+  "blobs": 8,
+  "problems": [],
+  "status": "editable",
+  "version": 2
+ },
+ "relight": {
+  "blobs": 2,
+  "problems": [],
+  "status": "editable",
+  "version": 1
+ },
+ "retouch": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 3
+ },
+ "rgbcurve": {
+  "blobs": 10,
+  "problems": [],
+  "status": "editable",
+  "version": 1
+ },
+ "rgblevels": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "rotatepixels": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "scalepixels": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "shadhi": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 5
+ },
+ "sharpen": {
+  "blobs": 1,
+  "problems": [],
+  "status": "editable",
+  "version": 1
+ },
+ "sigmoid": {
+  "blobs": 16,
+  "problems": [],
+  "status": "editable",
+  "version": 3
+ },
+ "soften": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ },
+ "splittoning": {
+  "blobs": 4,
+  "problems": [
+   "preset:_builtin_authentic platinotype: balance=100.0 is above 1.0"
+  ],
+  "status": "read-only",
+  "version": 1
+ },
+ "spots": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 2
+ },
+ "temperature": {
+  "blobs": 8,
+  "problems": [],
+  "status": "editable",
+  "version": 4
+ },
+ "tonecurve": {
+  "blobs": 17,
+  "problems": [],
+  "status": "editable",
+  "version": 5
+ },
+ "toneequal": {
+  "blobs": 17,
+  "problems": [
+   "preset:_builtin_simple tone curve: blending=0.0 is below 0.01"
+  ],
+  "status": "read-only",
+  "version": 2
+ },
+ "useless": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 3
+ },
+ "velvia": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 2
+ },
+ "vibrance": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 2
+ },
+ "vignette": {
+  "blobs": 1,
+  "problems": [],
+  "status": "editable",
+  "version": 4
+ },
+ "watermark": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 7
+ },
+ "zonesystem": {
+  "blobs": 0,
+  "problems": [],
+  "status": "no-corpus",
+  "version": 1
+ }
+}

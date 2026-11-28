@@ -1,0 +1,20 @@
+{
+ "module": "mask_manager",
+ "version": 2,
+ "struct": "dt_iop_mask_manager_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 4,
+ "fields": [
+  {
+   "name": "dummy",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

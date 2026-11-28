@@ -1,0 +1,193 @@
+{
+ "module": "ashift",
+ "version": 5,
+ "struct": "dt_iop_ashift_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 892,
+ "fields": [
+  {
+   "name": "rotation",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -180,
+   "max": 180,
+   "default": 0.0
+  },
+  {
+   "name": "lensshift_v",
+   "ctype": "float",
+   "dims": [],
+   "description": "lens shift (vertical)",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "lensshift_h",
+   "ctype": "float",
+   "dims": [],
+   "description": "lens shift (horizontal)",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 2.0,
+   "default": 0.0
+  },
+  {
+   "name": "shear",
+   "ctype": "float",
+   "dims": [],
+   "description": "shear",
+   "kind": "prim",
+   "min": -0.5,
+   "max": 0.5,
+   "default": 0.0
+  },
+  {
+   "name": "f_length",
+   "ctype": "float",
+   "dims": [],
+   "description": "focal length",
+   "kind": "prim",
+   "min": 1.0,
+   "max": 2000.0,
+   "default": 28.0
+  },
+  {
+   "name": "crop_factor",
+   "ctype": "float",
+   "dims": [],
+   "description": "crop factor",
+   "kind": "prim",
+   "min": 0.5,
+   "max": 10.0,
+   "default": 1.0
+  },
+  {
+   "name": "orthocorr",
+   "ctype": "float",
+   "dims": [],
+   "description": "lens dependence",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0
+  },
+  {
+   "name": "aspect",
+   "ctype": "float",
+   "dims": [],
+   "description": "aspect adjust",
+   "kind": "prim",
+   "min": 0.5,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "mode",
+   "ctype": "dt_iop_ashift_mode_t",
+   "dims": [],
+   "description": "lens model",
+   "kind": "enum",
+   "enum": {
+    "ASHIFT_MODE_GENERIC": 0,
+    "ASHIFT_MODE_SPECIFIC": 1
+   },
+   "min": null,
+   "max": null,
+   "default": "ASHIFT_MODE_GENERIC"
+  },
+  {
+   "name": "cropmode",
+   "ctype": "dt_iop_ashift_crop_t",
+   "dims": [],
+   "description": "automatic cropping",
+   "kind": "enum",
+   "enum": {
+    "ASHIFT_CROP_OFF": 0,
+    "ASHIFT_CROP_LARGEST": 1,
+    "ASHIFT_CROP_ASPECT": 2
+   },
+   "min": null,
+   "max": null,
+   "default": "ASHIFT_CROP_LARGEST"
+  },
+  {
+   "name": "cl",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "cr",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 1.0
+  },
+  {
+   "name": "ct",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "cb",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 1.0
+  },
+  {
+   "name": "last_drawn_lines",
+   "ctype": "float",
+   "dims": [
+    200
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "last_drawn_lines_count",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "last_quad_lines",
+   "ctype": "float",
+   "dims": [
+    8
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

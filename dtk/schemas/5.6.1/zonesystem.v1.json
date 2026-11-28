@@ -1,0 +1,32 @@
+{
+ "module": "zonesystem",
+ "version": 1,
+ "struct": "dt_iop_zonesystem_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 104,
+ "fields": [
+  {
+   "name": "size",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 10
+  },
+  {
+   "name": "zone",
+   "ctype": "float",
+   "dims": [
+    25
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": -1.0
+  }
+ ]
+}

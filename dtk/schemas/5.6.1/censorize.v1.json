@@ -1,0 +1,50 @@
+{
+ "module": "censorize",
+ "version": 1,
+ "struct": "dt_iop_censorize_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 16,
+ "fields": [
+  {
+   "name": "radius_1",
+   "ctype": "float",
+   "dims": [],
+   "description": "input blur radius",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 500.0,
+   "default": 0.0
+  },
+  {
+   "name": "pixelate",
+   "ctype": "float",
+   "dims": [],
+   "description": "pixelization radius",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 500.0,
+   "default": 0.0
+  },
+  {
+   "name": "radius_2",
+   "ctype": "float",
+   "dims": [],
+   "description": "output blur radius",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 500.0,
+   "default": 0.0
+  },
+  {
+   "name": "noise",
+   "ctype": "float",
+   "dims": [],
+   "description": "noise level",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  }
+ ]
+}

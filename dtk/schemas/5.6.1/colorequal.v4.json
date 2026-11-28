@@ -1,0 +1,330 @@
+{
+ "module": "colorequal",
+ "version": 4,
+ "struct": "dt_iop_colorequal_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 128,
+ "fields": [
+  {
+   "name": "threshold",
+   "ctype": "float",
+   "dims": [],
+   "description": "saturation threshold",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 0.3,
+   "default": 0.1
+  },
+  {
+   "name": "smoothing_hue",
+   "ctype": "float",
+   "dims": [],
+   "description": "hue curve",
+   "kind": "prim",
+   "min": 0.05,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "contrast",
+   "ctype": "float",
+   "dims": [],
+   "description": "contrast",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "white_level",
+   "ctype": "float",
+   "dims": [],
+   "description": "white level",
+   "kind": "prim",
+   "min": -2.0,
+   "max": 16.0,
+   "default": 1.0
+  },
+  {
+   "name": "chroma_size",
+   "ctype": "float",
+   "dims": [],
+   "description": "hue analysis radius",
+   "kind": "prim",
+   "min": 1.0,
+   "max": 10.0,
+   "default": 1.5
+  },
+  {
+   "name": "param_size",
+   "ctype": "float",
+   "dims": [],
+   "description": "effect radius",
+   "kind": "prim",
+   "min": 1.0,
+   "max": 128.0,
+   "default": 1.0
+  },
+  {
+   "name": "use_filter",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "use guided filter",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  },
+  {
+   "name": "sat_red",
+   "ctype": "float",
+   "dims": [],
+   "description": "red",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "sat_orange",
+   "ctype": "float",
+   "dims": [],
+   "description": "orange",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "sat_yellow",
+   "ctype": "float",
+   "dims": [],
+   "description": "yellow",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "sat_green",
+   "ctype": "float",
+   "dims": [],
+   "description": "green",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "sat_cyan",
+   "ctype": "float",
+   "dims": [],
+   "description": "cyan",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "sat_blue",
+   "ctype": "float",
+   "dims": [],
+   "description": "blue",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "sat_lavender",
+   "ctype": "float",
+   "dims": [],
+   "description": "lavender",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "sat_magenta",
+   "ctype": "float",
+   "dims": [],
+   "description": "magenta",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "hue_red",
+   "ctype": "float",
+   "dims": [],
+   "description": "red",
+   "kind": "prim",
+   "min": -180.0,
+   "max": 180.0,
+   "default": 0.0
+  },
+  {
+   "name": "hue_orange",
+   "ctype": "float",
+   "dims": [],
+   "description": "orange",
+   "kind": "prim",
+   "min": -180.0,
+   "max": 180.0,
+   "default": 0.0
+  },
+  {
+   "name": "hue_yellow",
+   "ctype": "float",
+   "dims": [],
+   "description": "yellow",
+   "kind": "prim",
+   "min": -180.0,
+   "max": 180.0,
+   "default": 0.0
+  },
+  {
+   "name": "hue_green",
+   "ctype": "float",
+   "dims": [],
+   "description": "green",
+   "kind": "prim",
+   "min": -180.0,
+   "max": 180.0,
+   "default": 0.0
+  },
+  {
+   "name": "hue_cyan",
+   "ctype": "float",
+   "dims": [],
+   "description": "cyan",
+   "kind": "prim",
+   "min": -180.0,
+   "max": 180.0,
+   "default": 0.0
+  },
+  {
+   "name": "hue_blue",
+   "ctype": "float",
+   "dims": [],
+   "description": "blue",
+   "kind": "prim",
+   "min": -180.0,
+   "max": 180.0,
+   "default": 0.0
+  },
+  {
+   "name": "hue_lavender",
+   "ctype": "float",
+   "dims": [],
+   "description": "lavender",
+   "kind": "prim",
+   "min": -180.0,
+   "max": 180.0,
+   "default": 0.0
+  },
+  {
+   "name": "hue_magenta",
+   "ctype": "float",
+   "dims": [],
+   "description": "magenta",
+   "kind": "prim",
+   "min": -180.0,
+   "max": 180.0,
+   "default": 0.0
+  },
+  {
+   "name": "bright_red",
+   "ctype": "float",
+   "dims": [],
+   "description": "red",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "bright_orange",
+   "ctype": "float",
+   "dims": [],
+   "description": "orange",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "bright_yellow",
+   "ctype": "float",
+   "dims": [],
+   "description": "yellow",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "bright_green",
+   "ctype": "float",
+   "dims": [],
+   "description": "green",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "bright_cyan",
+   "ctype": "float",
+   "dims": [],
+   "description": "cyan",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "bright_blue",
+   "ctype": "float",
+   "dims": [],
+   "description": "blue",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "bright_lavender",
+   "ctype": "float",
+   "dims": [],
+   "description": "lavender",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "bright_magenta",
+   "ctype": "float",
+   "dims": [],
+   "description": "magenta",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 2.0,
+   "default": 1.0
+  },
+  {
+   "name": "hue_shift",
+   "ctype": "float",
+   "dims": [],
+   "description": "node placement",
+   "kind": "prim",
+   "min": -23.0,
+   "max": 23.0,
+   "default": 0.0
+  }
+ ]
+}

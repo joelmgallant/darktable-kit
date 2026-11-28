@@ -1,0 +1,139 @@
+{
+ "module": "shadhi",
+ "version": 5,
+ "struct": "dt_iop_shadhi_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 48,
+ "fields": [
+  {
+   "name": "order",
+   "ctype": "dt_gaussian_order_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "DT_IOP_GAUSSIAN_ZERO": 0,
+    "DT_IOP_GAUSSIAN_ONE": 1,
+    "DT_IOP_GAUSSIAN_TWO": 2
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_IOP_GAUSSIAN_ZERO"
+  },
+  {
+   "name": "radius",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.1,
+   "max": 500.0,
+   "default": 100.0
+  },
+  {
+   "name": "shadows",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0
+  },
+  {
+   "name": "whitepoint",
+   "ctype": "float",
+   "dims": [],
+   "description": "white point adjustment",
+   "kind": "prim",
+   "min": -10.0,
+   "max": 10.0,
+   "default": 0.0
+  },
+  {
+   "name": "highlights",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -100.0,
+   "max": 100.0,
+   "default": -50.0
+  },
+  {
+   "name": "reserved2",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "compress",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0
+  },
+  {
+   "name": "shadows_ccorrect",
+   "ctype": "float",
+   "dims": [],
+   "description": "shadows color adjustment",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0
+  },
+  {
+   "name": "highlights_ccorrect",
+   "ctype": "float",
+   "dims": [],
+   "description": "highlights color adjustment",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0
+  },
+  {
+   "name": "flags",
+   "ctype": "unsigned int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": "UNBOUND_DEFAULT"
+  },
+  {
+   "name": "low_approximation",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1e-06
+  },
+  {
+   "name": "shadhi_algo",
+   "ctype": "dt_iop_shadhi_algo_t",
+   "dims": [],
+   "description": "soften with",
+   "kind": "enum",
+   "enum": {
+    "SHADHI_ALGO_GAUSSIAN": 0,
+    "SHADHI_ALGO_BILATERAL": 1
+   },
+   "min": null,
+   "max": null,
+   "default": "SHADHI_ALGO_BILATERAL"
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "module": "temperature",
+ "version": 4,
+ "struct": "dt_iop_temperature_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 20,
+ "fields": [
+  {
+   "name": "red",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 8.0,
+   "default": null
+  },
+  {
+   "name": "green",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 8.0,
+   "default": null
+  },
+  {
+   "name": "blue",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 8.0,
+   "default": null
+  },
+  {
+   "name": "various",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 8.0,
+   "default": null
+  },
+  {
+   "name": "preset",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

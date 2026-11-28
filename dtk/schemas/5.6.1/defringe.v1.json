@@ -1,0 +1,45 @@
+{
+ "module": "defringe",
+ "version": 1,
+ "struct": "dt_iop_defringe_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 12,
+ "fields": [
+  {
+   "name": "radius",
+   "ctype": "float",
+   "dims": [],
+   "description": "edge detection radius",
+   "kind": "prim",
+   "min": 0.5,
+   "max": 20.0,
+   "default": 4.0
+  },
+  {
+   "name": "thresh",
+   "ctype": "float",
+   "dims": [],
+   "description": "threshold",
+   "kind": "prim",
+   "min": 0.5,
+   "max": 128.0,
+   "default": 20.0
+  },
+  {
+   "name": "op_mode",
+   "ctype": "dt_iop_defringe_mode_t",
+   "dims": [],
+   "description": "operation mode",
+   "kind": "enum",
+   "enum": {
+    "MODE_GLOBAL_AVERAGE": 0,
+    "MODE_LOCAL_AVERAGE": 1,
+    "MODE_STATIC": 2
+   },
+   "min": null,
+   "max": null,
+   "default": "MODE_GLOBAL_AVERAGE"
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "module": "basecurve",
+ "version": 6,
+ "struct": "dt_iop_basecurve_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 520,
+ "fields": [
+  {
+   "name": "basecurve",
+   "ctype": "dt_iop_basecurve_node_t",
+   "dims": [
+    3,
+    20
+   ],
+   "description": null,
+   "kind": "struct",
+   "fields": [
+    {
+     "name": "x",
+     "ctype": "float",
+     "dims": [],
+     "description": null,
+     "kind": "prim",
+     "min": 0.0,
+     "max": 1.0,
+     "default": null
+    },
+    {
+     "name": "y",
+     "ctype": "float",
+     "dims": [],
+     "description": null,
+     "kind": "prim",
+     "min": 0.0,
+     "max": 1.0,
+     "default": null
+    }
+   ],
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "basecurve_nodes",
+   "ctype": "int",
+   "dims": [
+    3
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": 0,
+   "max": 20,
+   "default": 0
+  },
+  {
+   "name": "basecurve_type",
+   "ctype": "int",
+   "dims": [
+    3
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": 0,
+   "max": 2,
+   "default": 2
+  },
+  {
+   "name": "exposure_fusion",
+   "ctype": "int",
+   "dims": [],
+   "description": "fusion",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "exposure_stops",
+   "ctype": "float",
+   "dims": [],
+   "description": "exposure shift",
+   "kind": "prim",
+   "min": 0.01,
+   "max": 4.0,
+   "default": 1.0
+  },
+  {
+   "name": "exposure_bias",
+   "ctype": "float",
+   "dims": [],
+   "description": "exposure bias",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 1.0
+  },
+  {
+   "name": "preserve_colors",
+   "ctype": "dt_iop_rgb_norms_t",
+   "dims": [],
+   "description": "preserve colors",
+   "kind": "enum",
+   "enum": {
+    "DT_RGB_NORM_NONE": 0,
+    "DT_RGB_NORM_LUMINANCE": 1,
+    "DT_RGB_NORM_MAX": 2,
+    "DT_RGB_NORM_AVERAGE": 3,
+    "DT_RGB_NORM_SUM": 4,
+    "DT_RGB_NORM_NORM": 5,
+    "DT_RGB_NORM_POWER": 6
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_RGB_NORM_LUMINANCE"
+  }
+ ]
+}

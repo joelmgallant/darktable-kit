@@ -1,0 +1,112 @@
+{
+ "module": "rgbcurve",
+ "version": 1,
+ "struct": "dt_iop_rgbcurve_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 516,
+ "fields": [
+  {
+   "name": "curve_nodes",
+   "ctype": "dt_iop_rgbcurve_node_t",
+   "dims": [
+    3,
+    20
+   ],
+   "description": null,
+   "kind": "struct",
+   "fields": [
+    {
+     "name": "x",
+     "ctype": "float",
+     "dims": [],
+     "description": null,
+     "kind": "prim",
+     "min": 0.0,
+     "max": 1.0,
+     "default": 0.0
+    },
+    {
+     "name": "y",
+     "ctype": "float",
+     "dims": [],
+     "description": null,
+     "kind": "prim",
+     "min": 0.0,
+     "max": 1.0,
+     "default": 0.0
+    }
+   ],
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "curve_num_nodes",
+   "ctype": "int",
+   "dims": [
+    3
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 2
+  },
+  {
+   "name": "curve_type",
+   "ctype": "int",
+   "dims": [
+    3
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 2
+  },
+  {
+   "name": "curve_autoscale",
+   "ctype": "dt_iop_rgbcurve_autoscale_t",
+   "dims": [],
+   "description": "mode",
+   "kind": "enum",
+   "enum": {
+    "DT_S_SCALE_AUTOMATIC_RGB": 0,
+    "DT_S_SCALE_MANUAL_RGB": 1
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_S_SCALE_AUTOMATIC_RGB"
+  },
+  {
+   "name": "compensate_middle_grey",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": "compensate middle gray",
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "preserve_colors",
+   "ctype": "dt_iop_rgb_norms_t",
+   "dims": [],
+   "description": "preserve colors",
+   "kind": "enum",
+   "enum": {
+    "DT_RGB_NORM_NONE": 0,
+    "DT_RGB_NORM_LUMINANCE": 1,
+    "DT_RGB_NORM_MAX": 2,
+    "DT_RGB_NORM_AVERAGE": 3,
+    "DT_RGB_NORM_SUM": 4,
+    "DT_RGB_NORM_NORM": 5,
+    "DT_RGB_NORM_POWER": 6
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_RGB_NORM_LUMINANCE"
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "module": "lowlight",
+ "version": 1,
+ "struct": "dt_iop_lowlight_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 52,
+ "fields": [
+  {
+   "name": "blueness",
+   "ctype": "float",
+   "dims": [],
+   "description": "blue shift",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 0.0
+  },
+  {
+   "name": "transition_x",
+   "ctype": "float",
+   "dims": [
+    6
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "transition_y",
+   "ctype": "float",
+   "dims": [
+    6
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0.5
+  }
+ ]
+}

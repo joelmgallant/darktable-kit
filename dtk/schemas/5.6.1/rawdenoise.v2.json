@@ -1,0 +1,46 @@
+{
+ "module": "rawdenoise",
+ "version": 2,
+ "struct": "dt_iop_rawdenoise_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 164,
+ "fields": [
+  {
+   "name": "threshold",
+   "ctype": "float",
+   "dims": [],
+   "description": "noise threshold",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.01
+  },
+  {
+   "name": "x",
+   "ctype": "float",
+   "dims": [
+    4,
+    5
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "y",
+   "ctype": "float",
+   "dims": [
+    4,
+    5
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0.5
+  }
+ ]
+}

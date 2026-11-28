@@ -1,0 +1,344 @@
+{
+ "module": "colorbalancergb",
+ "version": 5,
+ "struct": "dt_iop_colorbalancergb_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 132,
+ "fields": [
+  {
+   "name": "shadows_Y",
+   "ctype": "float",
+   "dims": [],
+   "description": "luminance",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "shadows_C",
+   "ctype": "float",
+   "dims": [],
+   "description": "chroma",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "shadows_H",
+   "ctype": "float",
+   "dims": [],
+   "description": "hue",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 360.0,
+   "default": 0.0
+  },
+  {
+   "name": "midtones_Y",
+   "ctype": "float",
+   "dims": [],
+   "description": "luminance",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "midtones_C",
+   "ctype": "float",
+   "dims": [],
+   "description": "chroma",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "midtones_H",
+   "ctype": "float",
+   "dims": [],
+   "description": "hue",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 360.0,
+   "default": 0.0
+  },
+  {
+   "name": "highlights_Y",
+   "ctype": "float",
+   "dims": [],
+   "description": "luminance",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "highlights_C",
+   "ctype": "float",
+   "dims": [],
+   "description": "chroma",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "highlights_H",
+   "ctype": "float",
+   "dims": [],
+   "description": "hue",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 360.0,
+   "default": 0.0
+  },
+  {
+   "name": "global_Y",
+   "ctype": "float",
+   "dims": [],
+   "description": "luminance",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "global_C",
+   "ctype": "float",
+   "dims": [],
+   "description": "chroma",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "global_H",
+   "ctype": "float",
+   "dims": [],
+   "description": "hue",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 360.0,
+   "default": 0.0
+  },
+  {
+   "name": "shadows_weight",
+   "ctype": "float",
+   "dims": [],
+   "description": "shadows fall-off",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 3.0,
+   "default": 1.0
+  },
+  {
+   "name": "white_fulcrum",
+   "ctype": "float",
+   "dims": [],
+   "description": "white fulcrum",
+   "kind": "prim",
+   "min": -16.0,
+   "max": 16.0,
+   "default": 0.0
+  },
+  {
+   "name": "highlights_weight",
+   "ctype": "float",
+   "dims": [],
+   "description": "highlights fall-off",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 3.0,
+   "default": 1.0
+  },
+  {
+   "name": "chroma_shadows",
+   "ctype": "float",
+   "dims": [],
+   "description": "shadows",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "chroma_highlights",
+   "ctype": "float",
+   "dims": [],
+   "description": "highlights",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "chroma_global",
+   "ctype": "float",
+   "dims": [],
+   "description": "global chroma",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "chroma_midtones",
+   "ctype": "float",
+   "dims": [],
+   "description": "mid-tones",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "saturation_global",
+   "ctype": "float",
+   "dims": [],
+   "description": "global saturation",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "saturation_highlights",
+   "ctype": "float",
+   "dims": [],
+   "description": "highlights",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "saturation_midtones",
+   "ctype": "float",
+   "dims": [],
+   "description": "mid-tones",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "saturation_shadows",
+   "ctype": "float",
+   "dims": [],
+   "description": "shadows",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "hue_angle",
+   "ctype": "float",
+   "dims": [],
+   "description": "hue shift",
+   "kind": "prim",
+   "min": -180.0,
+   "max": 180.0,
+   "default": 0.0
+  },
+  {
+   "name": "brilliance_global",
+   "ctype": "float",
+   "dims": [],
+   "description": "global brilliance",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "brilliance_highlights",
+   "ctype": "float",
+   "dims": [],
+   "description": "highlights",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "brilliance_midtones",
+   "ctype": "float",
+   "dims": [],
+   "description": "mid-tones",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "brilliance_shadows",
+   "ctype": "float",
+   "dims": [],
+   "description": "shadows",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "mask_grey_fulcrum",
+   "ctype": "float",
+   "dims": [],
+   "description": "mask middle-gray fulcrum",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.1845
+  },
+  {
+   "name": "vibrance",
+   "ctype": "float",
+   "dims": [],
+   "description": "global vibrance",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0
+  },
+  {
+   "name": "grey_fulcrum",
+   "ctype": "float",
+   "dims": [],
+   "description": "contrast gray fulcrum",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.1845
+  },
+  {
+   "name": "contrast",
+   "ctype": "float",
+   "dims": [],
+   "description": "contrast",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "saturation_formula",
+   "ctype": "dt_iop_colorbalancrgb_saturation_t",
+   "dims": [],
+   "description": "saturation formula",
+   "kind": "enum",
+   "enum": {
+    "DT_COLORBALANCE_SATURATION_JZAZBZ": 0,
+    "DT_COLORBALANCE_SATURATION_DTUCS": 1
+   },
+   "min": null,
+   "max": null,
+   "default": 1
+  }
+ ]
+}

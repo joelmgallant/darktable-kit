@@ -1,0 +1,165 @@
+{
+ "module": "watermark",
+ "version": 7,
+ "struct": "dt_iop_watermark_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 880,
+ "fields": [
+  {
+   "name": "opacity",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0
+  },
+  {
+   "name": "scale",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 1.0,
+   "max": 500.0,
+   "default": 100.0
+  },
+  {
+   "name": "xoffset",
+   "ctype": "float",
+   "dims": [],
+   "description": "x offset",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "yoffset",
+   "ctype": "float",
+   "dims": [],
+   "description": "y offset",
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.0
+  },
+  {
+   "name": "alignment",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 4
+  },
+  {
+   "name": "rotate",
+   "ctype": "float",
+   "dims": [],
+   "description": "rotation",
+   "kind": "prim",
+   "min": -180.0,
+   "max": 180.0,
+   "default": 0.0
+  },
+  {
+   "name": "scale_base",
+   "ctype": "dt_iop_watermark_base_scale_t",
+   "dims": [],
+   "description": "scale on",
+   "kind": "enum",
+   "enum": {
+    "DT_SCALE_MAINMENU_IMAGE": 0,
+    "DT_SCALE_MAINMENU_LARGER_BORDER": 1,
+    "DT_SCALE_MAINMENU_SMALLER_BORDER": 2,
+    "DT_SCALE_MAINMENU_MARKERHEIGHT": 3,
+    "DT_SCALE_MAINMENU_ADVANCED": 4
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_SCALE_MAINMENU_IMAGE"
+  },
+  {
+   "name": "scale_img",
+   "ctype": "dt_iop_watermark_img_scale_t",
+   "dims": [],
+   "description": "scale marker to",
+   "kind": "enum",
+   "enum": {
+    "DT_SCALE_IMG_WIDTH": 1,
+    "DT_SCALE_IMG_HEIGHT": 2,
+    "DT_SCALE_IMG_LARGER": 3,
+    "DT_SCALE_IMG_SMALLER": 4
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_SCALE_IMG_LARGER"
+  },
+  {
+   "name": "scale_svg",
+   "ctype": "dt_iop_watermark_svg_scale_t",
+   "dims": [],
+   "description": "scale marker reference",
+   "kind": "enum",
+   "enum": {
+    "DT_SCALE_SVG_WIDTH": 0,
+    "DT_SCALE_SVG_HEIGHT": 1
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_SCALE_SVG_WIDTH"
+  },
+  {
+   "name": "filename",
+   "ctype": "char",
+   "dims": [
+    256
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "text",
+   "ctype": "char",
+   "dims": [
+    512
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "color",
+   "ctype": "float",
+   "dims": [
+    3
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0.0
+  },
+  {
+   "name": "font",
+   "ctype": "char",
+   "dims": [
+    64
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

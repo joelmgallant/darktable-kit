@@ -1,0 +1,124 @@
+{
+ "module": "tonecurve",
+ "version": 5,
+ "struct": "dt_iop_tonecurve_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 520,
+ "fields": [
+  {
+   "name": "tonecurve",
+   "ctype": "dt_iop_tonecurve_node_t",
+   "dims": [
+    3,
+    20
+   ],
+   "description": null,
+   "kind": "struct",
+   "fields": [
+    {
+     "name": "x",
+     "ctype": "float",
+     "dims": [],
+     "description": null,
+     "kind": "prim",
+     "min": null,
+     "max": null,
+     "default": null
+    },
+    {
+     "name": "y",
+     "ctype": "float",
+     "dims": [],
+     "description": null,
+     "kind": "prim",
+     "min": null,
+     "max": null,
+     "default": null
+    }
+   ],
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "tonecurve_nodes",
+   "ctype": "int",
+   "dims": [
+    3
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "tonecurve_type",
+   "ctype": "int",
+   "dims": [
+    3
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 2
+  },
+  {
+   "name": "tonecurve_autoscale_ab",
+   "ctype": "dt_iop_tonecurve_autoscale_t",
+   "dims": [],
+   "description": "color space",
+   "kind": "enum",
+   "enum": {
+    "DT_S_SCALE_AUTOMATIC": 1,
+    "DT_S_SCALE_MANUAL": 0,
+    "DT_S_SCALE_AUTOMATIC_XYZ": 2,
+    "DT_S_SCALE_AUTOMATIC_RGB": 3
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_S_SCALE_AUTOMATIC_RGB"
+  },
+  {
+   "name": "tonecurve_preset",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "tonecurve_unbound_ab",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  },
+  {
+   "name": "preserve_colors",
+   "ctype": "dt_iop_rgb_norms_t",
+   "dims": [],
+   "description": "preserve colors",
+   "kind": "enum",
+   "enum": {
+    "DT_RGB_NORM_NONE": 0,
+    "DT_RGB_NORM_LUMINANCE": 1,
+    "DT_RGB_NORM_MAX": 2,
+    "DT_RGB_NORM_AVERAGE": 3,
+    "DT_RGB_NORM_SUM": 4,
+    "DT_RGB_NORM_NORM": 5,
+    "DT_RGB_NORM_POWER": 6
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_RGB_NORM_AVERAGE"
+  }
+ ]
+}

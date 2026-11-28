@@ -1,0 +1,119 @@
+{
+ "module": "colorzones",
+ "version": 5,
+ "struct": "dt_iop_colorzones_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 520,
+ "fields": [
+  {
+   "name": "channel",
+   "ctype": "dt_iop_colorzones_channel_t",
+   "dims": [],
+   "description": "select by",
+   "kind": "enum",
+   "enum": {
+    "DT_IOP_COLORZONES_L": 0,
+    "DT_IOP_COLORZONES_C": 1,
+    "DT_IOP_COLORZONES_h": 2,
+    "DT_IOP_COLORZONES_MAX_CHANNELS": 3
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_IOP_COLORZONES_h"
+  },
+  {
+   "name": "curve",
+   "ctype": "dt_iop_colorzones_node_t",
+   "dims": [
+    3,
+    20
+   ],
+   "description": null,
+   "kind": "struct",
+   "fields": [
+    {
+     "name": "x",
+     "ctype": "float",
+     "dims": [],
+     "description": null,
+     "kind": "prim",
+     "min": null,
+     "max": null,
+     "default": null
+    },
+    {
+     "name": "y",
+     "ctype": "float",
+     "dims": [],
+     "description": null,
+     "kind": "prim",
+     "min": null,
+     "max": null,
+     "default": null
+    }
+   ],
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "curve_num_nodes",
+   "ctype": "int",
+   "dims": [
+    3
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "curve_type",
+   "ctype": "int",
+   "dims": [
+    3
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "strength",
+   "ctype": "float",
+   "dims": [],
+   "description": "mix",
+   "kind": "prim",
+   "min": -200.0,
+   "max": 200.0,
+   "default": 0.0
+  },
+  {
+   "name": "mode",
+   "ctype": "dt_iop_colorzones_modes_t",
+   "dims": [],
+   "description": "process mode",
+   "kind": "enum",
+   "enum": {
+    "DT_IOP_COLORZONES_MODE_SMOOTH": 0,
+    "DT_IOP_COLORZONES_MODE_STRONG": 1
+   },
+   "min": 0,
+   "max": 1,
+   "default": "DT_IOP_COLORZONES_MODE_SMOOTH"
+  },
+  {
+   "name": "splines_version",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

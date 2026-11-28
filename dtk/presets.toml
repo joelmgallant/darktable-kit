@@ -1,0 +1,10 @@
+[messenger]
+description = "Facebook Messenger: 2048 px long edge, JPEG quality 90, sRGB"
+width = 2048
+height = 2048
+quality = 90
+icc_type = "SRGB"
+icc_intent = "PERCEPTUAL"
+hq = true
+upscale = false
+out_dir = "{folder}/messenger"

@@ -1,0 +1,70 @@
+{
+ "module": "crop",
+ "version": 3,
+ "struct": "dt_iop_crop_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 24,
+ "fields": [
+  {
+   "name": "cx",
+   "ctype": "float",
+   "dims": [],
+   "description": "left",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": null
+  },
+  {
+   "name": "cy",
+   "ctype": "float",
+   "dims": [],
+   "description": "top",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": null
+  },
+  {
+   "name": "cw",
+   "ctype": "float",
+   "dims": [],
+   "description": "right",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": null
+  },
+  {
+   "name": "ch",
+   "ctype": "float",
+   "dims": [],
+   "description": "bottom",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": null
+  },
+  {
+   "name": "ratio_n",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": -1
+  },
+  {
+   "name": "ratio_d",
+   "ctype": "int",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": -1
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "module": "grain",
+ "version": 2,
+ "struct": "dt_iop_grain_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 16,
+ "fields": [
+  {
+   "name": "channel",
+   "ctype": "_dt_iop_grain_channel_t",
+   "dims": [],
+   "description": null,
+   "kind": "enum",
+   "enum": {
+    "DT_GRAIN_CHANNEL_HUE": 0,
+    "DT_GRAIN_CHANNEL_SATURATION": 1,
+    "DT_GRAIN_CHANNEL_LIGHTNESS": 2,
+    "DT_GRAIN_CHANNEL_RGB": 3
+   },
+   "min": null,
+   "max": null,
+   "default": "DT_GRAIN_CHANNEL_LIGHTNESS"
+  },
+  {
+   "name": "scale",
+   "ctype": "float",
+   "dims": [],
+   "description": "coarseness",
+   "kind": "prim",
+   "min": 0.09380863039399626,
+   "max": 30.0187617260788,
+   "default": 7.5046904315197
+  },
+  {
+   "name": "strength",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 25.0
+  },
+  {
+   "name": "midtones_bias",
+   "ctype": "float",
+   "dims": [],
+   "description": "mid-tones bias",
+   "kind": "prim",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0
+  }
+ ]
+}

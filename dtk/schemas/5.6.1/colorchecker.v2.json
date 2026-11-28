@@ -1,0 +1,92 @@
+{
+ "module": "colorchecker",
+ "version": 2,
+ "struct": "dt_iop_colorchecker_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 1180,
+ "fields": [
+  {
+   "name": "source_L",
+   "ctype": "float",
+   "dims": [
+    49
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "source_a",
+   "ctype": "float",
+   "dims": [
+    49
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "source_b",
+   "ctype": "float",
+   "dims": [
+    49
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "target_L",
+   "ctype": "float",
+   "dims": [
+    49
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "target_a",
+   "ctype": "float",
+   "dims": [
+    49
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "target_b",
+   "ctype": "float",
+   "dims": [
+    49
+   ],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  },
+  {
+   "name": "num_patches",
+   "ctype": "int32_t",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": null
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "module": "hazeremoval",
+ "version": 3,
+ "struct": "dt_iop_hazeremoval_params_t",
+ "status": "ok",
+ "reason": null,
+ "size": 16,
+ "fields": [
+  {
+   "name": "strength",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": -1.0,
+   "max": 1.0,
+   "default": 0.2
+  },
+  {
+   "name": "distance",
+   "ctype": "float",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.2
+  },
+  {
+   "name": "compatibility_mode",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 0
+  },
+  {
+   "name": "adaptive",
+   "ctype": "gboolean",
+   "dims": [],
+   "description": null,
+   "kind": "prim",
+   "min": null,
+   "max": null,
+   "default": 1
+  }
+ ]
+}
