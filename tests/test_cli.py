@@ -115,3 +115,33 @@ def test_library_snapshots_are_removed_at_exit(tmp_path, monkeypatch):
     for func, args, kwargs in cleanups:
         func(*args, **kwargs)
     assert not copy.parent.exists()
+
+
+@pytest.fixture
+def duplicate_photo(photo):
+    """photo plus a darktable duplicate (version 1) whose sidecar is IMG_1_01.CR2.xmp."""
+    shutil.copy(FIXTURES / "minimal.xmp", photo.with_name("IMG_1_01.CR2.xmp"))
+    return photo
+
+
+def test_export_of_a_duplicate_does_not_overwrite_the_original_export(duplicate_photo, fake_darktable):
+    duplicate_sidecar = duplicate_photo.with_name("IMG_1_01.CR2.xmp")
+    assert main(["export", str(duplicate_photo), str(duplicate_sidecar), "--preset", "messenger"]) == 0
+    exports = sorted(path.name for path in (duplicate_photo.parent / "messenger").iterdir())
+    assert exports == ["IMG_1.jpg", "IMG_1_01.jpg"]
+
+
+def test_find_shows_the_duplicate_version(duplicate_photo, tmp_path, monkeypatch, capsys):
+    import sqlite3
+
+    import dtk.commands as commands
+    library = tmp_path / "library.db"
+    with sqlite3.connect(library) as conn:
+        conn.executescript((FIXTURES / "library_schema.sql").read_text())
+        conn.execute("insert into film_rolls (id, folder) values (1, ?)", (str(duplicate_photo.parent),))
+        conn.executemany("insert into images (id, film_id, filename, flags, version) values (?, 1, 'IMG_1.CR2', 1, ?)",
+                         [(1, 0), (2, 1)])
+    monkeypatch.setattr(commands, "DEFAULT_LIBRARY", library)
+    assert main(["find"]) == 0
+    lines = capsys.readouterr().out.splitlines()
+    assert "(duplicate" not in lines[0] and lines[1].rstrip().endswith("(duplicate 1)")

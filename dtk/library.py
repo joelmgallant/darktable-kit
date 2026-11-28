@@ -13,7 +13,8 @@ EPOCH = datetime(1, 1, 1)
 RATING_MASK, RATING_REJECTED, FLAG_REJECTED = 7, 6, 8
 
 SELECT = """
-select i.id, f.folder, i.filename, i.flags, i.datetime_taken, h.basic_hash, h.auto_hash, h.current_hash
+select i.id, f.folder, i.filename, i.flags, i.datetime_taken, h.basic_hash, h.auto_hash, h.current_hash,
+       i.version
 from images i join film_rolls f on f.id = i.film_id left join history_hash h on h.imgid = i.id
 """
 
@@ -25,6 +26,7 @@ class Image:
     rating: int
     edited: bool
     taken: datetime | None
+    version: int = 0  # darktable duplicate number; 0 is the original
 
 
 def to_timespan(day: date) -> int:
@@ -51,9 +53,9 @@ def _rating(flags: int) -> int:
 
 
 def _image(row) -> Image:
-    image_id, folder, filename, flags, taken, basic, auto, current = row
+    image_id, folder, filename, flags, taken, basic, auto, current, version = row
     edited = current is not None and current != basic and current != auto
-    return Image(image_id, Path(folder) / filename, _rating(flags or 0), edited, from_timespan(taken))
+    return Image(image_id, Path(folder) / filename, _rating(flags or 0), edited, from_timespan(taken), version or 0)
 
 
 def find_images(library: Path, data: Path | None = None, *, roll: str | None = None, rating_min: int | None = None,

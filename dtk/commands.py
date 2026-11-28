@@ -11,7 +11,7 @@ from dtk import pending, render
 from dtk.blob import decode_param_string
 from dtk.codec import CodecError, decode
 from dtk.editing import plan_edit
-from dtk.images import resolve_image
+from dtk.images import resolve_image, versioned_name
 from dtk.library import DEFAULT_DATA, DEFAULT_LIBRARY, find_images, snapshot
 from dtk.presets import load_preset, out_dir_for
 from dtk.schemas import current_version, load_corpus_report, load_index, load_schema
@@ -44,7 +44,8 @@ def cmd_find(args) -> int:
     for image in images:
         stars = "rejected" if image.rating < 0 else "*" * image.rating or "-"
         taken = image.taken.strftime("%Y-%m-%d") if image.taken else "----------"
-        print(f"{image.id:>6}  {stars:<8} {'edited' if image.edited else '      '}  {taken}  {image.path}")
+        duplicate = f"  (duplicate {image.version})" if image.version else ""
+        print(f"{image.id:>6}  {stars:<8} {'edited' if image.edited else '      '}  {taken}  {image.path}{duplicate}")
     print(f"{len(images)} images")
     return 0
 
@@ -68,7 +69,7 @@ def _summary(entry) -> str:
 def cmd_show(args) -> int:
     files = resolve_image(args.image, _library_snapshot)
     sidecar = parse_sidecar(files.xmp.read_text(encoding="utf-8"))
-    print(f"{files.raw}  history_end={sidecar.history_end}")
+    print(f"{files.raw}  sidecar={files.xmp.name}  history_end={sidecar.history_end}")
     for entry in sidecar.history:
         state = "undone" if entry.num >= sidecar.history_end else ("on" if entry.enabled else "off")
         instance = f" [{entry.multi_name}]" if entry.multi_name else ""
@@ -87,7 +88,7 @@ def cmd_modules(args) -> int:
 
 
 def _export_target(files, out_dir: Path) -> Path:
-    out = out_dir / f"{files.raw.stem}.jpg"
+    out = out_dir / f"{Path(versioned_name(files.raw.name, files.version)).stem}.jpg"
     same_as_source = str(out.resolve()).casefold() == str(files.raw.resolve()).casefold()
     beside_source = out.resolve().parent == files.raw.resolve().parent and out.exists()
     if same_as_source or beside_source:

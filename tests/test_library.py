@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from dtk.images import ImageNotFound, resolve_image
+from dtk.images import ImageNotFound, resolve_image, versioned_name
 from dtk.library import find_images, from_timespan, image_by_id, snapshot, to_timespan
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -102,3 +102,62 @@ def test_resolve_image_refuses_missing_sidecar(tmp_path):
 def test_snapshot_of_a_missing_library_is_a_clear_refusal(tmp_path):
     with pytest.raises(LookupError, match="no darktable library at .*DTK_LIBRARY"):
         snapshot(tmp_path / "missing.db", tmp_path / "snap")
+
+
+@pytest.fixture
+def duplicates(tmp_path):
+    """An original (version 0) and one darktable duplicate (version 1) of the same raw, files on disk."""
+    folder = tmp_path / "roll"
+    folder.mkdir()
+    (folder / "IMG_1.CR2").write_bytes(b"raw")
+    (folder / "IMG_1.CR2.xmp").write_text("<original/>")
+    (folder / "IMG_1_01.CR2.xmp").write_text("<duplicate/>")
+    lib = tmp_path / "library.db"
+    with sqlite3.connect(lib) as conn:
+        conn.executescript((FIXTURES / "library_schema.sql").read_text())
+        conn.execute("insert into film_rolls (id, folder) values (1, ?)", (str(folder),))
+        conn.executemany("insert into images (id, film_id, filename, flags, version) values (?, 1, 'IMG_1.CR2', 1, ?)",
+                         [(1, 0), (2, 1)])
+    return lib, folder
+
+
+def test_images_carry_their_duplicate_version(duplicates):
+    lib, _ = duplicates
+    assert [(image.id, image.version) for image in find_images(lib)] == [(1, 0), (2, 1)]
+    assert image_by_id(lib, 2).version == 1
+
+
+def test_library_id_of_a_duplicate_resolves_to_its_own_sidecar(duplicates):
+    lib, folder = duplicates
+    original = resolve_image("1", library_snapshot=lambda: lib)
+    duplicate = resolve_image("2", library_snapshot=lambda: lib)
+    assert (original.raw, original.xmp, original.version) == (folder / "IMG_1.CR2", folder / "IMG_1.CR2.xmp", 0)
+    assert (duplicate.raw, duplicate.xmp, duplicate.version) == (folder / "IMG_1.CR2", folder / "IMG_1_01.CR2.xmp", 1)
+
+
+def test_duplicate_sidecar_path_resolves_to_the_raw(duplicates):
+    _, folder = duplicates
+    files = resolve_image(str(folder / "IMG_1_01.CR2.xmp"), library_snapshot=lambda: pytest.fail("no library"))
+    assert (files.raw, files.xmp, files.version) == (folder / "IMG_1.CR2", folder / "IMG_1_01.CR2.xmp", 1)
+
+
+def test_raw_whose_own_name_ends_in_digits_is_not_a_duplicate(tmp_path):
+    raw = tmp_path / "DSC_0001.NEF"
+    raw.write_bytes(b"raw")
+    (tmp_path / "DSC_0001.NEF.xmp").write_text("<x/>")
+    files = resolve_image(str(tmp_path / "DSC_0001.NEF.xmp"), library_snapshot=lambda: None)
+    assert (files.raw, files.version) == (raw, 0)
+
+
+def test_missing_duplicate_sidecar_names_the_versioned_path(duplicates):
+    lib, folder = duplicates
+    (folder / "IMG_1_01.CR2.xmp").unlink()
+    with pytest.raises(ImageNotFound, match="IMG_1_01.CR2.xmp"):
+        resolve_image("2", library_snapshot=lambda: lib)
+
+
+@pytest.mark.parametrize("version, expected", [(0, "IMG_1.CR2"), (1, "IMG_1_01.CR2"), (42, "IMG_1_42.CR2"),
+                                               (100, "IMG_1_100.CR2"), (999, "IMG_1_999.CR2")])
+def test_versioned_name_follows_darktable(version, expected):
+    # src/common/image.c dt_image_path_append_version_no_db: "_%02d" before the last '.', version 0 unchanged
+    assert versioned_name("IMG_1.CR2", version) == expected

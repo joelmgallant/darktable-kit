@@ -14,6 +14,7 @@ from PIL import Image, ImageStat
 
 from dtk import corpus, render
 from dtk.editing import plan_edit
+from dtk.images import sidecar_path
 from dtk.library import DEFAULT_LIBRARY, find_images, snapshot
 from dtk.presets import load_preset
 from dtk.schemas import load_corpus_report
@@ -25,7 +26,7 @@ needs_cli = pytest.mark.skipif(not Path(render.cli_path()).exists(), reason="dar
 
 def live_sidecars():
     library = snapshot(DEFAULT_LIBRARY, Path(tempfile.mkdtemp()))
-    paths = [image.path.with_name(image.path.name + ".xmp") for image in find_images(library)]
+    paths = [sidecar_path(image.path, image.version) for image in find_images(library)]
     return [path for path in paths if path.exists()]
 
 
