@@ -9,8 +9,10 @@ import json
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Callable
 
 from dtk.codec import PRIMS, CodecError, struct_size
+from schemagen.cexpr import STANDARD_CONSTANTS, eval_number
 from schemagen.ctext import (ParseError, eval_int, find_aliases, find_defines, find_typedefs, parse_annotations,
                              parse_enum_body, parse_struct_body, resolve_ints)
 
@@ -67,7 +69,26 @@ def _resolve_alias(ctype: str, table: TypeTable) -> str:
     raise Unsupported(f"alias loop at {ctype}")
 
 
-def annotation_value(text: str | None, names: dict[str, int], members: dict[str, int | None]):
+def number_lookup(table: TypeTable, names: dict[str, int]) -> Callable[[str], int | float | None]:
+    """Resolve a name for a $MIN/$MAX expression: int names, then standard constants, then any #define."""
+    resolving: set[str] = set()
+
+    def lookup(name: str) -> int | float | None:
+        if name in names:
+            return names[name]
+        if name in STANDARD_CONSTANTS or name in resolving or name not in table.defines:
+            return None
+        resolving.add(name)
+        try:
+            return eval_number(table.defines[name], lookup)
+        finally:
+            resolving.discard(name)
+    return lookup
+
+
+def annotation_value(text: str | None, names: dict[str, int], members: dict[str, int | None],
+                     lookup: Callable[[str], int | float | None] | None = None):
+    """A number when the annotation evaluates to one; otherwise the raw text (enum member or unresolved)."""
     if text is None:
         return None
     if text in members:
@@ -78,6 +99,8 @@ def annotation_value(text: str | None, names: dict[str, int], members: dict[str,
         literal = text.rstrip("fF")
         return int(literal) if re.fullmatch(r"[-+]?\d+", literal) else float(literal)
     value = eval_int(text, names)
+    if value is None:
+        value = eval_number(text, lookup or names.get)
     return value if value is not None else text
 
 
@@ -111,8 +134,9 @@ def _field(raw, table: TypeTable, names: dict[str, int], depth: int) -> dict:
         result.update(kind="struct", fields=_struct_fields(ctype, table, names, depth + 1))
     else:
         raise Unsupported(f"{raw.name}: unknown type {raw.ctype}")
+    lookup = number_lookup(table, names)
     for key in ("min", "max", "default"):
-        result[key] = annotation_value(notes.get(key), names, members)
+        result[key] = annotation_value(notes.get(key), names, members, lookup)
     return result
 
 

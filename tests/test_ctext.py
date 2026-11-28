@@ -1,5 +1,8 @@
+import math
+
 import pytest
 
+from schemagen.cexpr import eval_number
 from schemagen.ctext import (ParseError, eval_int, find_aliases, find_defines, find_typedefs, parse_annotations,
                              parse_enum_body, parse_struct_body, resolve_ints)
 
@@ -111,3 +114,32 @@ def test_indented_top_level_typedefs_count_but_function_local_ones_do_not():
     found = find_typedefs(src)
     assert found["dt_iop_rgb_norms_t"][0] == "enum"
     assert "dt_iop_exposure_params_v6_t" not in found
+
+
+def test_annotation_value_stops_before_a_trailing_comma():
+    # src/iop/watermark.c: "$MIN: -1.0 $MAX: 1.0, 0.001 $DEFAULT: 0.0"
+    assert parse_annotations('$MIN: -1.0 $MAX: 1.0, 0.001 $DEFAULT: 0.0')["max"] == "1.0"
+
+
+@pytest.mark.parametrize("expr, expected", [
+    ("-M_PI", -math.pi),
+    ("2.0 * M_PI", 2.0 * math.pi),
+    ("1.0f/3.0f", 1.0 / 3.0),
+    ("1667.", 1667.0),
+    (".5f", 0.5),
+    ("7 / 2", 3),
+    ("-7 / 2", -3),
+    ("(1 + 2) * 3", 9),
+    ("20.0/GRAIN_SCALE_FACTOR", 20.0 / 213.2),
+    ("UINT16_MAX", 65535),
+    ("FLT_MAX", float.fromhex("0x1.fffffep+127")),
+    ("-FLT_MAX", -float.fromhex("0x1.fffffep+127")),
+])
+def test_eval_number(expr, expected):
+    names = {"GRAIN_SCALE_FACTOR": 213.2}
+    assert eval_number(expr, names.get) == expected
+
+
+@pytest.mark.parametrize("expr", ["UNKNOWN", "__import__('os')", "2 ** 8", "1 / 0", "M_PI[0]", "", "1.0 1.0"])
+def test_eval_number_refuses_what_it_cannot_evaluate_safely(expr):
+    assert eval_number(expr, {}.get) is None

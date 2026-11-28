@@ -12,8 +12,8 @@
    "dims": [],
    "description": "tint hue",
    "kind": "prim",
-   "min": "-M_PI",
-   "max": "M_PI",
+   "min": -3.141592653589793,
+   "max": 3.141592653589793,
    "default": 0.0
   },
   {
@@ -32,8 +32,8 @@
    "dims": [],
    "description": "red hue",
    "kind": "prim",
-   "min": "-M_PI",
-   "max": "M_PI",
+   "min": -3.141592653589793,
+   "max": 3.141592653589793,
    "default": 0.0
   },
   {
@@ -52,8 +52,8 @@
    "dims": [],
    "description": "green hue",
    "kind": "prim",
-   "min": "-M_PI",
-   "max": "M_PI",
+   "min": -3.141592653589793,
+   "max": 3.141592653589793,
    "default": 0.0
   },
   {
@@ -72,8 +72,8 @@
    "dims": [],
    "description": "blue hue",
    "kind": "prim",
-   "min": "-M_PI",
-   "max": "M_PI",
+   "min": -3.141592653589793,
+   "max": 3.141592653589793,
    "default": 0.0
   },
   {

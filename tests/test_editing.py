@@ -150,3 +150,9 @@ def test_non_finite_and_unknown_enum_numbers_are_refused(arg, message):
 def test_enum_member_number_is_accepted():
     _, _, values = last_values(plan(MINIMAL, "exposure.mode=1").new_text)
     assert values["mode"] == 1
+
+
+def test_field_with_an_unresolved_limit_is_refused():
+    sch = schema("sym", [prim("level", "float", lo=0.0, hi="MYSTERY_MAX")])
+    with pytest.raises(EditRefused, match="sym.level: its max limit 'MYSTERY_MAX' is unresolved"):
+        apply_change(sch, {"level": 0.5}, parse_set("sym.level=0.6"))

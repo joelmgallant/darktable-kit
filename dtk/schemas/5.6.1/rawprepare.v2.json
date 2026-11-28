@@ -13,7 +13,7 @@
    "description": "crop left",
    "kind": "prim",
    "min": 0,
-   "max": "UINT16_MAX",
+   "max": 65535,
    "default": null
   },
   {
@@ -23,7 +23,7 @@
    "description": "crop top",
    "kind": "prim",
    "min": 0,
-   "max": "UINT16_MAX",
+   "max": 65535,
    "default": null
   },
   {
@@ -33,7 +33,7 @@
    "description": "crop right",
    "kind": "prim",
    "min": 0,
-   "max": "UINT16_MAX",
+   "max": 65535,
    "default": null
   },
   {
@@ -43,7 +43,7 @@
    "description": "crop bottom",
    "kind": "prim",
    "min": 0,
-   "max": "UINT16_MAX",
+   "max": 65535,
    "default": null
   },
   {
@@ -55,7 +55,7 @@
    "description": "black level",
    "kind": "prim",
    "min": 0,
-   "max": "UINT16_MAX",
+   "max": 65535,
    "default": null
   },
   {
@@ -65,7 +65,7 @@
    "description": "white point",
    "kind": "prim",
    "min": 0,
-   "max": "UINT16_MAX",
+   "max": 65535,
    "default": null
   },
   {

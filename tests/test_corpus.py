@@ -56,3 +56,12 @@ def test_committed_report_is_current():
 def test_exposure_is_editable():
     committed = json.loads((SCHEMA_DIR / "corpus.json").read_text())
     assert committed["exposure"]["status"] == "editable", committed["exposure"]["problems"]
+
+
+def test_unresolved_limit_makes_a_module_read_only_and_names_the_field(monkeypatch):
+    symbolic = schema("sym", [prim("level", "float", lo=0.0, hi="MYSTERY_MAX")])
+    monkeypatch.setattr(corpus, "load_index", lambda: {"sym": {"module": "sym", "version": 1, "status": "ok"}})
+    monkeypatch.setattr(corpus, "load_schema", lambda module, version: symbolic)
+    report = corpus.evaluate([("sym", 1, encode(symbolic, {"level": 0.5}), "a")])
+    assert report["sym"]["status"] == "read-only"
+    assert report["sym"]["problems"] == ["level: max limit 'MYSTERY_MAX' is unresolved"]

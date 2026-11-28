@@ -50,3 +50,33 @@ def test_unknown_type_marks_module_unsupported():
 
 def test_files_without_introspection_are_skipped():
     assert build("helper", "int x;") is None
+
+
+SYMBOLIC_SRC = '''DT_MODULE_INTROSPECTION(1, dt_iop_sym_params_t)
+#define COLOR_MAX 2.0
+#define TEMP_MIN 1667.
+#define SCALE 213.2
+typedef struct dt_iop_sym_params_t
+{
+  float red;     // $MIN: -COLOR_MAX $MAX: COLOR_MAX
+  float temp;    // $MIN: TEMP_MIN $MAX: 25000.
+  float angle;   // $MIN: -M_PI_F $MAX: M_PI
+  float grain;   // $MIN: 20.0/SCALE $MAX: FLT_MAX
+  int edge;      // $MAX: UINT16_MAX
+  float offset;  // $MIN: -1.0 $MAX: 1.0, 0.001
+  float odd;     // $MAX: NOT_DEFINED_ANYWHERE
+} dt_iop_sym_params_t;
+'''
+
+
+def test_symbolic_limits_resolve_through_defines_headers_and_standard_constants():
+    import math
+    fields = {f["name"]: f for f in build("sym", SYMBOLIC_SRC, "#define M_PI_F 3.14159265358979323846f\n")["fields"]}
+    assert (fields["red"]["min"], fields["red"]["max"]) == (-2.0, 2.0)
+    assert (fields["temp"]["min"], fields["temp"]["max"]) == (1667.0, 25000.0)
+    assert (fields["angle"]["min"], fields["angle"]["max"]) == (-3.14159265358979323846, math.pi)
+    assert fields["grain"]["min"] == 20.0 / 213.2
+    assert fields["grain"]["max"] == float.fromhex("0x1.fffffep+127")
+    assert fields["edge"]["max"] == 65535
+    assert fields["offset"]["max"] == 1.0
+    assert fields["odd"]["max"] == "NOT_DEFINED_ANYWHERE"

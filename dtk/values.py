@@ -80,6 +80,11 @@ def _coerce(field: dict, change: Change, old):
 
 def _check_range(field: dict, change: Change, value) -> None:
     low, high = field.get("min"), field.get("max")
+    for key, limit in (("min", low), ("max", high)):
+        if limit is not None and not isinstance(limit, (int, float)):
+            label = ".".join((change.module,) + change.path)
+            raise EditRefused(f"{label}: its {key} limit {limit!r} is unresolved in the darktable source, so dtk "
+                              "will not edit it; fix schemagen and regenerate")
     if isinstance(value, str):
         return
     if (isinstance(low, (int, float)) and value < low) or (isinstance(high, (int, float)) and value > high):

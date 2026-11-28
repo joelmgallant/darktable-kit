@@ -22,8 +22,8 @@
    "dims": [],
    "description": "lens shift (vertical)",
    "kind": "prim",
-   "min": "-LENSSHIFT_RANGE_SOFT",
-   "max": "LENSSHIFT_RANGE_SOFT",
+   "min": -2.0,
+   "max": 2.0,
    "default": 0.0
   },
   {
@@ -32,8 +32,8 @@
    "dims": [],
    "description": "lens shift (horizontal)",
    "kind": "prim",
-   "min": "-LENSSHIFT_RANGE_SOFT",
-   "max": "LENSSHIFT_RANGE_SOFT",
+   "min": -2.0,
+   "max": 2.0,
    "default": 0.0
   },
   {
@@ -42,8 +42,8 @@
    "dims": [],
    "description": "shear",
    "kind": "prim",
-   "min": "-SHEAR_RANGE_SOFT",
-   "max": "SHEAR_RANGE_SOFT",
+   "min": -0.5,
+   "max": 0.5,
    "default": 0.0
   },
   {
@@ -54,7 +54,7 @@
    "kind": "prim",
    "min": 1.0,
    "max": 2000.0,
-   "default": "DEFAULT_F_LENGTH"
+   "default": 28.0
   },
   {
    "name": "crop_factor",

@@ -14,8 +14,8 @@
    ],
    "description": null,
    "kind": "prim",
-   "min": "COLOR_MIN",
-   "max": "COLOR_MAX",
+   "min": -2.0,
+   "max": 2.0,
    "default": null
   },
   {
@@ -26,8 +26,8 @@
    ],
    "description": null,
    "kind": "prim",
-   "min": "COLOR_MIN",
-   "max": "COLOR_MAX",
+   "min": -2.0,
+   "max": 2.0,
    "default": null
   },
   {
@@ -38,8 +38,8 @@
    ],
    "description": null,
    "kind": "prim",
-   "min": "COLOR_MIN",
-   "max": "COLOR_MAX",
+   "min": -2.0,
+   "max": 2.0,
    "default": null
   },
   {
@@ -253,8 +253,8 @@
    "dims": [],
    "description": null,
    "kind": "prim",
-   "min": "TEMP_MIN",
-   "max": "TEMP_MAX",
+   "min": 1667.0,
+   "max": 25000.0,
    "default": 5003.0
   },
   {

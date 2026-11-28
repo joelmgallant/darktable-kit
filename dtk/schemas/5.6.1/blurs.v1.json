@@ -67,8 +67,8 @@
    "dims": [],
    "description": "rotation",
    "kind": "prim",
-   "min": "-M_PI_2f",
-   "max": "M_PI_2f",
+   "min": -1.5707963267948966,
+   "max": 1.5707963267948966,
    "default": 0.0
   },
   {
@@ -77,8 +77,8 @@
    "dims": [],
    "description": "direction",
    "kind": "prim",
-   "min": "-M_PI_F",
-   "max": "M_PI_F",
+   "min": -3.141592653589793,
+   "max": 3.141592653589793,
    "default": 0.0
   },
   {

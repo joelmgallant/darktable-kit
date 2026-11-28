@@ -18,7 +18,7 @@ TYPEDEF_BLOCK_RE = re.compile(r"^(?P<indent>[ \t]*)typedef[ \t]+(struct|enum)\b[
 TYPEDEF_ALIAS_RE = re.compile(
     r"^typedef[ \t]+((?:unsigned[ \t]+|signed[ \t]+)?[A-Za-z_]\w*)[ \t]+([A-Za-z_]\w*)[ \t]*;", re.M)
 LITERAL_OR_COMMENT_RE = re.compile(r'//[^\n]*|/\*.*?\*/|"(?:[^"\\\n]|\\.)*"|\'(?:[^\'\\\n]|\\.)*\'', re.S)
-ANNOTATION_RE = re.compile(r'\$(MIN|MAX|DEFAULT|DESCRIPTION):\s*("(?:[^"\\]|\\.)*"|[^\s$]+)')
+ANNOTATION_RE = re.compile(r'\$(MIN|MAX|DEFAULT|DESCRIPTION):\s*("(?:[^"\\]|\\.)*"|[^\s$,]+)')
 DECL_RE = re.compile(r"^(?P<ctype>(?:(?:const|unsigned|signed)\s+)*[A-Za-z_]\w*)\s+(?P<declarators>.+)$", re.S)
 DECLARATOR_RE = re.compile(r"^(?P<name>[A-Za-z_]\w*)\s*(?P<dims>(?:\[[^\]]+\]\s*)*)$")
 

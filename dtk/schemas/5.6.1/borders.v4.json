@@ -26,7 +26,7 @@
    "kind": "prim",
    "min": 1.0,
    "max": 3.0,
-   "default": "DT_IOP_BORDERS_ASPECT_CONSTANT_VALUE"
+   "default": -1.0
   },
   {
    "name": "aspect_text",

@@ -28,9 +28,9 @@
    "dims": [],
    "description": "coarseness",
    "kind": "prim",
-   "min": "20.0/GRAIN_SCALE_FACTOR",
-   "max": "6400.0/GRAIN_SCALE_FACTOR",
-   "default": "1600.0/GRAIN_SCALE_FACTOR"
+   "min": 0.09380863039399626,
+   "max": 30.0187617260788,
+   "default": 7.5046904315197
   },
   {
    "name": "strength",

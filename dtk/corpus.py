@@ -72,6 +72,18 @@ def range_problems(schema: dict, values: dict) -> list[str]:
     return problems
 
 
+def unresolved_limits(fields: list[dict], prefix: str = "") -> list[str]:
+    """A limit schemagen could not turn into a number means the range check cannot run: never skip it silently."""
+    problems = []
+    for field in fields:
+        for key in ("min", "max"):
+            limit = field.get(key)
+            if limit is not None and not isinstance(limit, (int, float)):
+                problems.append(f"{prefix}{field['name']}: {key} limit {limit!r} is unresolved")
+        problems.extend(unresolved_limits(field.get("fields", []), f"{prefix}{field['name']}."))
+    return problems
+
+
 def evaluate(blobs: list[Blob]) -> dict[str, dict]:
     grouped: dict[str, list[tuple[int, bytes, str]]] = defaultdict(list)
     for module, version, raw, source in blobs:
@@ -84,7 +96,8 @@ def evaluate(blobs: list[Blob]) -> dict[str, dict]:
             continue
         schema = load_schema(module, entry["version"])
         current = [(raw, source) for version, raw, source in grouped.get(module, []) if version == entry["version"]]
-        problems: list[str] = []
+        unresolved = unresolved_limits(schema["fields"])
+        problems: list[str] = list(unresolved)
         for raw, source in current:
             try:
                 values = decode(schema, raw)
@@ -94,7 +107,7 @@ def evaluate(blobs: list[Blob]) -> dict[str, dict]:
             if encode(schema, values) != raw:
                 problems.append(f"{source}: re-encoding changed the bytes")
             problems.extend(f"{source}: {problem}" for problem in range_problems(schema, values))
-        status = "no-corpus" if not current else "editable" if not problems else "read-only"
+        status = "read-only" if unresolved else "no-corpus" if not current else "editable" if not problems else "read-only"
         report[module] = {"status": status, "version": entry["version"], "blobs": len(current),
                           "problems": problems[:MAX_PROBLEMS]}
     return report
