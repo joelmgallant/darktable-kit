@@ -7,6 +7,7 @@ import os
 import shutil
 import subprocess
 import tempfile
+import warnings
 from pathlib import Path
 
 import pytest
@@ -71,8 +72,10 @@ def test_messenger_export_leaves_the_sidecar_alone(test_raw, tmp_path):
     out = render.render(test_raw, xmp.read_text(), tmp_path / "m.jpg", preset.spec)
     assert sha256_bytes(xmp.read_bytes()) == before
     with Image.open(out) as image:
-        assert max(image.size) <= 2048
-    if shutil.which("magick"):
-        quality = subprocess.run(["magick", "identify", "-format", "%Q", str(out)],
-                                 capture_output=True, text=True).stdout.strip()
-        assert quality == "90"
+        assert 2047 <= max(image.size) <= 2048  # the spike's GUI-equivalent render was 2047x2048
+    if not shutil.which("magick"):
+        warnings.warn("ImageMagick not installed: JPEG quality 90 was not checked")
+        return
+    quality = subprocess.run(["magick", "identify", "-format", "%Q", str(out)],
+                             capture_output=True, text=True).stdout.strip()
+    assert quality == "90"
