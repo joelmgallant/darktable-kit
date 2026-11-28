@@ -143,3 +143,14 @@ def test_eval_number(expr, expected):
 @pytest.mark.parametrize("expr", ["UNKNOWN", "__import__('os')", "2 ** 8", "1 / 0", "M_PI[0]", "", "1.0 1.0"])
 def test_eval_number_refuses_what_it_cannot_evaluate_safely(expr):
     assert eval_number(expr, {}.get) is None
+
+
+@pytest.mark.parametrize("expr, expected", [("-1 / 2", 0), ("-7 / 2", -3), ("-7 % 2", -1), ("7 % -2", 1),
+                                            ("1 << 4 | 1", 17), ("~0 & 0xff", 255), ("6 ^ 3", 5), ("256 >> 2", 64)])
+def test_eval_int_follows_c_semantics(expr, expected):
+    assert eval_int(expr, {}) == expected
+
+
+@pytest.mark.parametrize("expr", ["__import__('os')", "1 / 0", "2 ** 8", "1.5"])
+def test_eval_int_refuses_what_it_cannot_evaluate(expr):
+    assert eval_int(expr, {}) is None

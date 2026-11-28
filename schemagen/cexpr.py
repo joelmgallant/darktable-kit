@@ -42,15 +42,13 @@ def eval_int(expr: str, names: dict[str, int]) -> int | None:
         elif token[0].isdigit():
             digits = token.rstrip("uUlL")
             pieces.append(str(int(digits, 16) if digits[:2].lower() == "0x" else int(digits, 10)))
-        elif token == "/":
-            pieces.append("//")
         else:
             pieces.append(token)
         while position < len(expr) and expr[position].isspace():
             position += 1
     try:
-        value = eval(" ".join(pieces), {"__builtins__": {}}, {})  # tokens are restricted to ints and operators
-    except Exception:
+        value = _evaluate(ast.parse(" ".join(pieces), mode="eval"))
+    except (SyntaxError, ValueError, TypeError, ZeroDivisionError, OverflowError):
         return None
     return value if isinstance(value, int) else None
 
@@ -84,7 +82,9 @@ STANDARD_CONSTANTS: dict[str, int | float] = {
 }
 NUMBER_TOKEN_RE = re.compile(r"\s*((?:\d+\.\d*|\.\d+|\d+)(?:[eE][-+]?\d+)?[fFuUlL]*|0[xX][0-9a-fA-F]+[uUlL]*"
                              r"|[A-Za-z_]\w*|[-+*/()])")
-_BINARY = {ast.Add: lambda a, b: a + b, ast.Sub: lambda a, b: a - b, ast.Mult: lambda a, b: a * b}
+_BINARY = {ast.Add: lambda a, b: a + b, ast.Sub: lambda a, b: a - b, ast.Mult: lambda a, b: a * b,
+           ast.BitOr: lambda a, b: a | b, ast.BitAnd: lambda a, b: a & b, ast.BitXor: lambda a, b: a ^ b,
+           ast.LShift: lambda a, b: a << b, ast.RShift: lambda a, b: a >> b}
 
 
 def _literal(token: str) -> int | float:
@@ -109,8 +109,15 @@ def _evaluate(node: ast.AST) -> int | float:
     if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.USub, ast.UAdd)):
         value = _evaluate(node.operand)
         return -value if isinstance(node.op, ast.USub) else value
+    if isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.Invert):
+        return ~_evaluate(node.operand)
     if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div):
         return _divide(_evaluate(node.left), _evaluate(node.right))
+    if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Mod):
+        left, right = _evaluate(node.left), _evaluate(node.right)
+        if not (isinstance(left, int) and isinstance(right, int)):
+            raise ValueError("% needs integers")
+        return left - right * _divide(left, right)  # C remainder takes the sign of the dividend
     if isinstance(node, ast.BinOp) and type(node.op) in _BINARY:
         return _BINARY[type(node.op)](_evaluate(node.left), _evaluate(node.right))
     raise ValueError(f"unsupported expression node {type(node).__name__}")
