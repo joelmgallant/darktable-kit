@@ -77,3 +77,21 @@ def test_read_back_mismatch_is_refused_and_names_the_backup(xmp, tmp_path, monke
     monkeypatch.setattr(writer.os, "replace", corrupting_replace)
     with pytest.raises(WriteRefused, match="did not read back as written; restore from"):
         write_xmp(xmp, NEW_TEXT, sha(xmp), is_running=lambda: False, backup_dir=tmp_path / "bk")
+
+
+def test_write_keeps_the_sidecar_file_mode(xmp, tmp_path):
+    xmp.chmod(0o640)
+    write_xmp(xmp, NEW_TEXT, sha(xmp), is_running=lambda: False, backup_dir=tmp_path / "bk")
+    assert xmp.stat().st_mode & 0o777 == 0o640
+
+
+def test_failed_rename_leaves_the_sidecar_and_no_temp_file(xmp, tmp_path, monkeypatch):
+    import dtk.writer as writer
+
+    def failing_replace(src, dst):
+        raise OSError("disk full")
+    monkeypatch.setattr(writer.os, "replace", failing_replace)
+    with pytest.raises(OSError, match="disk full"):
+        write_xmp(xmp, NEW_TEXT, sha(xmp), is_running=lambda: False, backup_dir=tmp_path / "bk")
+    assert xmp.read_text() == MINIMAL
+    assert not list(xmp.parent.glob(".*dtk-tmp"))

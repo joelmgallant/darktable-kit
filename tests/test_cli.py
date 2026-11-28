@@ -60,10 +60,36 @@ def test_edit_refusal_is_one_line_on_stderr(photo, capsys):
     assert err.startswith("dtk: ") and "outside" in err and "\n" not in err
 
 
-def test_edit_with_preview(photo, fake_darktable, capsys):
+def test_edit_with_preview(photo, monkeypatch, capsys):
+    rendered = []
+
+    def recording_darktable(cmd, **kwargs):
+        rendered.append((Path(cmd[3]).name, Path(cmd[2]).read_text()))
+        Image.new("RGB", (640, 480), (90, 90, 90)).save(cmd[3], "JPEG", icc_profile=SRGB)
+        return subprocess.CompletedProcess(cmd, 0, "", "")
+    monkeypatch.setattr(render.subprocess, "run", recording_darktable)
     assert main(["edit", str(photo), "--set", "exposure.exposure=0.5"]) == 0
     preview = next(line.split(": ", 1)[1] for line in capsys.readouterr().out.splitlines() if line.startswith("preview: "))
     assert Path(preview).exists()
+    (_, before_text), (_, after_text) = rendered
+    assert before_text == (FIXTURES / "minimal.xmp").read_text()
+    assert 'darktable:history_end="3"' in after_text and 'darktable:history_end="3"' not in before_text
+
+
+def test_show_marks_bad_and_unsupported_entries_without_aborting(photo, capsys):
+    xmp = photo.with_name("IMG_1.CR2.xmp")
+    text = xmp.read_text().replace('darktable:params="000000000000000036f22a3f0000803f0100000001000000"',
+                                   'darktable:params="zz-not-params"', 1)
+    text = text.replace('darktable:operation="exposure"\n      darktable:enabled="1"\n      darktable:modversion="7"\n'
+                        '      darktable:params="00000000000080b90000404000004842000080c00100000001000000"',
+                        'darktable:operation="dither"\n      darktable:enabled="1"\n      darktable:modversion="1"\n'
+                        '      darktable:params="00000000000080b90000404000004842000080c00100000001000000"', 1)
+    assert 'operation="dither"' in text and "zz-not-params" in text
+    xmp.write_text(text)
+    assert main(["show", str(photo)]) == 0
+    out = capsys.readouterr().out
+    assert "crop v3  (cannot read params:" in out
+    assert "dither v1  (unsupported:" in out
 
 
 def test_export_with_preset(photo, fake_darktable, capsys):

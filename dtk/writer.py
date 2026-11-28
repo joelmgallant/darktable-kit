@@ -35,8 +35,15 @@ def write_xmp(xmp: Path, new_text: str, expected_sha: str, *, is_running=None,
     shutil.copy2(xmp, backup)
     data = new_text.encode("utf-8")
     temp = xmp.with_name(f".{xmp.name}.dtk-tmp")
-    temp.write_bytes(data)
-    os.replace(temp, xmp)
+    try:
+        with open(temp, "wb") as handle:
+            handle.write(data)
+            handle.flush()
+            os.fsync(handle.fileno())
+        shutil.copymode(xmp, temp)
+        os.replace(temp, xmp)
+    finally:
+        temp.unlink(missing_ok=True)
     written = xmp.read_bytes()
     if written != data:
         raise WriteRefused(f"{xmp.name} did not read back as written; restore from {backup}")

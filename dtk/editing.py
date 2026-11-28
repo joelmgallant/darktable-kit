@@ -68,6 +68,9 @@ def plan_edit(sidecar_text: str, changes: list[Change], instance: str | None = N
         raw, fmt = decode_param_string(entry.params)
         try:
             values = decode(schema, raw)
+            if encode(schema, values, base=raw) != raw:
+                raise EditRefused(f"{module}'s params in this image do not re-encode byte-for-byte, so editing one "
+                                  "field could change others; edit it in darktable instead")
             for change in module_changes:
                 old, new = apply_change(schema, values, change)
                 diff.append((".".join((module,) + change.path), old, new))

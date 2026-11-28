@@ -156,3 +156,14 @@ def test_field_with_an_unresolved_limit_is_refused():
     sch = schema("sym", [prim("level", "float", lo=0.0, hi="MYSTERY_MAX")])
     with pytest.raises(EditRefused, match="sym.level: its max limit 'MYSTERY_MAX' is unresolved"):
         apply_change(sch, {"level": 0.5}, parse_set("sym.level=0.6"))
+
+
+def test_image_blob_that_does_not_round_trip_is_refused():
+    # junk after the NUL of a char[] would be zeroed by re-encoding an unrelated field
+    named = schema("named", [prim("label", "char", dims=(4,)), prim("level", "float", lo=0.0, hi=1.0)])
+    raw = b"ab\0Z" + bytes(4)
+    text = MINIMAL.replace('darktable:operation="crop"', 'darktable:operation="named"').replace(
+        "000000000000000036f22a3f0000803f0100000001000000", raw.hex())
+    with pytest.raises(EditRefused, match="re-encode byte-for-byte"):
+        plan_edit(text, [parse_set("named.level=0.5")], schema_for=lambda module, version: named,
+                  editable=lambda module: True, version_of=lambda module: 3)

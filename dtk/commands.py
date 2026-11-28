@@ -8,13 +8,13 @@ from datetime import date, datetime
 from pathlib import Path
 
 from dtk import pending, render
-from dtk.blob import decode_param_string
+from dtk.blob import BlobError, decode_param_string
 from dtk.codec import CodecError, decode
 from dtk.editing import plan_edit
 from dtk.images import resolve_image, versioned_name
 from dtk.library import DEFAULT_DATA, DEFAULT_LIBRARY, find_images, snapshot
 from dtk.presets import load_preset, out_dir_for
-from dtk.schemas import current_version, load_corpus_report, load_index, load_schema
+from dtk.schemas import load_corpus_report, load_index, load_schema
 from dtk.state import state_dir
 from dtk.values import EditRefused, parse_set
 from dtk.writer import sha256_bytes, write_xmp
@@ -51,13 +51,20 @@ def cmd_find(args) -> int:
 
 
 def _summary(entry) -> str:
-    version = current_version(entry.operation)
-    if version is None:
+    index_entry = load_index().get(entry.operation)
+    if index_entry is None:
         return "(no schema)"
+    if index_entry["status"] != "ok":
+        return f"(unsupported: {index_entry['reason']})"
+    version = index_entry["version"]
     if version != entry.modversion:
         return f"(stored v{entry.modversion}, dtk knows v{version})"
     try:
-        values = decode(load_schema(entry.operation, version), decode_param_string(entry.params)[0])
+        raw, _ = decode_param_string(entry.params)
+    except BlobError as exc:
+        return f"(cannot read params: {exc})"
+    try:
+        values = decode(load_schema(entry.operation, version), raw)
     except CodecError as exc:
         return f"(cannot decode: {exc})"
     shown = [f"{name}={value:.4g}" if isinstance(value, float) else f"{name}={value}"
