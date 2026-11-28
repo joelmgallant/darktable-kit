@@ -9,6 +9,7 @@ HISTORY_RE = re.compile(r"<darktable:history>\s*<rdf:Seq>(?P<body>.*?)\s*</rdf:S
 LI_RE = re.compile(r"<rdf:li\b(?P<attrs>[^>]*?)/>", re.S)
 ATTR_RE = re.compile(r'(\w+:\w+)="([^"]*)"')
 HISTORY_END_RE = re.compile(r'darktable:history_end="(\d+)"')
+MASKS_HISTORY_RE = re.compile(r"<darktable:masks_history>(?P<body>.*?)</darktable:masks_history>", re.S)
 DEFAULT_INDENT = "     "
 
 
@@ -35,7 +36,7 @@ class Sidecar:
     text: str
     history: tuple[HistoryEntry, ...]
     history_end: int
-    has_masks_history: bool
+    has_masks_history: bool  # masks_history has at least one entry
 
 
 def _entry(attrs: str) -> HistoryEntry:
@@ -58,7 +59,13 @@ def parse_sidecar(text: str) -> Sidecar:
     history = tuple(_entry(li.group("attrs")) for li in LI_RE.finditer(match.group("body"))) if match else ()
     end = HISTORY_END_RE.search(text)
     return Sidecar(text=text, history=history, history_end=int(end.group(1)) if end else len(history),
-                   has_masks_history="<darktable:masks_history>" in text)
+                   has_masks_history=_has_mask_entries(text))
+
+
+def _has_mask_entries(text: str) -> bool:
+    """True when masks_history holds at least one rdf:li. darktable writes an empty <rdf:Seq/> into every sidecar."""
+    masks = MASKS_HISTORY_RE.search(text)
+    return bool(masks and re.search(r"<rdf:li\b", masks.group("body")))
 
 
 def format_entry(entry: HistoryEntry, indent: str) -> str:
